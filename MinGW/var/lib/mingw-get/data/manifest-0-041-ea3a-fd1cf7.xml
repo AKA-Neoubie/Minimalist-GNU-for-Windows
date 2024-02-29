@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-041-ea3a-fd1cf7">
+    <release tarname="libunistring-0.9.6-1-mingw32-dev.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="include" />
+        <file path="include/unicase.h" />
+        <file path="include/uniconv.h" />
+        <file path="include/unictype.h" />
+        <file path="include/unigbrk.h" />
+        <file path="include/unilbrk.h" />
+        <file path="include/uniname.h" />
+        <file path="include/uninorm.h" />
+        <file path="include/unistdio.h" />
+        <file path="include/unistr.h" />
+        <dir path="include/unistring" />
+        <file path="include/unistring/cdefs.h" />
+        <file path="include/unistring/iconveh.h" />
+        <file path="include/unistring/inline.h" />
+        <file path="include/unistring/localcharset.h" />
+        <file path="include/unistring/stdbool.h" />
+        <file path="include/unistring/stdint.h" />
+        <file path="include/unistring/version.h" />
+        <file path="include/unistring/woe32dll.h" />
+        <file path="include/unitypes.h" />
+        <file path="include/uniwbrk.h" />
+        <file path="include/uniwidth.h" />
+        <dir path="lib" />
+        <file path="lib/libunistring.a" />
+        <file path="lib/libunistring.dll.a" />
+        <file path="lib/libunistring.la" />
+    </manifest>
+</package>

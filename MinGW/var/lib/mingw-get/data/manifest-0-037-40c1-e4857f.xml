@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-037-40c1-e4857f">
+    <release tarname="zlib-1.2.7-1-msys-1.0.17-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/zlib.README.txt" />
+        <dir path="share/doc/zlib/1.2.7" />
+        <file path="share/doc/zlib/1.2.7/ChangeLog" />
+        <dir path="share/doc/zlib/1.2.7/examples" />
+        <file path="share/doc/zlib/1.2.7/examples/enough.c" />
+        <file path="share/doc/zlib/1.2.7/examples/fitblk.c" />
+        <file path="share/doc/zlib/1.2.7/examples/gun.c" />
+        <file path="share/doc/zlib/1.2.7/examples/gzappend.c" />
+        <file path="share/doc/zlib/1.2.7/examples/gzjoin.c" />
+        <file path="share/doc/zlib/1.2.7/examples/gzlog.c" />
+        <file path="share/doc/zlib/1.2.7/examples/gzlog.h" />
+        <file path="share/doc/zlib/1.2.7/examples/README.examples" />
+        <file path="share/doc/zlib/1.2.7/examples/zlib_how.html" />
+        <file path="share/doc/zlib/1.2.7/examples/zpipe.c" />
+        <file path="share/doc/zlib/1.2.7/examples/zran.c" />
+        <file path="share/doc/zlib/1.2.7/FAQ" />
+        <file path="share/doc/zlib/1.2.7/MiniZip64_Changes.txt" />
+        <file path="share/doc/zlib/1.2.7/MiniZip64_info.txt" />
+        <file path="share/doc/zlib/1.2.7/README" />
+        <dir path="share/man" />
+        <dir path="share/man/man3" />
+        <file path="share/man/man3/zlib.3.gz" />
+    </manifest>
+</package>

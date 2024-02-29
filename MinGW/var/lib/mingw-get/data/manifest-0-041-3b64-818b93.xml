@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-041-3b64-818b93">
+    <release tarname="libexpat-2.0.1-1-msys-1.0.13-dev.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="include" />
+        <file path="include/expat.h" />
+        <file path="include/expat_external.h" />
+        <dir path="lib" />
+        <file path="lib/libexpat.a" />
+        <file path="lib/libexpat.dll.a" />
+        <file path="lib/libexpat.la" />
+    </manifest>
+</package>

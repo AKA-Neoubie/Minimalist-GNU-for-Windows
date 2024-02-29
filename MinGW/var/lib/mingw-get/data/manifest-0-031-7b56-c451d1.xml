@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-031-7b56-c451d1">
+    <release tarname="xz-5.0.3-2-mingw32-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <file path="share/doc/xz/5.0.3/COPYING" />
+        <file path="share/doc/xz/5.0.3/COPYING.GPLv2" />
+        <file path="share/doc/xz/5.0.3/COPYING.GPLv3" />
+        <file path="share/doc/xz/5.0.3/COPYING.LGPLv2.1" />
+    </manifest>
+</package>

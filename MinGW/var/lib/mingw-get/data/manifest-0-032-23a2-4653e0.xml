@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-032-23a2-4653e0">
+    <release tarname="pexports-0.47-mingw32-doc.tar.xz" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/doc" />
+        <dir path="share/doc/pexports" />
+        <dir path="share/doc/pexports/0.47" />
+        <file path="share/doc/pexports/0.47/README" />
+        <file path="share/doc/pexports/0.47/ChangeLog" />
+    </manifest>
+</package>

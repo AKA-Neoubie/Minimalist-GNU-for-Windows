@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-034-24c2-389bf4">
+    <release tarname="zip-3.0-1-msys-1.0.14-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/zip-3.0-1-msys.RELEASE_NOTES.txt" />
+        <dir path="share/doc/zip" />
+        <dir path="share/doc/zip/3.0" />
+        <file path="share/doc/zip/3.0/Betas_Readme.txt" />
+        <file path="share/doc/zip/3.0/BUGS" />
+        <file path="share/doc/zip/3.0/CHANGES" />
+        <file path="share/doc/zip/3.0/README" />
+        <file path="share/doc/zip/3.0/README.CR" />
+        <file path="share/doc/zip/3.0/TODO" />
+        <file path="share/doc/zip/3.0/USexport.msg" />
+        <file path="share/doc/zip/3.0/WHATSNEW" />
+        <file path="share/doc/zip/3.0/WHERE" />
+        <file path="share/doc/zip/3.0/zip.txt" />
+        <file path="share/doc/zip/3.0/zip30.ann" />
+        <file path="share/doc/zip/3.0/zipcloak.txt" />
+        <file path="share/doc/zip/3.0/zipnote.txt" />
+        <file path="share/doc/zip/3.0/zipsplit.txt" />
+    </manifest>
+</package>

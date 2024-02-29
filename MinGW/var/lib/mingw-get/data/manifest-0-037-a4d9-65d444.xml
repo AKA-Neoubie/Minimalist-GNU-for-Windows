@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-037-a4d9-65d444">
+    <release tarname="gettext-0.18.3.2-2-mingw32-man.tar.xz" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/msgfilter.1" />
+        <file path="share/man/man1/recode-sr-latin.1" />
+        <file path="share/man/man1/envsubst.1" />
+        <file path="share/man/man1/msgcat.1" />
+        <file path="share/man/man1/msgattrib.1" />
+        <file path="share/man/man1/ngettext.1" />
+        <file path="share/man/man1/autopoint.1" />
+        <file path="share/man/man1/xgettext.1" />
+        <file path="share/man/man1/msggrep.1" />
+        <file path="share/man/man1/msginit.1" />
+        <file path="share/man/man1/msgen.1" />
+        <file path="share/man/man1/msgexec.1" />
+        <file path="share/man/man1/gettext.1" />
+        <file path="share/man/man1/msgfmt.1" />
+        <file path="share/man/man1/gettextize.1" />
+        <file path="share/man/man1/msgcmp.1" />
+        <file path="share/man/man1/msgcomm.1" />
+        <file path="share/man/man1/msgunfmt.1" />
+        <file path="share/man/man1/msgmerge.1" />
+        <file path="share/man/man1/msgconv.1" />
+        <file path="share/man/man1/msguniq.1" />
+        <dir path="share/man/man3" />
+        <file path="share/man/man3/textdomain.3" />
+        <file path="share/man/man3/gettext.3" />
+        <file path="share/man/man3/bindtextdomain.3" />
+        <file path="share/man/man3/dngettext.3" />
+        <file path="share/man/man3/ngettext.3" />
+        <file path="share/man/man3/dcngettext.3" />
+        <file path="share/man/man3/bind_textdomain_codeset.3" />
+        <file path="share/man/man3/dgettext.3" />
+        <file path="share/man/man3/dcgettext.3" />
+    </manifest>
+</package>

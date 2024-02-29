@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-204b-48ddb5">
+    <release tarname="file-5.04-1-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/file" />
+        <dir path="share/doc/file/5.04" />
+        <file path="share/doc/file/5.04/AUTHORS" />
+        <file path="share/doc/file/5.04/NEWS" />
+        <file path="share/doc/file/5.04/README" />
+        <file path="share/doc/file/5.04/TODO" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/file-5.04-1-msys.RELEASE_NOTES.txt" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/file.1" />
+        <dir path="share/man/man3" />
+        <file path="share/man/man3/libmagic.3" />
+        <dir path="share/man/man5" />
+        <file path="share/man/man5/magic.5" />
+    </manifest>
+</package>

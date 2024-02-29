@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-039-4ed1-ae6ce3">
+    <release tarname="mksh-40.0.0c-1-msys-1.0.17-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/mksh" />
+        <dir path="share/doc/mksh/40.0.0c" />
+        <dir path="share/doc/mksh/40.0.0c/examples" />
+        <file path="share/doc/mksh/40.0.0c/examples/dot.mkshrc" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/mksh.README.txt" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/mksh.1.gz" />
+    </manifest>
+</package>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-040-a351-d23ba9">
+    <release tarname="libiconv-1.14-1-msys-1.0.17-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/libiconv" />
+        <dir path="share/doc/libiconv/1.14" />
+        <file path="share/doc/libiconv/1.14/AUTHORS" />
+        <file path="share/doc/libiconv/1.14/ChangeLog" />
+        <file path="share/doc/libiconv/1.14/HACKING" />
+        <file path="share/doc/libiconv/1.14/iconv.1.html" />
+        <file path="share/doc/libiconv/1.14/iconv.3.html" />
+        <file path="share/doc/libiconv/1.14/iconvctl.3.html" />
+        <file path="share/doc/libiconv/1.14/iconv_close.3.html" />
+        <file path="share/doc/libiconv/1.14/iconv_open.3.html" />
+        <file path="share/doc/libiconv/1.14/iconv_open_into.3.html" />
+        <file path="share/doc/libiconv/1.14/NEWS" />
+        <file path="share/doc/libiconv/1.14/NOTES" />
+        <file path="share/doc/libiconv/1.14/THANKS" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/libiconv.README.txt" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/iconv.1.gz" />
+        <dir path="share/man/man3" />
+        <file path="share/man/man3/iconv.3.gz" />
+        <file path="share/man/man3/iconvctl.3.gz" />
+        <file path="share/man/man3/iconv_close.3.gz" />
+        <file path="share/man/man3/iconv_open.3.gz" />
+        <file path="share/man/man3/iconv_open_into.3.gz" />
+    </manifest>
+</package>

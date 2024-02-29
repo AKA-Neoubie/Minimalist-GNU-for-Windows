@@ -1,0 +1,69 @@
+mingw32 gcc-tools-epoch2-autoconf
+========================================================================
+Provides a version of autoconf suitable for use by gcc developers. Gcc
+requires an unpatched version of autoconf.  This package provides that
+software, installed into the /mingw/opt/gcc-tools/epoch2 prefix.
+
+epoch2 autotools are: autoconf-2.64 + automake-1.11.latest, and are
+                      used for gcc-4.5.
+
+Runtime requirements:
+  msys-core-bin                   1.0.17-1
+  msys-coreutils-bin              5.97-3
+  msys-bash-bin                   3.1.17-4
+  msys-sed-bin                    4.2.1-2
+  msys-file-bin                   5.0.4-1
+  msys-m4-bin                     1.4.14-1
+  msys-texinfo-bin                4.13a-2
+  msys-perl-bin                   5.8.8-1
+  msys-libcrypt-dll-0             1.1_1-3
+  msys-libgdbm-dll-3              1.8.3-3
+  msys-zlib-dll                   1.2.3-2
+  msys-libintl-dll-8              0.17-2
+  msys-libiconv-dll-2             1.13.1-2
+  msys-grep-bin                   2.5.4-2
+  msys-gawk-bin                   3.1.7-2
+
+Build requirements:
+  Same as above, plus
+  msys-patch-bin                  2.6.1-1
+  msys-bzip2-bin                  1.0.5-2
+  msys-xz-bin                     4.999.9beta_20100401-1
+  msys-tar-bin                    1.23-1
+  msys-make-bin                   3.81-3
+  msys-wget-bin                   1.12-1
+  mingw32-mgwport-bin             0.10.5-1
+
+Canonical homepage:
+  http://www.gnu.org/software/autoconf/
+
+Canonical download:
+  ftp://ftp.gnu.org/pub/gnu/autoconf/
+
+License:
+  GPL
+
+Language:
+  perl, m4
+
+========================================================================
+
+Build instructions:
+  unpack gcc-tools-epoch2-autoconf-2.64-X-mingw32-src.tar.lzma
+  mgwport gcc-tools-epoch2-autoconf-2.64-X.mgwport all
+
+This will create:
+  gcc-tools-epoch2-autoconf-2.64-1-mingw32-src.tar.lzma
+  gcc-tools-epoch2-autoconf-2.64-1-mingw32-bin.tar.lzza
+  gcc-tools-epoch2-autoconf-2.64-1-mingw32-lic.tar.lzma
+  gcc-tools-epoch2-autoconf-2.64-1-mingw32-doc.tar.lzma
+
+See `mgwport --help' for other options.
+
+========================================================================
+
+Port Notes:
+
+----- version 2.64-1 -- 2011 Sep 05 -----
+* New package, providing version of autoconf required by gcc-4.5.x.
+* Install into /mingw/opt/gcc-tools/epoch2/

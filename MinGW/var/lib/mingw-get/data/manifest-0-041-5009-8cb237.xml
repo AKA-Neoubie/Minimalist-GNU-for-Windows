@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-041-5009-8cb237">
+    <release tarname="autogen-5.10.1-1-msys-1.0.15-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/autogen" />
+        <dir path="share/doc/autogen/5.10.1" />
+        <file path="share/doc/autogen/5.10.1/AUTHORS" />
+        <file path="share/doc/autogen/5.10.1/ChangeLog" />
+        <file path="share/doc/autogen/5.10.1/NEWS" />
+        <file path="share/doc/autogen/5.10.1/NOTES" />
+        <file path="share/doc/autogen/5.10.1/README" />
+        <file path="share/doc/autogen/5.10.1/THANKS" />
+        <file path="share/doc/autogen/5.10.1/TODO" />
+        <file path="share/doc/autogen/5.10.1/VERSION" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/autogen-5.10.1-1-msys.RELEASE_NOTES.txt" />
+        <dir path="share/info" />
+        <file path="share/info/autogen.info" />
+        <file path="share/info/autogen.info-1" />
+        <file path="share/info/autogen.info-2" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/autogen.1" />
+        <file path="share/man/man1/autoopts-config.1" />
+        <file path="share/man/man1/columns.1" />
+        <file path="share/man/man1/getdefs.1" />
+        <file path="share/man/man1/xml2ag.1" />
+        <dir path="share/man/man3" />
+        <file path="share/man/man3/ao_string_tokenize.3" />
+        <file path="share/man/man3/configFileLoad.3" />
+        <file path="share/man/man3/optionFileLoad.3" />
+        <file path="share/man/man3/optionFindNextValue.3" />
+        <file path="share/man/man3/optionFindValue.3" />
+        <file path="share/man/man3/optionFree.3" />
+        <file path="share/man/man3/optionGetValue.3" />
+        <file path="share/man/man3/optionLoadLine.3" />
+        <file path="share/man/man3/optionNextValue.3" />
+        <file path="share/man/man3/optionOnlyUsage.3" />
+        <file path="share/man/man3/optionProcess.3" />
+        <file path="share/man/man3/optionRestore.3" />
+        <file path="share/man/man3/optionSaveFile.3" />
+        <file path="share/man/man3/optionSaveState.3" />
+        <file path="share/man/man3/optionUnloadNested.3" />
+        <file path="share/man/man3/optionVersion.3" />
+        <file path="share/man/man3/strequate.3" />
+        <file path="share/man/man3/streqvcmp.3" />
+        <file path="share/man/man3/streqvmap.3" />
+        <file path="share/man/man3/strneqvcmp.3" />
+        <file path="share/man/man3/strtransform.3" />
+    </manifest>
+</package>

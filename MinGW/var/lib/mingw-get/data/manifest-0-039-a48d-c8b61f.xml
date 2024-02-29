@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-039-a48d-c8b61f">
+    <release tarname="mksh-40.0.0c-1-msys-1.0.17-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <file path="share/doc/mksh/40.0.0c/TaC-mksh.txt" />
+    </manifest>
+</package>

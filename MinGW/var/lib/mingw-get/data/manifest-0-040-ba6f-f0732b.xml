@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-040-ba6f-f0732b">
+    <release tarname="inetutils-1.7-1-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/inetutils" />
+        <dir path="share/doc/inetutils/1.7" />
+        <file path="share/doc/inetutils/1.7/AUTHORS" />
+        <file path="share/doc/inetutils/1.7/ChangeLog" />
+        <file path="share/doc/inetutils/1.7/ChangeLog.0" />
+        <file path="share/doc/inetutils/1.7/NEWS" />
+        <file path="share/doc/inetutils/1.7/README" />
+        <file path="share/doc/inetutils/1.7/THANKS" />
+        <file path="share/doc/inetutils/1.7/TODO" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/inetutils-1.7-1-msys.RELEASE_NOTES.txt" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/ftp.1" />
+        <file path="share/man/man1/rcp.1" />
+        <file path="share/man/man1/rexec.1" />
+        <file path="share/man/man1/rlogin.1" />
+        <file path="share/man/man1/rsh.1" />
+        <file path="share/man/man1/telnet.1" />
+        <file path="share/man/man1/tftp.1" />
+        <dir path="share/info" />
+        <file path="share/info/inetutils.info" />
+    </manifest>
+</package>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-95fb-87f2ee">
+    <release tarname="liblzma-5.0.3-2-mingw32-dev.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="include" />
+        <dir path="include/lzma" />
+        <file path="include/lzma/base.h" />
+        <file path="include/lzma/bcj.h" />
+        <file path="include/lzma/block.h" />
+        <file path="include/lzma/check.h" />
+        <file path="include/lzma/container.h" />
+        <file path="include/lzma/delta.h" />
+        <file path="include/lzma/filter.h" />
+        <file path="include/lzma/hardware.h" />
+        <file path="include/lzma/index.h" />
+        <file path="include/lzma/index_hash.h" />
+        <file path="include/lzma/lzma.h" />
+        <file path="include/lzma/stream_flags.h" />
+        <file path="include/lzma/version.h" />
+        <file path="include/lzma/vli.h" />
+        <file path="include/lzma.h" />
+        <dir path="lib" />
+        <file path="lib/liblzma.a" />
+        <file path="lib/liblzma.dll.a" />
+        <file path="lib/liblzma.la" />
+        <dir path="lib/pkgconfig" />
+        <file path="lib/pkgconfig/liblzma.pc" />
+    </manifest>
+</package>

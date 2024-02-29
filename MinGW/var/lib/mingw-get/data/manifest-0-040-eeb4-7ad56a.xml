@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-040-eeb4-7ad56a">
+    <release tarname="inetutils-1.7-1-msys-1.0.13-dev.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="include" />
+        <dir path="include/arpa" />
+        <file path="include/arpa/tftp.h" />
+        <dir path="include/protocols" />
+        <file path="include/protocols/osockaddr.h" />
+        <file path="include/protocols/talkd.h" />
+    </manifest>
+</package>

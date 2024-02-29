@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-9c31-61e931">
+    <release tarname="gcc-3.4.4-3-msys-1.0.13-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <file path="share/doc/gcc/3.4.4/COPYING" />
+        <file path="share/doc/gcc/3.4.4/COPYING.LIB" />
+    </manifest>
+</package>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-041-060b-13d447">
+    <release tarname="cygutils-1.3.4-4-msys-1.0.13-bin.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="bin" />
+        <file path="bin/getclip.exe" />
+        <file path="bin/lpr-basic.exe" />
+        <file path="bin/lpr.exe" />
+        <file path="bin/mkshortcut.exe" />
+        <file path="bin/putclip.exe" />
+        <file path="bin/readshortcut.exe" />
+    </manifest>
+</package>

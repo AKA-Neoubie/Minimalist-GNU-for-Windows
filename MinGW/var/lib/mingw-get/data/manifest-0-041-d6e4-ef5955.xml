@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-041-d6e4-ef5955">
+    <release tarname="rebase-4.0.1_1-1-msys-1.0.17-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/doc" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/rebase.README.txt" />
+        <dir path="share/doc/rebase" />
+        <dir path="share/doc/rebase/4.0.1_1" />
+        <file path="share/doc/rebase/4.0.1_1/ChangeLog" />
+        <file path="share/doc/rebase/4.0.1_1/libimagehelper.ChangeLog" />
+        <file path="share/doc/rebase/4.0.1_1/libimagehelper.README" />
+        <file path="share/doc/rebase/4.0.1_1/NEWS" />
+        <file path="share/doc/rebase/4.0.1_1/README" />
+        <file path="share/doc/rebase/4.0.1_1/ToDo" />
+    </manifest>
+</package>

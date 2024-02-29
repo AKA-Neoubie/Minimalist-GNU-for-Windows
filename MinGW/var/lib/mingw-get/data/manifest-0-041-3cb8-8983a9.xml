@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-041-3cb8-8983a9">
+    <release tarname="rebase-4.0.1_1-1-msys-1.0.17-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <file path="share/doc/rebase/4.0.1_1/COPYING" />
+    </manifest>
+</package>

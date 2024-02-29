@@ -1,0 +1,66 @@
+mingw tcl
+==============================================================================
+This distribution is created from pristine source without patches.
+
+Canonical homepage: http://tcl.sourceforge.net/
+Canonical download: https://sourceforge.net/projects/tcl/files/Tcl/
+License: BSD
+Language: C and C++
+
+Build requirements:
+  MinGW gcc and g++ runtime environment
+  MSYS shell environment and msys-xz
+
+Build instructions:
+  cd working-directory
+  mingw-get source mingw32-gmp
+  cd tcl-8.6.0-1-mingw32-src
+  make clean package
+  # See the output of make usage for a detailed list of targets
+  # You can edit package.ini to modify the configuration items or to increment
+  # the MPKGRLS value (the -1- after the mingw32).
+
+When the job completes the release files will be generated in the rls directory
+of the working directory.
+
+  README.tcl-8.6.0-1-mingw32
+  tcl-8.6.0-1-mingw32-bin.tar.lzma
+  tcl-8.6.0-1-mingw32-dev.tar.lzma
+  tcl-8.6.0-1-mingw32-dll.tar.lzma
+  tcl-8.6.0-1-mingw32-doc.tar.lzma
+  tcl-8.6.0-1-mingw32-lic.tar.lzma
+  tcl-8.6.0-1-mingw32-man.tar.lzma
+  tcl-8.6.0-1-mingw32-src.tar.lzma
+
+Test results:
+NOTE: I am not setup to test the database tests which is why they fail.
+
+Tests located in:  I:/p/giaw/src/pkg/tcl-8.6.0-1-mingw32-src/tcl8.6.0-src/tests
+all.tcl:	Total	29026	Passed	27992	Skipped	1024	Failed	10
+Sourced 146 Test Files.
+Files with failing tests: fileSystem.test socket.test tcltest.test winFCmd.test zlib.test
+
+Tests located in:  I:/p/giaw/src/pkg/tcl-8.6.0-1-mingw32-src/tcl8.6.0-src/pkgs/itcl4.0.0/tests
+all.tcl:	Total	742	Passed	677	Skipped	65	Failed	0
+Sourced 25 Test Files.
+
+Tests located in:  I:/p/giaw/src/pkg/tcl-8.6.0-1-mingw32-src/tcl8.6.0-src/pkgs/tdbc1.0.0/tests
+all.tcl:	Total	0	Passed	0	Skipped	0	Failed	0
+Sourced 2 Test Files.
+Test files exiting with errors: tdbc.test tokenize.test
+
+Tests located in:  I:/p/giaw/src/pkg/tcl-8.6.0-1-mingw32-src/tcl8.6.0-src/pkgs/tdbcmysql1.0.0/tests
+all.tcl:	Total	0	Passed	0	Skipped	0	Failed	0
+Sourced 1 Test Files.
+Test files exiting with errors: tdbcmysql.test
+
+Tests located in:  I:/p/giaw/src/pkg/tcl-8.6.0-1-mingw32-src/tcl8.6.0-src/pkgs/tdbcodbc1.0.0/tests
+all.tcl:	Total	0	Passed	0	Skipped	0	Failed	0
+Sourced 1 Test Files.
+Test files exiting with errors: tdbcodbc.test
+
+Tests located in:  I:/p/giaw/src/pkg/tcl-8.6.0-1-mingw32-src/tcl8.6.0-src/pkgs/tdbcpostgres1.0.0/tests
+all.tcl:	Total	0	Passed	0	Skipped	0	Failed	0
+Sourced 1 Test Files.
+Test files exiting with errors: tdbcpostgres.test
+

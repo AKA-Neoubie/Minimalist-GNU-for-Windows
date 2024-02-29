@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<software-distribution project="MinGW" home="http://www.mingw.org" issue="ZZZZZZZZZZ">
+
+  <!-- File: mingw32-runtime.xml ~~ mingw-get package description for MinGW API -->
+
+  <!-- This is an INDIRECTLY published variant of the mingw32-runtime.xml    -->
+  <!-- catalogue; it is provided to facilitate testing of release candidates -->
+  <!-- for the upcoming WSL-4.0 system library distribution.  It will be     -->
+  <!-- delivered by installation of the mingw32-wsl_rc package, (which will  -->
+  <!-- extract it from the wsl_rc-4.0-1-mingw32-rc-4-meta.tar.lzma tarball), -->
+  <!-- and NOT by the normal execution of "mingw-get update"; (this delivery -->
+  <!-- mechanism is established by the setting of issue="ZZZZZZZZZZ" above,  -->
+  <!-- which exempts the locally installed pre-release catalogue from normal -->
+  <!-- consideration during "mingw-get update" processing.                   -->
+
+  <package-collection subsystem="mingw32">
+    <download-host uri="http://prdownloads.sourceforge.net/mingw/%F?download" />
+
+    <!-- Provides the package descriptions for each of the two primary    -->
+    <!-- packages, which comprise the standard MinGW Runtime Library API, -->
+    <!-- namely mingwrt and w32api.                                       -->
+
+    <package name="mingw32-mingwrt" alias="mingwrt mingw-runtime" >
+      <affiliate group="MinGW Compiler Suite" />
+      <affiliate group="MinGW Standard Libraries" />
+      <description lang="en" title="The MinGW Runtime Library API">
+        <paragraph>
+          This package provides the header files, system object modules,
+          dynamic link libraries, import libraries and static libraries
+          which constitute the standard MinGW Runtime API.
+        </paragraph>
+        <paragraph>
+          This is a required component of the MinGW Compiler Suite.
+        </paragraph>
+      </description>
+
+      <source tarname="mingwrt-%-mingw32-%-src.tar.%" />
+      <licence tarname="mingwrt-%-mingw32-%-dev.tar.%" />
+
+      <component class="dev">
+        <requires eq="mingwrt-%-mingw32-%-dll.tar" />
+        <release tarname="mingwrt-4.0-1-mingw32-rc-4-dev.tar.lzma">
+	  <!-- Override the global licence tag -->
+	  <licence tarname="mingwrt-4.0-1-mingw32-rc-4-lic.tar.lzma" />
+	</release>
+	<!-- These releases use the global licence tag -->
+        <release tarname="mingwrt-3.20-2-mingw32-dev.tar.lzma" />
+        <release tarname="mingwrt-3.20-mingw32-dev.tar.gz" />
+        <release tarname="mingwrt-3.19-mingw32-dev.tar.gz" />
+        <release tarname="mingwrt-3.18-mingw32-dev.tar.gz" />
+        <release tarname="mingwrt-3.17-mingw32-dev.tar.gz" />
+      </component>
+
+      <component class="dll">
+        <release tarname="mingwrt-4.0-1-mingw32-rc-4-dll.tar.lzma" />
+        <release tarname="mingwrt-3.20-2-mingw32-dll.tar.lzma" />
+        <release tarname="mingwrt-3.20-mingw32-dll.tar.gz" />
+        <release tarname="mingwrt-3.19-mingw32-dll.tar.gz" />
+        <release tarname="mingwrt-3.18-mingw32-dll.tar.gz" />
+        <release tarname="mingwrt-3.17-mingw32-dll.tar.gz" />
+      </component>
+
+      <component class="lic">
+        <release tarname="mingwrt-4.0-1-mingw32-rc-4-lic.tar.lzma" />
+      </component>
+
+      <component class="doc">
+        <release tarname="mingwrt-4.0-1-mingw32-rc-4-doc.tar.lzma" />
+      </component>
+    </package>
+
+    <package name="mingw32-w32api" alias="w32api">
+      <affiliate group="MinGW Compiler Suite" />
+      <affiliate group="MinGW Standard Libraries" />
+      <description lang="en" title="The MinGW API for 32-Bit MS-Windows">
+        <paragraph>
+          This package provides the header files, and import libraries
+          constituting a standard API for the development of applications
+          which utilise the capabilities of the 32-bit MS-Windows system
+          dynamic link libraries.
+        </paragraph>
+        <paragraph>
+          This is a required component of the MinGW Compiler Suite.
+        </paragraph>
+      </description>
+
+      <source tarname="w32api-%-mingw32-%-src.tar.%" />
+      <licence tarname="w32api-%-mingw32-%-dev.tar.%" />
+
+      <component class="dev">
+        <release tarname="w32api-4.0-1-mingw32-rc-4-dev.tar.lzma">
+	  <!-- Override the global licence tag -->
+	  <licence tarname="w32api-4.0-1-mingw32-rc-4-lic.tar.lzma" />
+	</release>
+	<!-- These releases use the global licence tag -->
+        <release tarname="w32api-3.17-2-mingw32-dev.tar.lzma" />
+        <release tarname="w32api-3.17-1-mingw32-dev.tar.lzma" />
+        <release tarname="w32api-3.16-1-mingw32-dev.tar.lzma" />
+        <release tarname="w32api-3.15-1-mingw32-dev.tar.lzma" />
+        <release tarname="w32api-3.14-mingw32-dev.tar.gz" />
+      </component>
+
+      <component class="lic">
+        <release tarname="w32api-4.0-1-mingw32-rc-4-lic.tar.lzma" />
+      </component>
+
+      <component class="doc">
+        <release tarname="w32api-4.0-1-mingw32-rc-4-doc.tar.lzma" />
+      </component>
+    </package>
+
+  </package-collection>
+
+  <!-- The following package collection delivers the WSL release candidate   -->
+  <!-- testing infrastructure; it is exposed when the mingw32-wsl_rc package -->
+  <!-- is installed, but should never be declared in a formally published    -->
+  <!-- edition of the mingw32-runtime.xml catalogue.                         -->
+
+  <package-collection subsystem="mingw32">
+    <download-host uri="http://prdownloads.sourceforge.net/mingw/%F?download" />
+
+    <affiliate group="MinGW Project Infrastructure" />
+
+    <!-- The following pair of meta-packages are provided to facilitate   -->
+    <!-- installation and reversion of the WSL release candidate features -->
+
+    <description lang="en" title="Windows System Libraries Meta-Package">
+      <paragraph>
+        This meta-package provides the mechanism for switching between
+        the production environment and the pre-release test environment
+        for the upcoming windows system library packages; it is made
+        available when you mingw-get install the mingw32-wsl_rc package.
+      </paragraph>
+      <paragraph>
+        If you mingw-get install this package, and you subsequently wish
+        to mingw-get remove the mingw32-wsl_rc package, please ensure that
+        you mingw-get remove this package beforehand.
+      </paragraph>
+    </description>
+
+    <package name="mingw32-wsl_rc-test-on" class="virtual">
+      <description lang="en">
+        <paragraph>
+          mingw-get install this meta-package, to activate the release
+          candidate testing environment.
+        </paragraph>
+        <paragraph>
+          After installation, you may safely remove it without any effect on
+          the operation of the testing environment; indeed, it is recommended
+          that you do so immediately, to ensure that you do not forget to do
+          so, in the event that you subsequently revert to the production
+          environment.
+        </paragraph>
+      </description>
+
+      <component class="meta">
+        <release tarname="wsl_rc-test-on-4.0-1-mingw32-rc-4-meta.dat" />
+        <requires eq="mingwrt-%-mingw32-%-dev.tar" />
+        <requires eq="w32api-%-mingw32-%-dev.tar" />
+      </component>
+    </package>
+
+    <package name="mingw32-wsl_rc-test-off" class="virtual">
+      <description lang="en">
+        <paragraph>
+          mingw-get install this meta-package, to revert from the release
+          candidate testing environment to the production environment.
+        </paragraph>
+        <paragraph>
+          After installation, you may safely remove it without any effect on
+          the operation of the compiler environment; indeed, it is recommended
+          that you do so immediately, to ensure that you do not forget to do
+          so, in the event that you subsequently reactivate the testing
+          environment, or mingw-get remove the wsl_rc testing package.
+        </paragraph>
+      </description>
+
+      <component class="meta">
+        <release tarname="wsl_rc-test-off-4.0-1-mingw32-rc-4-meta.dat" />
+        <requires eq="mingwrt-3.*-mingw32-*-dev.tar" />
+        <requires eq="w32api-3.*-mingw32-*-dev.tar" />
+      </component>
+    </package>
+
+  </package-collection>
+</software-distribution>
+<!-- vim: set nocompatible expandtab fileformat=unix textwidth=80 tabstop=2 shiftwidth=2: -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-c1da-1d75cb">
+    <release tarname="minizip-1.2.7-1-mingw32-bin.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <file path="bin/miniunzip.exe" />
+        <file path="bin/minizip.exe" />
+    </manifest>
+</package>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-035-0f49-3164ea">
+    <release tarname="man-1.6f-2-msys-1.0.13-bin.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="bin" />
+        <file path="bin/apropos" />
+        <file path="bin/man.exe" />
+        <file path="bin/man2dvi" />
+        <file path="bin/man2html.exe" />
+        <file path="bin/manlint" />
+        <file path="bin/manpath.exe" />
+        <file path="bin/whatis" />
+        <dir path="sbin" />
+        <file path="sbin/makewhatis" />
+        <dir path="var" />
+        <dir path="var/cache" />
+        <dir path="var/cache/man" />
+        <dir path="share/misc" />
+        <file path="share/misc/man.conf" />
+    </manifest>
+</package>

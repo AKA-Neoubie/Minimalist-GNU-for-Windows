@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-035-37de-49c6b1">
+    <release tarname="less-436-2-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/less" />
+        <dir path="share/doc/less/436" />
+        <file path="share/doc/less/436/NEWS" />
+        <file path="share/doc/less/436/README" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/less-436-2-msys.RELEASE_NOTES.txt" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/less.1" />
+        <file path="share/man/man1/lessecho.1" />
+        <file path="share/man/man1/lesskey.1" />
+    </manifest>
+</package>

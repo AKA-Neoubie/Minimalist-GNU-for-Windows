@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-050-0c1d-6fd35d">
+    <release tarname="libtermcap-0.20050421_1-2-msys-1.0.13-dev.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="lib" />
+        <file path="lib/libtermcap.a" />
+        <file path="lib/libtermcap.dll.a" />
+        <dir path="include" />
+        <file path="include/termcap.h" />
+    </manifest>
+</package>

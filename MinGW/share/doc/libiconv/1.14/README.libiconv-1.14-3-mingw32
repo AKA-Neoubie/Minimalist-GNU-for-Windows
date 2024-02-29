@@ -1,0 +1,46 @@
+mingw libiconv
+==============================================================================
+This distribution is created from pristine source without patches.
+
+Canonical homepage: http://www.gnu.org/software/libiconv/
+Canonical download: http://ftp.gnu.org/gnu/libiconv/
+License: LGPLv3+
+Language: C
+
+Build requirements:
+  MinGW gcc runtime environment
+  MSYS shell environment and msys-xz
+  mingw-gettext-dev *
+
+* This is optional and the package build process will determine if it is
+installed on the system.
+
+Build instructions:
+  cd working-directory
+  mingw-get source mingw32-libiconv
+  cd libiconv-1.14-3-mingw32-src
+  make clean package *
+  # See the output of make usage for a detailed list of targets
+  # You can edit package.ini to modify the configuration items or to increment
+  # the MPKGRLS value (the -1- after the mingw32).
+
+* If you build without gettext development libraries when you install it you
+can then rebuild libiconv to include gettext in the build.  This should be done
+for the binaries uploaded to the MinGW SF project FRS.
+
+When the job completes the release files will be generated in the rls directory
+of the working directory.
+
+  README.libiconv-1.14-3-mingw32
+  libiconv-1.14-3-mingw32-bin.tar.lzma
+  libiconv-1.14-3-mingw32-dev.tar.lzma
+  libiconv-1.14-3-mingw32-dll.tar.lzma
+  libiconv-1.14-3-mingw32-doc.tar.lzma
+  libiconv-1.14-3-mingw32-html.tar.lzma
+  libiconv-1.14-3-mingw32-lang.tar.lzma
+  libiconv-1.14-3-mingw32-lic.tar.lzma
+  libiconv-1.14-3-mingw32-man.tar.lzma
+  libiconv-1.14-3-mingw32-src.tar.lzma
+
+Test results:
+All tests except GB18030 pass.

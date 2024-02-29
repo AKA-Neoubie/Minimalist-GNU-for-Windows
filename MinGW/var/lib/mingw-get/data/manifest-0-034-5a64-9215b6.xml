@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-034-5a64-9215b6">
+    <release tarname="ncurses-6.0-2-mingw32-bin.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <file path="bin/captoinfo.exe" />
+        <file path="bin/clear.exe" />
+        <file path="bin/infocmp.exe" />
+        <file path="bin/infotocap.exe" />
+        <file path="bin/reset.exe" />
+        <file path="bin/tabs.exe" />
+        <file path="bin/tic.exe" />
+        <file path="bin/toe.exe" />
+        <file path="bin/tput.exe" />
+        <file path="bin/tset.exe" />
+    </manifest>
+</package>

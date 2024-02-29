@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-038-83ac-f9a848">
+    <release tarname="libarchive-2.8.3-1-mingw32-dev.tar.bz2" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="include" />
+        <file path="include/archive.h" />
+        <file path="include/archive_entry.h" />
+        <dir path="lib" />
+        <file path="lib/libarchive.a" />
+        <file path="lib/libarchive.dll.a" />
+        <file path="lib/libarchive.la" />
+        <dir path="lib/pkgconfig" />
+        <file path="lib/pkgconfig/libarchive.pc" />
+    </manifest>
+</package>

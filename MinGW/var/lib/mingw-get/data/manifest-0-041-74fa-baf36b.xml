@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-041-74fa-baf36b">
+    <release tarname="cygutils-1.3.4-4-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/cygutils" />
+        <dir path="share/doc/cygutils/1.3.4" />
+        <file path="share/doc/cygutils/1.3.4/AUTHORS" />
+        <file path="share/doc/cygutils/1.3.4/BRANCHES" />
+        <file path="share/doc/cygutils/1.3.4/ChangeLog" />
+        <file path="share/doc/cygutils/1.3.4/HOW-TO-CONTRIBUTE" />
+        <dir path="share/doc/cygutils/1.3.4/lpr" />
+        <file path="share/doc/cygutils/1.3.4/lpr/README" />
+        <file path="share/doc/cygutils/1.3.4/NEWS" />
+        <file path="share/doc/cygutils/1.3.4/PROGLIST" />
+        <file path="share/doc/cygutils/1.3.4/README" />
+        <file path="share/doc/cygutils/1.3.4/TODO" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/cygutils-1.3.4-4-msys.RELEASE_NOTES.txt" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/lpr-basic.1" />
+        <file path="share/man/man1/lpr.1" />
+        <file path="share/man/man1/mkshortcut.1" />
+        <file path="share/man/man1/readshortcut.1" />
+    </manifest>
+</package>

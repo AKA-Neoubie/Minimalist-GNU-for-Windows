@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-1b71-f3167f">
+    <release tarname="libiconv-1.14-3-mingw32-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/doc" />
+        <dir path="share/doc/libiconv" />
+        <dir path="share/doc/libiconv/1.14" />
+        <file path="share/doc/libiconv/1.14/COPYING" />
+        <file path="share/doc/libiconv/1.14/COPYING.LIB" />
+        <dir path="share/doc/libiconv/1.14/libcharset" />
+        <file path="share/doc/libiconv/1.14/libcharset/COPYING.LIB" />
+    </manifest>
+</package>

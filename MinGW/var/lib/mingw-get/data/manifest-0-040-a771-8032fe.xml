@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-040-a771-8032fe">
+    <release tarname="libgdbm-1.8.3-3-msys-1.0.13-dev.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="include" />
+        <file path="include/dbm.h" />
+        <file path="include/gdbm.h" />
+        <file path="include/ndbm.h" />
+        <dir path="lib" />
+        <file path="lib/libgdbm.a" />
+        <file path="lib/libgdbm.dll.a" />
+        <file path="lib/libgdbm.la" />
+        <file path="lib/libgdbm_compat.a" />
+        <file path="lib/libgdbm_compat.dll.a" />
+        <file path="lib/libgdbm_compat.la" />
+    </manifest>
+</package>

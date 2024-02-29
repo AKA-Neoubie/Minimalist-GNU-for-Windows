@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-039-f091-386d04">
+    <release tarname="libminizip-1.2.7-1-mingw32-dev.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="include/minizip" />
+        <file path="include/minizip/crypt.h" />
+        <file path="include/minizip/ioapi.h" />
+        <file path="include/minizip/iowin32.h" />
+        <file path="include/minizip/mztools.h" />
+        <file path="include/minizip/unzip.h" />
+        <file path="include/minizip/zip.h" />
+        <file path="lib/libminizip.a" />
+        <file path="lib/libminizip.dll.a" />
+        <file path="lib/libminizip.la" />
+        <file path="lib/pkgconfig/minizip.pc" />
+    </manifest>
+</package>

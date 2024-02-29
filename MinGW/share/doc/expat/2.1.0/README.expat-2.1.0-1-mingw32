@@ -1,0 +1,40 @@
+mingw gmp
+==============================================================================
+This distribution is created from pristine source without patches.
+
+Canonical homepage: http://gmplib.org/
+Canonical download: http://ftp.gnu.org/gnu/gmp/
+License: LGPLv3+
+Language: C and C++
+
+Runtime requirements:
+  mingw32-libgmpxx-dll
+  mingw32-libgmp-dll
+  mingw32-libgcc-dll
+  mingw32-libstdc++-dll
+
+Build requirements:
+  MinGW gcc and g++ runtime environment
+  MSYS shell environment and msys-xz
+
+Build instructions:
+  cd working-directory
+  mingw-get source mingw32-gmp
+  cd gmp-5.1.2-mingw32-1-src
+  make clean package
+  # See the output of make usage for a detailed list of targets
+  # You can edit package.ini to modify the configuration items or to increment
+  # the MPKGRLS value (the -1- after the mingw32).
+
+When the job completes the release files will be generated in the rls directory
+of the working directory.
+
+  README.gmp-5.1.2-1-mingw32
+  gmp-5.1.2-mingw32-1-dev.tar.lzma
+  gmp-5.1.2-mingw32-1-dll.tar.lzma
+  gmp-5.1.2-mingw32-1-doc.tar.lzma
+  gmp-5.1.2-mingw32-1-lic.tar.lzma
+  gmp-5.1.2-mingw32-1-src.tar.lzma
+
+Test results:
+All 20 tests passed.

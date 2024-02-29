@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-035-19d8-48d404">
+    <release tarname="tar-1.23-1-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/tar-1.23-1-msys.RELEASE_NOTES.txt" />
+        <dir path="share/doc/tar" />
+        <dir path="share/doc/tar/1.23" />
+        <file path="share/doc/tar/1.23/AUTHORS" />
+        <file path="share/doc/tar/1.23/ChangeLog" />
+        <file path="share/doc/tar/1.23/ChangeLog.1" />
+        <file path="share/doc/tar/1.23/NEWS" />
+        <file path="share/doc/tar/1.23/README" />
+        <file path="share/doc/tar/1.23/THANKS" />
+        <file path="share/doc/tar/1.23/TODO" />
+        <dir path="share/info" />
+        <file path="share/info/tar.info" />
+        <file path="share/info/tar.info-1" />
+        <file path="share/info/tar.info-2" />
+    </manifest>
+</package>

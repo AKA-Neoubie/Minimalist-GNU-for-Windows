@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-031-7e9e-4386a1">
+    <release tarname="tk-8.6.0-1-mingw32-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/doc" />
+        <dir path="share/doc/tk" />
+        <dir path="share/doc/tk/8.6.0" />
+        <dir path="share/doc/tk/8.6.0/compat" />
+        <file path="share/doc/tk/8.6.0/compat/license.terms" />
+        <dir path="share/doc/tk/8.6.0/library" />
+        <dir path="share/doc/tk/8.6.0/library/demos" />
+        <file path="share/doc/tk/8.6.0/library/demos/license.terms" />
+        <file path="share/doc/tk/8.6.0/library/license.terms" />
+        <file path="share/doc/tk/8.6.0/license.terms" />
+        <dir path="share/doc/tk/8.6.0/macosx" />
+        <file path="share/doc/tk/8.6.0/macosx/license.terms" />
+        <dir path="share/doc/tk/8.6.0/tests" />
+        <file path="share/doc/tk/8.6.0/tests/license.terms" />
+        <dir path="share/doc/tk/8.6.0/unix" />
+        <file path="share/doc/tk/8.6.0/unix/license.terms" />
+        <dir path="share/doc/tk/8.6.0/xlib" />
+        <file path="share/doc/tk/8.6.0/xlib/license.terms" />
+        <dir path="share/doc/tk/8.6.0/xlib/X11" />
+        <file path="share/doc/tk/8.6.0/xlib/X11/license.terms" />
+    </manifest>
+</package>

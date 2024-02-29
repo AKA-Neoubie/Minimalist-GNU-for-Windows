@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-032-039d-cce167">
+    <release tarname="mingwrt-5.0.2-mingw32-man.tar.xz" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/man" />
+        <dir path="share/man/man3" />
+        <file path="share/man/man3/getline.3" />
+        <file path="share/man/man3/getdelim.3" />
+        <file path="share/man/man3/dirname.3" />
+        <file path="share/man/man3/basename.3" />
+    </manifest>
+</package>

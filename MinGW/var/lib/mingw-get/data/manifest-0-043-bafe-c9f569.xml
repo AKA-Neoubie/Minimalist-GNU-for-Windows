@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-043-bafe-c9f569">
+    <release tarname="regex-1.20090805-2-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/regex-1.20090805-2-msys.RELEASE_NOTES.txt" />
+        <dir path="share/doc/regex" />
+        <dir path="share/doc/regex/1.20090805" />
+        <file path="share/doc/regex/1.20090805/ChangeLog" />
+        <file path="share/doc/regex/1.20090805/NEWS" />
+        <file path="share/doc/regex/1.20090805/README" />
+    </manifest>
+</package>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-032-9a07-4a9517">
+    <release tarname="tcl-8.6.0-1-mingw32-man.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/man" />
+        <dir path="share/man/mann" />
+        <file path="share/man/mann/sqlite3.n" />
+        <file path="share/man/mann/tdbc_mysql.n" />
+        <file path="share/man/mann/tdbc_odbc.n" />
+        <file path="share/man/mann/tdbc_sqlite3.n" />
+    </manifest>
+</package>

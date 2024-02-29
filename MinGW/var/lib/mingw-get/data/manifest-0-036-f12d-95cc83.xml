@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-f12d-95cc83">
+    <release tarname="libiconv-1.14-3-mingw32-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/doc" />
+        <dir path="share/doc/libiconv" />
+        <dir path="share/doc/libiconv/1.14" />
+        <file path="share/doc/libiconv/1.14/ABOUT-NLS" />
+        <file path="share/doc/libiconv/1.14/AUTHORS" />
+        <file path="share/doc/libiconv/1.14/ChangeLog" />
+        <file path="share/doc/libiconv/1.14/DEPENDENCIES" />
+        <file path="share/doc/libiconv/1.14/DESIGN" />
+        <dir path="share/doc/libiconv/1.14/djgpp" />
+        <file path="share/doc/libiconv/1.14/djgpp/README" />
+        <dir path="share/doc/libiconv/1.14/extras" />
+        <file path="share/doc/libiconv/1.14/extras/ChangeLog" />
+        <file path="share/doc/libiconv/1.14/HACKING" />
+        <file path="share/doc/libiconv/1.14/INSTALL.generic" />
+        <dir path="share/doc/libiconv/1.14/libcharset" />
+        <file path="share/doc/libiconv/1.14/libcharset/AUTHORS" />
+        <file path="share/doc/libiconv/1.14/libcharset/ChangeLog" />
+        <file path="share/doc/libiconv/1.14/libcharset/DEPENDENCIES" />
+        <dir path="share/doc/libiconv/1.14/libcharset/djgpp" />
+        <file path="share/doc/libiconv/1.14/libcharset/djgpp/README" />
+        <file path="share/doc/libiconv/1.14/libcharset/HACKING" />
+        <file path="share/doc/libiconv/1.14/libcharset/INSTALL.generic" />
+        <file path="share/doc/libiconv/1.14/libcharset/INTEGRATE" />
+        <dir path="share/doc/libiconv/1.14/libcharset/lib" />
+        <file path="share/doc/libiconv/1.14/libcharset/lib/ChangeLog" />
+        <file path="share/doc/libiconv/1.14/libcharset/NEWS" />
+        <file path="share/doc/libiconv/1.14/libcharset/README" />
+        <file path="share/doc/libiconv/1.14/libcharset/README.djgpp" />
+        <file path="share/doc/libiconv/1.14/libcharset/README.woe32" />
+        <dir path="share/doc/libiconv/1.14/libcharset/tools" />
+        <file path="share/doc/libiconv/1.14/libcharset/tools/README" />
+        <file path="share/doc/libiconv/1.14/NEWS" />
+        <file path="share/doc/libiconv/1.14/NOTES" />
+        <dir path="share/doc/libiconv/1.14/po" />
+        <file path="share/doc/libiconv/1.14/po/ChangeLog" />
+        <file path="share/doc/libiconv/1.14/PORTS" />
+        <file path="share/doc/libiconv/1.14/README" />
+        <file path="share/doc/libiconv/1.14/README.djgpp" />
+        <file path="share/doc/libiconv/1.14/README.libiconv-1.14-3-mingw32" />
+        <file path="share/doc/libiconv/1.14/README.woe32" />
+        <file path="share/doc/libiconv/1.14/THANKS" />
+    </manifest>
+</package>

@@ -1,0 +1,74 @@
+gdb-python
+------------------------------------------
+
+GDB, the GNU Project debugger, allows you to see what is going on `inside'
+another program while it executes -- or what another program was doing at the
+moment it crashed.
+
+GDB can do four main kinds of things (plus other things in support of these) to
+help you catch bugs in the act:
+
+- Start your program, specifying anything that might affect its behavior.
+- Make your program stop on specified conditions.
+- Examine what has happened, when your program has stopped.
+- Change things in your program, so you can experiment with correcting the
+  effects of one bug and go on to learn about another.
+
+The program being debugged can be written in Ada, C, C++, Objective-C, Pascal
+(and many other languages). Those programs might be executing on the same
+machine as GDB (native) or on another machine (remote). GDB can run on most
+popular UNIX and Microsoft Windows variants.
+
+This particular build has been python enabled.
+
+Runtime requirements:
+  msys-0.17
+
+Build requirements:
+  mgwport
+  gcc-core
+  make
+  epoch2-autoconf
+  epoch2-automake
+  gettext
+
+Canonical website:
+  http://www.gnu.org/software/gdb/
+
+Canonical download:
+  ftp://ftp.gnu.org/gnu/gdb/
+
+-------------------------------------------
+
+Build instructions:
+  unpack gdb-7.5-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+    unpacked under /src automatically
+  cd /src
+  mgwport gdb-7.5-X.mgwport all
+
+This will create:
+  /src/gdb-7.5-X-mingw32-bin.tar.lzma
+  /src/gdb-7.5-X-mingw32-doc.tar.lzma
+  /src/gdb-7.5-X-mingw32-lang.tar.lzma
+  /src/gdb-7.5-X-mingw32-lic.tar.lzma
+  /src/gdb-7.5-X-mingw32-src.tar.lzma
+
+-------------------------------------------
+
+Files included in the binary package:
+
+bin/gdb.exe
+bin/gdbserver.exe
+include/gdb/hit-reader.h
+share/gdb/python/gdb/__init__.py
+share/gdb/python/gdb/printing.py
+share/gdb/python/gdb/prompt.py
+share/gdb/python/gdb/types.py
+share/gdb/python/gdb/command/__init__.py
+share/gdb/python/gdb/command/pretty_printers.py
+share/gdb/python/gdb/command/prompt.py
+share/gdb/syscalls/amd64-linux.xml
+share/gdb/syscalls/gdb-syscalls.dtd
+share/gdb/syscalls/i386-linux.xml
+share/gdb/syscalls/mips-n32-linux.xml

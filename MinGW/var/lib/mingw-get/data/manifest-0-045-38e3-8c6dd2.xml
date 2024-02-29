@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-045-38e3-8c6dd2">
+    <release tarname="lpr-enhanced-1.0.2-1-msys-1.0.11-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="usr" />
+        <dir path="usr/share" />
+        <dir path="usr/share/doc" />
+        <dir path="usr/share/doc/lpr-enhanced" />
+        <dir path="usr/share/doc/lpr-enhanced/1.0.2-1" />
+        <file path="usr/share/doc/lpr-enhanced/1.0.2-1/COPYING" />
+    </manifest>
+</package>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-043-68ec-401e6d">
+    <release tarname="libminizip-1.2.7-1-msys-1.0.17-dev.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="include/minizip" />
+        <file path="include/minizip/crypt.h" />
+        <file path="include/minizip/ioapi.h" />
+        <file path="include/minizip/mztools.h" />
+        <file path="include/minizip/unzip.h" />
+        <file path="include/minizip/zip.h" />
+        <file path="lib/libminizip.a" />
+        <file path="lib/libminizip.dll.a" />
+        <file path="lib/libminizip.la" />
+        <file path="lib/pkgconfig/minizip.pc" />
+    </manifest>
+</package>

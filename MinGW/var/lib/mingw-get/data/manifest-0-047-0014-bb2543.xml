@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-047-0014-bb2543">
+    <release tarname="termcap-0.20050421_1-2-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/termcap-0.20050421_1-2-msys.RELEASE_NOTES.txt" />
+        <dir path="share/doc/termcap" />
+        <dir path="share/doc/termcap/0.20050421_1" />
+        <file path="share/doc/termcap/0.20050421_1/ChangeLog.RedHat" />
+        <dir path="share/man/man3" />
+        <file path="share/man/man3/termcap.3" />
+    </manifest>
+</package>

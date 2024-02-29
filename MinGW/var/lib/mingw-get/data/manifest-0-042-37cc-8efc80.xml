@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-042-37cc-8efc80">
+    <release tarname="findutils-4.4.2-2-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/findutils" />
+        <dir path="share/doc/findutils/4.4.2" />
+        <file path="share/doc/findutils/4.4.2/AUTHORS" />
+        <file path="share/doc/findutils/4.4.2/ChangeLog" />
+        <file path="share/doc/findutils/4.4.2/NEWS" />
+        <file path="share/doc/findutils/4.4.2/README" />
+        <file path="share/doc/findutils/4.4.2/README-hacking" />
+        <file path="share/doc/findutils/4.4.2/THANKS" />
+        <file path="share/doc/findutils/4.4.2/TODO" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/findutils-4.4.2-2-msys.RELEASE_NOTES.txt" />
+        <dir path="share/info" />
+        <file path="share/info/find-maint.info" />
+        <file path="share/info/find.info" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/find.1" />
+        <file path="share/man/man1/locate.1" />
+        <file path="share/man/man1/updatedb.1" />
+        <file path="share/man/man1/xargs.1" />
+        <dir path="share/man/man5" />
+        <file path="share/man/man5/locatedb.5" />
+    </manifest>
+</package>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-042-11a3-44bacd">
+    <release tarname="help2man-1.40.4-1-msys-1.0.17-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/help2man" />
+        <dir path="share/doc/help2man/1.40.4" />
+        <file path="share/doc/help2man/1.40.4/ChangeLog" />
+        <file path="share/doc/help2man/1.40.4/NEWS" />
+        <file path="share/doc/help2man/1.40.4/README" />
+        <file path="share/doc/help2man/1.40.4/THANKS" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/help2man-1.40.4-1-msys.RELEASE_NOTES.txt" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/help2man.1" />
+        <dir path="share/info" />
+        <file path="share/info/help2man.info" />
+    </manifest>
+</package>

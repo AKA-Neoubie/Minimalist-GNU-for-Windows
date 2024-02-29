@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-041-981a-256477">
+    <release tarname="dos2unix-7.4.0-1-msys-1.0.19-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <file path="share/doc/dos2unix/7.4.0/COPYING.txt" />
+    </manifest>
+</package>

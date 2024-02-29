@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-055-3f46-40961d">
+    <release tarname="gcc-tools-epoch2-automake-1.11.1-1-mingw32-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <file path="share/doc/gcc-tools-epoch2-automake/1.11.1/COPYING" />
+    </manifest>
+</package>

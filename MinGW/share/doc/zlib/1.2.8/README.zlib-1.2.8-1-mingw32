@@ -1,0 +1,62 @@
+mingw zlib
+==============================================================================
+This distribution is created from pristine source without patches.
+
+Canonical homepage: http://zlib.net/
+Canonical download: http://zlib.net/
+License: LGPLv3+
+Language: C and C++
+
+Build requirements:
+  MinGW gcc and g++ runtime environment
+  MSYS shell environment and msys-xz
+
+Build instructions:
+  cd working-directory
+  mingw-get source mingw32-gmp
+  cd zlib-1.2.8-1-mingw32-src
+  make clean package
+  # See the output of make usage for a detailed list of targets
+  # You can edit package.ini to modify the configuration items or to increment
+  # the MPKGRLS value (the -1- after the mingw32).
+
+When the job completes the release files will be generated in the rls directory
+of the working directory.
+
+  README.zlib-1.2.8-1-mingw32
+  zlib-1.2.8-1-mingw32-dev.tar.lzma
+  zlib-1.2.8-1-mingw32-dll.tar.lzma
+  zlib-1.2.8-1-mingw32-doc.tar.lzma
+  zlib-1.2.8-1-mingw32-lic.tar.lzma
+  zlib-1.2.8-1-mingw32-src.tar.lzma
+
+Test results:
+The package tests executed without error.
+
+
+$ make -fwin32/Makefile.gcc test
+./example
+zlib version 1.2.8 = 0x1280, compile flags = 0x55
+uncompress(): hello, hello!
+gzread(): hello, hello!
+gzgets() after gzseek:  hello!
+inflate(): hello, hello!
+large_inflate(): OK
+after inflateSync(): hello, hello!
+inflate with dictionary: hello, hello!
+echo hello world | ./minigzip | ./minigzip -d
+hello world
+
+
+$ make -fwin32/Makefile.gcc testdll
+./example_d
+zlib version 1.2.8 = 0x1280, compile flags = 0x55
+uncompress(): hello, hello!
+gzread(): hello, hello!
+gzgets() after gzseek:  hello!
+inflate(): hello, hello!
+large_inflate(): OK
+after inflateSync(): hello, hello!
+inflate with dictionary: hello, hello!
+echo hello world | ./minigzip_d | ./minigzip_d -d
+hello world

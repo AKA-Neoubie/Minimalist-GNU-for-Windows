@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-039-cc43-332c44">
+    <release tarname="locate-4.4.2-2-msys-1.0.13-bin.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <file path="bin/locate.exe" />
+        <file path="bin/updatedb" />
+        <dir path="sbin" />
+        <file path="sbin/bigram.exe" />
+        <file path="sbin/code.exe" />
+        <file path="sbin/frcode.exe" />
+        <dir path="var" />
+    </manifest>
+</package>

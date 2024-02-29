@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-032-b3c7-c32392">
+    <release tarname="tcl-8.6.0-1-mingw32-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/doc" />
+        <dir path="share/doc/tcl" />
+        <dir path="share/doc/tcl/8.6.0" />
+        <dir path="share/doc/tcl/8.6.0/compat" />
+        <file path="share/doc/tcl/8.6.0/compat/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/doc" />
+        <file path="share/doc/tcl/8.6.0/doc/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/library" />
+        <file path="share/doc/tcl/8.6.0/library/license.terms" />
+        <file path="share/doc/tcl/8.6.0/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/macosx" />
+        <file path="share/doc/tcl/8.6.0/macosx/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/pkgs" />
+        <dir path="share/doc/tcl/8.6.0/pkgs/itcl4.0.0" />
+        <dir path="share/doc/tcl/8.6.0/pkgs/itcl4.0.0/doc" />
+        <file path="share/doc/tcl/8.6.0/pkgs/itcl4.0.0/doc/license.terms" />
+        <file path="share/doc/tcl/8.6.0/pkgs/itcl4.0.0/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/pkgs/sqlite3.7.15.1" />
+        <file path="share/doc/tcl/8.6.0/pkgs/sqlite3.7.15.1/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/pkgs/tdbc1.0.0" />
+        <file path="share/doc/tcl/8.6.0/pkgs/tdbc1.0.0/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/pkgs/tdbcmysql1.0.0" />
+        <file path="share/doc/tcl/8.6.0/pkgs/tdbcmysql1.0.0/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/pkgs/tdbcodbc1.0.0" />
+        <file path="share/doc/tcl/8.6.0/pkgs/tdbcodbc1.0.0/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/pkgs/tdbcpostgres1.0.0" />
+        <file path="share/doc/tcl/8.6.0/pkgs/tdbcpostgres1.0.0/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/pkgs/tdbcsqlite3-1.0.0" />
+        <file path="share/doc/tcl/8.6.0/pkgs/tdbcsqlite3-1.0.0/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/pkgs/thread2.7.0" />
+        <file path="share/doc/tcl/8.6.0/pkgs/thread2.7.0/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/tests" />
+        <file path="share/doc/tcl/8.6.0/tests/license.terms" />
+        <dir path="share/doc/tcl/8.6.0/win" />
+        <file path="share/doc/tcl/8.6.0/win/license.terms" />
+    </manifest>
+</package>

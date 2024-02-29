@@ -1,0 +1,225 @@
+2015-09-08  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Prepare, tag, and publish 0.47 release.
+
+	* configure.ac: Update copyright notice.
+	(AC_INIT): Increment PACKAGE_VERSION assignment to 0.47
+
+	* pexports.c: Update copyright notice.
+
+	* README: Add release notes.
+	* All files: Tagged "v0_47" for release.
+
+2015-09-07  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Avoid uint32_t difference overflow in 64-bit pointer adjustment.
+
+	* pexports.c (rva_to_ptr): Do not compute uint32_t offset differences;
+	apply each offset adjustment individually to the base pointer.
+
+	* pexports.h: Add '#pragma ms_struct on', to keep structures aligned
+	per MSVC convention.
+
+2015-09-07  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Eliminate Microsoft inspired obfuscated typedef insanity.
+
+	* pexports.c pexports.h (BYTE, WORD, DWORD): Delete typedefs;
+	respectively replace all corresponding usage instances with...
+	(uint8_t, uint16_t, uint32_t): ...these ISO-C standard types.
+	(PVOID, PIMAGE_DOS_HEADER, PIMAGE_FILE_HEADER, PIMAGE_SECTION_HEADER)
+	(PIMAGE_DATA_DIRECTORY, PIMAGE_EXPORT_DIRECTORY, PIMAGE_NT_HEADERS32)
+	(PIMAGE_NT_HEADERS64, PIMAGE_OPTIONAL_HEADER32)
+	(PIMAGE_OPTIONAL_HEADER64): Delete these non-standard style pointer
+	reference typedefs; replace with conventional pointer references to
+	the underlying data type; where these are structural types, delete
+	initial underscores from the corresponding structure tag names.
+	(HMODULE): Likewise; replace with pointer to void.
+
+2013-05-30  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Prepare, tag, and publish 0.46 release.
+
+	* README: Add release notes.
+	* All files: Tagged "v0_46" for release.
+
+2013-05-30  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Assemble licence and documentation tarballs for distribution.
+
+	* Makefile.in (dist): Add dependencies on...
+	(licdist, docdist): ...these new build goals; specify them based on...
+	(LIC_DISTFILES, DOC_DISTFILES): ...these new macros; define them as
+	the respective list of files to include in each tarball.
+
+2013-05-29  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Force a remake, on package version updates.
+
+	* Makefile.in (pexports.OBJEXT): Make it depend on Makefile; this
+	indirectly captures changes, when configure.ac is updated.
+
+2013-05-29  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Update program identification, via configuration process.
+
+	* pexports.c (main): Update identification text; remove references...
+	(VER_MAJOR, VER_MINOR): ...to these; combine them by substituting...
+	(PACKAGE_VERSION_STRING): ...this new macro; also amend instructions
+	for reporting bugs, as directed at URL identified by...
+	(PACKAGE_BUG_REPORT): ...this additional new macro.
+
+	* pexports.h (VER_MAJOR, VER_MINOR): Obsolete macros; delete them.
+
+	* Makefile.in (PACKAGE_DEFS): New macro; defined in terms of these...
+	(PACKAGE_VERSION_STRING, PACKAGE_BUG_REPORT_URL, PACKAGE_BUG_REPORT):
+	...these additional new macros, defined by AC_SUBST from configure.ac,
+	and subsequently propagated to pexports.c, as an addendum to...
+	(CDEPFLAGS): ...this.
+
+2013-05-29  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Autoconfiscate.
+
+	* configure.ac Makefile.in: New files.
+	* Makefile: Now auto-generated at configure time; remove it.
+	* .hgignore: Add configure, Makefile, autom4te.cache and build dir.
+
+2013-05-29  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Integrate build-aux utilities as a submodule.
+
+	* .gitmodules .hgsub .hgsubstate: New files.
+
+2013-05-28  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Designate files which mercurial should not track.
+
+	* .hgignore: New file.
+
+2013-05-28  Keith Marshall  <keithmarshall@users.sourceforge.net>
+
+	Correct some obfuscated typedef portability issues.
+
+	* pexports.c: Include inttypes.h; it permits use of...
+	(PRIdPTR): ...this ISO-C99 standard macro, in preference to...
+	(INT_PTR_FORMAT): ...this non-standard contrivance; similarly...
+	(intptr_t): ...substitute this ISO-C99 standard typedef...
+	(INT_PTR): ...for this non-standard type.
+
+	* pexports.h: Include stdint.h; typedef...
+	(BYTE): ...this, as explicitly equivalent to uint8_t.
+	(WORD): ...this, as explicitly equivalent to uint16_t.
+	(DWORD): ...this, as explicitly equivalent to uint32_t.
+	(INT_PTR, INT_PTR_FORMAT): No longer required; delete them.
+	(ULONGLONG): Explicitly typedef as equivalent to uint64_t; although
+	'unsigned long long' seems a better fit, our present usage requires
+	the explicit 64-bit association, and use of this standard type allows
+	us to eliminate all references to Microsoft's non-standard __int64.
+	(LONG): Explicitly typedef as equivalent to int32_t; technically, this
+	is incorrect, but misuse elsewhere requires the explicit 32-bit type,
+	which is not guaranteed by ISO-C99's standard 'long' type.
+
+2011-09-14  Daniel Collins  <solemnwarning@solemnwarning.net>
+
+	Avoid segmentation faults in forwarder function checks.
+
+	* pexports.h (dump_exports): Adjust prototype to accommodate new
+	'exports_size' argument; this is to be assigned and passed from...
+	* pexports.c (main): ...here; assigned value is determined from the
+	export table size recorded in the PE file image, whence passed to...
+	(dump_exports): ...here; it is used to avoid crashing or corruption
+	when the export table isn't at the end of its section.  Also check
+	for, and filter out duplicated symbol reports.
+
+2009-09-15  Charles Wilson  <cwilso11@users.sourceforge.net>
+
+	Slight build improvements.
+
+	* README: Update.
+	* Makefile: Rewrite dist rule to create a .tar.lzma instead
+	of a .zip (and don't create a tarbomb). 
+
+2009-09-15  Charles Wilson  <cwilso11@users.sourceforge.net>
+
+	Package 0.44-1-mingw32 fixes.
+
+	* pexports.c (main): Fix typo in usage statement.
+	* pexports.h: Ensure ULONGLONG is defined.
+	* Makefile: Force use of flex and bison, not lex and yacc.
+
+2008-08-31  Tor Lillqvist  <tml@novell.com>
+
+	Release 0.44. Add support for 64-bit executables.
+
+	* hlex.l
+	* hparse.y
+	* pexports.h
+	* pexports.c
+	* str_tree.h
+	* str_tree.c: Handle also 64-bit executables. Make it work also if
+	built as 64-bit code. Remove all gcc -Wall warnings. Make it
+	compilable also with MSVC. Disable Wow64 file system redirection
+	when running as a 32-bit process on 64-bit Windows. Bump version
+	to 0.44.
+	* Makefile: New.
+	* pe.h: Not needed, removed.
+	* hparse.h: Remove generated file.
+	* Makefile.am: Removed.
+
+2002-11-08  Luke Dunstan  <infidel@users.sourceforge.net>
+
+	* pexports.c (dump_exports): fix exports incorrectly
+	determined to be forwarders.
+
+1999-04-02  Paul Sokolovsky  <Paul.Sokolovsky@technologist.com>
+
+	* pexports.c: now distinguishes data/non-data symbols,
+	depending on type of section symbol in
+	* pexports.c: in verbose mode prints section name for symbol
+	* pexports.c: file offsets are now in hex
+
+1998-11-07  Anders Norlander  <kv98anr@cs.umu.se>
+
+	* hparse.y: types and parameters are now recognized as
+	a series of tokens, which means that keywords like const
+	struct and so on are not recognized as such, allowing any
+	kind of parameter, including function pointers.
+
+1998-11-05  Anders Norlander  <kv98anr@cs.umu.se>
+
+	* hlex.l: removed all tokens except ID, CONST and VOLATILE
+	* hparse.y: Added INC_ARGS macro to increment arg_size only if
+	new flag inc_flag is set
+	* hparse.y: Added function_pointer and function_pointer_name rules
+	* hparse.y: Function attributes are now handled as list of ID's
+	* pexports.h: Incremented VER_MINOR
+	* pexports.c: Print name of file if a header is not found
+	* pexports.c: Separated printing to function dump_symbol
+	* pexports.c: Fixed handling of forwarded exports
+
+1998-10-26  Anders Norlander  <anorland@hem2.passagen.se>
+
+	* New files: str_tree.c str_tree.h: implements
+	a symbol tree.
+	* pexports.c: changed symbol handling to use str_tree,
+	add_function_prot removed.
+	* pexports.h: removed add_function_prot prototype
+	* hlex.l: removed unnecessary code (count, CONSTANT, STRING)
+	* hlex.l: added ATTRIBUTE token.
+	* hparse.y: completely rewritten. *Much* improved parser.
+	* pexports.h: changed VER_MINOR to 3
+
+1998-10-21  Anders Norlander  <anorland@hem2.passagen.se>
+
+	* pexports.c: removed include_path structure and replaced
+	it with a generic string list str_list.
+	* pexports.c: preprocessor now defaults to "gcc -E -xc-header"
+	instead of "cpp".
+	* pexports.h: incremented minor version VER_MINOR to 2
+	* pexports.c: headers are now parsed after all paramaters
+	command line options have been parsed.
+	* hparse.y: fixed problem with unnamed parameters that
+	are pointers.
+	* pexports.c: in dump_exports: don't print extra white
+	space if ordinals are not supposed to be printed.

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-043-cef4-f233c2">
+    <release tarname="libncurses-6.0-2-msys-1.0.18-dll-6.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <file path="bin/msys-form-6.dll" />
+        <file path="bin/msys-menu-6.dll" />
+        <file path="bin/msys-ncurses-6.dll" />
+        <file path="bin/msys-panel-6.dll" />
+    </manifest>
+</package>

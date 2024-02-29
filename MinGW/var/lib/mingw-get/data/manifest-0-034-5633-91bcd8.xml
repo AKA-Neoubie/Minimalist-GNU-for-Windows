@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-034-5633-91bcd8">
+    <release tarname="zip-3.0-1-msys-1.0.14-bin.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="bin" />
+        <file path="bin/zip.exe" />
+        <file path="bin/zipcloak.exe" />
+        <file path="bin/zipnote.exe" />
+        <file path="bin/zipsplit.exe" />
+    </manifest>
+</package>

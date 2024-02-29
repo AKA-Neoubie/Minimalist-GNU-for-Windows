@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-039-c3d7-6d0171">
+    <release tarname="wsl_rc-4.0-1-mingw32-rc-4-meta.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="bin" />
+        <file path="bin/#!.exe" />
+        <file path="bin/test-wsl-rc.bat" />
+        <dir path="var" />
+        <dir path="var/lib" />
+        <dir path="var/lib/mingw-get" />
+        <dir path="var/lib/mingw-get/data" />
+        <file path="var/lib/mingw-get/data/mingw32-runtime.xml" />
+    </manifest>
+</package>

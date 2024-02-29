@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-038-918a-7167ce">
+    <release tarname="bzip2-1.0.6-1-msys-1.0.17-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/info" />
+        <file path="share/info/bzip2.info" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/bzcmp.1.gz" />
+        <file path="share/man/man1/bzdiff.1.gz" />
+        <file path="share/man/man1/bzegrep.1.gz" />
+        <file path="share/man/man1/bzfgrep.1.gz" />
+        <file path="share/man/man1/bzgrep.1.gz" />
+        <file path="share/man/man1/bzip2.1.gz" />
+        <file path="share/man/man1/bzless.1.gz" />
+        <file path="share/man/man1/bzmore.1.gz" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/bzip2.README.txt" />
+        <dir path="share/doc/bzip2/1.0.6" />
+        <file path="share/doc/bzip2/1.0.6/CHANGES" />
+        <file path="share/doc/bzip2/1.0.6/libbz2.def" />
+        <file path="share/doc/bzip2/1.0.6/manual.html" />
+        <file path="share/doc/bzip2/1.0.6/manual.pdf" />
+        <file path="share/doc/bzip2/1.0.6/manual.ps" />
+        <file path="share/doc/bzip2/1.0.6/manual.xml" />
+        <file path="share/doc/bzip2/1.0.6/README" />
+        <file path="share/doc/bzip2/1.0.6/README.CYGMING" />
+    </manifest>
+</package>

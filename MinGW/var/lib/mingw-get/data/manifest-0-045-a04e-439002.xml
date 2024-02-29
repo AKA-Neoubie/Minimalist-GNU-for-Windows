@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-045-a04e-439002">
+    <release tarname="lpr-enhanced-1.0.2-1-msys-1.0.11-bin.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="bin" />
+        <file path="bin/lp" />
+        <file path="bin/lpr" />
+        <file path="bin/lpr-enhanced" />
+        <dir path="etc" />
+        <dir path="var" />
+        <dir path="var/spool" />
+        <dir path="var/spool/lp" />
+        <dir path="var/spool/lp/debug" />
+        <dir path="var/spool/lp/config" />
+        <file path="var/spool/lp/config/example" />
+        <dir path="var/spool/lp/tmp" />
+        <dir path="var/spool/lp/log" />
+        <dir path="var/spool/lp/filter" />
+    </manifest>
+</package>

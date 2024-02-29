@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-035-bfe8-a5bec4">
+    <release tarname="xz-5.0.3-1-msys-1.0.17-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <file path="share/doc/xz/5.0.3/COPYING" />
+        <file path="share/doc/xz/5.0.3/COPYING.GPLv2" />
+        <file path="share/doc/xz/5.0.3/COPYING.GPLv3" />
+        <file path="share/doc/xz/5.0.3/COPYING.LGPLv2.1" />
+    </manifest>
+</package>

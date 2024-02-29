@@ -1,0 +1,43 @@
+mingw tk
+==============================================================================
+This distribution is created from pristine source without patches.
+
+Canonical homepage: http://tcl.sourceforge.net
+Canonical download: https://sourceforge.net/projects/tcl/files/Tcl/
+License: BSD
+Language: C and C++
+
+Build requirements:
+  MinGW gcc and g++ runtime environment
+  MSYS shell environment and msys-xz
+
+Build instructions:
+  cd working-directory
+  mingw-get source mingw32-gmp
+  cd tk-8.6.0-1-mingw32-src
+  make clean package
+  # See the output of make usage for a detailed list of targets
+  # You can edit package.ini to modify the configuration items or to increment
+  # the MPKGRLS value (the -1- after the mingw32).
+
+When the job completes the release files will be generated in the rls directory
+of the working directory.
+
+  README.tk-8.6.0-1-mingw32
+  tk-8.6.0-1-mingw32-bin.tar.lzma
+  tk-8.6.0-1-mingw32-dev.tar.lzma
+  tk-8.6.0-1-mingw32-dll.tar.lzma
+  tk-8.6.0-1-mingw32-doc.tar.lzma
+  tk-8.6.0-1-mingw32-lic.tar.lzma
+  tk-8.6.0-1-mingw32-src.tar.lzma
+
+Test results:
+Tests located in:  I:/p/giaw/src/pkg/tk-8.6.0-1-mingw32-src/tk8.6.0-src/tests
+all.tcl:	Total	9191	Passed	7882	Skipped	1293	Failed	16
+Sourced 91 Test Files.
+Files with failing tests: bind.test bitmap.test border.test cursor.test font.test frame.test spinbox.test text.test textDisp.test textImage.test
+
+Tests located in:  I:/p/giaw/src/pkg/tk-8.6.0-1-mingw32-src/tk8.6.0-src/tests/ttk
+all.tcl:	Total	457	Passed	443	Skipped	14	Failed	0
+Sourced 17 Test Files.
+

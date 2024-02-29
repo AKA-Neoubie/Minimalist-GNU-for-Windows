@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-039-3cfd-9b7046">
+    <release tarname="libbz2-1.0.6-1-msys-1.0.17-dev.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="include" />
+        <file path="include/bzlib.h" />
+        <dir path="lib" />
+        <file path="lib/libbz2.a" />
+        <file path="lib/libbz2.dll.a" />
+    </manifest>
+</package>

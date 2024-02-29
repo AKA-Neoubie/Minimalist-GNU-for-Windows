@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-041-6d00-1f4fbf">
+    <release tarname="xerces-c-3.1.1-2-mingw32-4.7.2-bin.tar.xz" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="bin" />
+        <file path="bin/CreateDOMDocument.exe" />
+        <file path="bin/DOMCount.exe" />
+        <file path="bin/DOMPrint.exe" />
+        <file path="bin/EnumVal.exe" />
+        <file path="bin/MemParse.exe" />
+        <file path="bin/PParse.exe" />
+        <file path="bin/PSVIWriter.exe" />
+        <file path="bin/Redirect.exe" />
+        <file path="bin/SAX2Count.exe" />
+        <file path="bin/SAX2Print.exe" />
+        <file path="bin/SAXCount.exe" />
+        <file path="bin/SAXPrint.exe" />
+        <file path="bin/SCMPrint.exe" />
+        <file path="bin/SEnumVal.exe" />
+        <file path="bin/StdInParse.exe" />
+        <file path="bin/XInclude.exe" />
+    </manifest>
+</package>

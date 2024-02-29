@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-031-910a-a28b2d">
+    <release tarname="xz-5.0.3-2-mingw32-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/MinGW" />
+        <file path="share/doc/MinGW/xz.README.txt" />
+        <dir path="share/doc/xz" />
+        <dir path="share/doc/xz/5.0.3" />
+        <file path="share/doc/xz/5.0.3/AUTHORS" />
+        <file path="share/doc/xz/5.0.3/ChangeLog" />
+        <dir path="share/doc/xz/5.0.3/examples" />
+        <file path="share/doc/xz/5.0.3/examples/xz_pipe_comp.c" />
+        <file path="share/doc/xz/5.0.3/examples/xz_pipe_decomp.c" />
+        <file path="share/doc/xz/5.0.3/faq.txt" />
+        <file path="share/doc/xz/5.0.3/history.txt" />
+        <file path="share/doc/xz/5.0.3/liblzma.def" />
+        <file path="share/doc/xz/5.0.3/lzma-file-format.txt" />
+        <file path="share/doc/xz/5.0.3/NEWS" />
+        <dir path="share/doc/xz/5.0.3/pdf-a4" />
+        <file path="share/doc/xz/5.0.3/pdf-a4/lzmainfo-a4.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-a4/xz-a4.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-a4/xzdec-a4.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-a4/xzdiff-a4.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-a4/xzgrep-a4.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-a4/xzless-a4.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-a4/xzmore-a4.pdf" />
+        <dir path="share/doc/xz/5.0.3/pdf-letter" />
+        <file path="share/doc/xz/5.0.3/pdf-letter/lzmainfo-letter.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-letter/xz-letter.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-letter/xzdec-letter.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-letter/xzdiff-letter.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-letter/xzgrep-letter.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-letter/xzless-letter.pdf" />
+        <file path="share/doc/xz/5.0.3/pdf-letter/xzmore-letter.pdf" />
+        <file path="share/doc/xz/5.0.3/README" />
+        <file path="share/doc/xz/5.0.3/THANKS" />
+        <file path="share/doc/xz/5.0.3/TODO" />
+        <dir path="share/doc/xz/5.0.3/txt" />
+        <file path="share/doc/xz/5.0.3/txt/lzmainfo.txt" />
+        <file path="share/doc/xz/5.0.3/txt/xz.txt" />
+        <file path="share/doc/xz/5.0.3/txt/xzdec.txt" />
+        <file path="share/doc/xz/5.0.3/txt/xzdiff.txt" />
+        <file path="share/doc/xz/5.0.3/txt/xzgrep.txt" />
+        <file path="share/doc/xz/5.0.3/txt/xzless.txt" />
+        <file path="share/doc/xz/5.0.3/txt/xzmore.txt" />
+        <file path="share/doc/xz/5.0.3/xz-file-format.txt" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/lzcat.1.gz" />
+        <file path="share/man/man1/lzcmp.1.gz" />
+        <file path="share/man/man1/lzdiff.1.gz" />
+        <file path="share/man/man1/lzegrep.1.gz" />
+        <file path="share/man/man1/lzfgrep.1.gz" />
+        <file path="share/man/man1/lzgrep.1.gz" />
+        <file path="share/man/man1/lzless.1.gz" />
+        <file path="share/man/man1/lzma.1.gz" />
+        <file path="share/man/man1/lzmadec.1.gz" />
+        <file path="share/man/man1/lzmainfo.1.gz" />
+        <file path="share/man/man1/lzmore.1.gz" />
+        <file path="share/man/man1/unlzma.1.gz" />
+        <file path="share/man/man1/unxz.1.gz" />
+        <file path="share/man/man1/xz.1.gz" />
+        <file path="share/man/man1/xzcat.1.gz" />
+        <file path="share/man/man1/xzcmp.1.gz" />
+        <file path="share/man/man1/xzdec.1.gz" />
+        <file path="share/man/man1/xzdiff.1.gz" />
+        <file path="share/man/man1/xzegrep.1.gz" />
+        <file path="share/man/man1/xzfgrep.1.gz" />
+        <file path="share/man/man1/xzgrep.1.gz" />
+        <file path="share/man/man1/xzless.1.gz" />
+        <file path="share/man/man1/xzmore.1.gz" />
+    </manifest>
+</package>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-035-ba21-967725">
+    <release tarname="binutils-2.28-1-mingw32-info.tar.xz" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share/info" />
+        <file path="share/info/gprof.info" />
+        <file path="share/info/as.info" />
+        <file path="share/info/binutils.info" />
+        <file path="share/info/ld.info" />
+        <file path="share/info/bfd.info" />
+    </manifest>
+</package>

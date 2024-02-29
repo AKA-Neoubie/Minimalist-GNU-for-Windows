@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-032-6a37-7eb905">
+    <release tarname="xz-5.0.3-2-mingw32-lang.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share/locale" />
+        <dir path="share/locale/cs" />
+        <dir path="share/locale/cs/LC_MESSAGES" />
+        <file path="share/locale/cs/LC_MESSAGES/xz.mo" />
+        <dir path="share/locale/de" />
+        <dir path="share/locale/de/LC_MESSAGES" />
+        <file path="share/locale/de/LC_MESSAGES/xz.mo" />
+        <dir path="share/locale/fr" />
+        <dir path="share/locale/fr/LC_MESSAGES" />
+        <file path="share/locale/fr/LC_MESSAGES/xz.mo" />
+        <dir path="share/locale/it" />
+        <dir path="share/locale/it/LC_MESSAGES" />
+        <file path="share/locale/it/LC_MESSAGES/xz.mo" />
+        <dir path="share/locale/pl" />
+        <dir path="share/locale/pl/LC_MESSAGES" />
+        <file path="share/locale/pl/LC_MESSAGES/xz.mo" />
+    </manifest>
+</package>

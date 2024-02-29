@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-053-7c95-71b149">
+    <release tarname="gcc-tools-epoch2-autoconf-2.64-1-mingw32-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <file path="share/doc/gcc-tools-epoch2-autoconf/2.64/COPYING" />
+        <file path="share/doc/gcc-tools-epoch2-autoconf/2.64/COPYINGv3" />
+    </manifest>
+</package>

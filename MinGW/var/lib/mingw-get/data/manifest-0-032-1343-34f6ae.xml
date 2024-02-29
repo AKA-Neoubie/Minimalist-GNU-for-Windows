@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-032-1343-34f6ae">
+    <release tarname="mingwrt-5.0.2-mingw32-lic.tar.xz" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/doc" />
+        <dir path="share/doc/mingwrt" />
+        <dir path="share/doc/mingwrt/5.0.2" />
+        <file path="share/doc/mingwrt/5.0.2/DISCLAIMER" />
+        <file path="share/doc/mingwrt/5.0.2/CYGWIN_LICENSE" />
+        <file path="share/doc/mingwrt/5.0.2/COPYING" />
+    </manifest>
+</package>

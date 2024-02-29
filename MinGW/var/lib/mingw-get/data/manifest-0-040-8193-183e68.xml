@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-040-8193-183e68">
+    <release tarname="diffstat-1.54-1-msys-1.0.17-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/diffstat" />
+        <dir path="share/doc/diffstat/1.54" />
+        <file path="share/doc/diffstat/1.54/CHANGES" />
+        <file path="share/doc/diffstat/1.54/README" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/diffstat-1.54-1-msys.RELEASE_NOTES.txt" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/diffstat.1" />
+    </manifest>
+</package>

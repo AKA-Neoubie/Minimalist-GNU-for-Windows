@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-4dff-e00edb">
+    <release tarname="xz-5.0.3-1-msys-1.0.17-lang.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/locale" />
+        <dir path="share/locale/cs" />
+        <dir path="share/locale/cs/LC_MESSAGES" />
+        <file path="share/locale/cs/LC_MESSAGES/xz.mo" />
+        <dir path="share/locale/de" />
+        <dir path="share/locale/de/LC_MESSAGES" />
+        <file path="share/locale/de/LC_MESSAGES/xz.mo" />
+        <dir path="share/locale/fr" />
+        <dir path="share/locale/fr/LC_MESSAGES" />
+        <file path="share/locale/fr/LC_MESSAGES/xz.mo" />
+        <dir path="share/locale/it" />
+        <dir path="share/locale/it/LC_MESSAGES" />
+        <file path="share/locale/it/LC_MESSAGES/xz.mo" />
+        <dir path="share/locale/pl" />
+        <dir path="share/locale/pl/LC_MESSAGES" />
+        <file path="share/locale/pl/LC_MESSAGES/xz.mo" />
+    </manifest>
+</package>

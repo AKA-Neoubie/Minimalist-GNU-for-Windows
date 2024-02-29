@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-035-ee41-e3ba81">
+    <release tarname="tar-1.23-1-msys-1.0.13-ext.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="sbin" />
+        <file path="sbin/backup" />
+        <file path="sbin/backup.sh" />
+        <file path="sbin/dump-remind" />
+        <file path="sbin/restore" />
+        <file path="sbin/rmt.exe" />
+    </manifest>
+</package>

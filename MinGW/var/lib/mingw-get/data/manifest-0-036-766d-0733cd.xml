@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-766d-0733cd">
+    <release tarname="gcc-3.4.4-3-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/gcc" />
+        <dir path="share/doc/gcc/3.4.4" />
+        <file path="share/doc/gcc/3.4.4/BUGS" />
+        <file path="share/doc/gcc/3.4.4/bugs.html" />
+        <file path="share/doc/gcc/3.4.4/FAQ" />
+        <file path="share/doc/gcc/3.4.4/faq.html" />
+        <file path="share/doc/gcc/3.4.4/MAINTAINERS" />
+        <file path="share/doc/gcc/3.4.4/NEWS" />
+        <file path="share/doc/gcc/3.4.4/README" />
+        <file path="share/doc/gcc/3.4.4/README.SCO" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/gcc-3.4.4-3-msys-RELEASE_NOTES.txt" />
+        <dir path="share/info" />
+        <file path="share/info/cpp.info" />
+        <file path="share/info/cppinternals.info" />
+        <file path="share/info/gcc.info" />
+        <file path="share/info/gccinstall.info" />
+        <file path="share/info/gccint.info" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/cpp.1" />
+        <file path="share/man/man1/g++.1" />
+        <file path="share/man/man1/gcc.1" />
+        <file path="share/man/man1/gcov.1" />
+        <dir path="share/man/man7" />
+        <file path="share/man/man7/fsf-funding.7" />
+        <file path="share/man/man7/gfdl.7" />
+        <file path="share/man/man7/gpl.7" />
+    </manifest>
+</package>

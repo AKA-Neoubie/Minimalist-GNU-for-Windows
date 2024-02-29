@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-044-da37-a0ae3e">
+    <release tarname="libminires-1.02_1-2-msys-1.0.13-dev.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="include" />
+        <dir path="include/arpa" />
+        <file path="include/arpa/nameser.h" />
+        <file path="include/arpa/nameser_compat.h" />
+        <file path="include/resolv.h" />
+        <dir path="lib" />
+        <file path="lib/libminires.a" />
+        <file path="lib/libminires.dll.a" />
+    </manifest>
+</package>

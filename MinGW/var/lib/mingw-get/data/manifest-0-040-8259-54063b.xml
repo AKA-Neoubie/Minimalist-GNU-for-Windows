@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-040-8259-54063b">
+    <release tarname="libxml2-2.7.6-1-msys-1.0.13-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <file path="share/doc/libxml2/2.7.6/Copyright" />
+    </manifest>
+</package>

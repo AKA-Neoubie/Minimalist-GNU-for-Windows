@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-038-eab2-747726">
+    <release tarname="guile-1.8.7-2-msys-1.0.15-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/guile" />
+        <dir path="share/doc/guile/1.8.7" />
+        <file path="share/doc/guile/1.8.7/AUTHORS" />
+        <file path="share/doc/guile/1.8.7/ChangeLog" />
+        <file path="share/doc/guile/1.8.7/ChangeLog-2008" />
+        <dir path="share/doc/guile/1.8.7/examples" />
+        <dir path="share/doc/guile/1.8.7/examples/box" />
+        <file path="share/doc/guile/1.8.7/examples/box/box.c" />
+        <file path="share/doc/guile/1.8.7/examples/box/README" />
+        <dir path="share/doc/guile/1.8.7/examples/box-dynamic" />
+        <file path="share/doc/guile/1.8.7/examples/box-dynamic/box.c" />
+        <file path="share/doc/guile/1.8.7/examples/box-dynamic/README" />
+        <dir path="share/doc/guile/1.8.7/examples/box-dynamic-module" />
+        <file path="share/doc/guile/1.8.7/examples/box-dynamic-module/box-mixed.scm" />
+        <file path="share/doc/guile/1.8.7/examples/box-dynamic-module/box-module.scm" />
+        <file path="share/doc/guile/1.8.7/examples/box-dynamic-module/box.c" />
+        <file path="share/doc/guile/1.8.7/examples/box-dynamic-module/README" />
+        <dir path="share/doc/guile/1.8.7/examples/box-module" />
+        <file path="share/doc/guile/1.8.7/examples/box-module/box.c" />
+        <file path="share/doc/guile/1.8.7/examples/box-module/README" />
+        <file path="share/doc/guile/1.8.7/examples/ChangeLog-2008" />
+        <dir path="share/doc/guile/1.8.7/examples/modules" />
+        <file path="share/doc/guile/1.8.7/examples/modules/main" />
+        <file path="share/doc/guile/1.8.7/examples/modules/module-0.scm" />
+        <file path="share/doc/guile/1.8.7/examples/modules/module-1.scm" />
+        <file path="share/doc/guile/1.8.7/examples/modules/module-2.scm" />
+        <file path="share/doc/guile/1.8.7/examples/modules/README" />
+        <file path="share/doc/guile/1.8.7/examples/README" />
+        <dir path="share/doc/guile/1.8.7/examples/safe" />
+        <file path="share/doc/guile/1.8.7/examples/safe/evil.scm" />
+        <file path="share/doc/guile/1.8.7/examples/safe/README" />
+        <file path="share/doc/guile/1.8.7/examples/safe/safe" />
+        <file path="share/doc/guile/1.8.7/examples/safe/untrusted.scm" />
+        <dir path="share/doc/guile/1.8.7/examples/scripts" />
+        <file path="share/doc/guile/1.8.7/examples/scripts/fact" />
+        <file path="share/doc/guile/1.8.7/examples/scripts/hello" />
+        <file path="share/doc/guile/1.8.7/examples/scripts/README" />
+        <file path="share/doc/guile/1.8.7/examples/scripts/simple-hello.scm" />
+        <file path="share/doc/guile/1.8.7/GUILE-VERSION" />
+        <file path="share/doc/guile/1.8.7/HACKING" />
+        <file path="share/doc/guile/1.8.7/NEWS" />
+        <file path="share/doc/guile/1.8.7/README" />
+        <file path="share/doc/guile/1.8.7/THANKS" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/guile-1.8.7-2-msys.RELEASE_NOTES.txt" />
+        <dir path="share/info" />
+        <file path="share/info/goops.info" />
+        <file path="share/info/guile-tut.info" />
+        <file path="share/info/guile.info" />
+        <file path="share/info/guile.info-1" />
+        <file path="share/info/guile.info-2" />
+        <file path="share/info/guile.info-3" />
+        <file path="share/info/guile.info-4" />
+        <file path="share/info/guile.info-5" />
+        <file path="share/info/guile.info-6" />
+        <file path="share/info/guile.info-7" />
+        <file path="share/info/r5rs.info" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/guile.1" />
+    </manifest>
+</package>

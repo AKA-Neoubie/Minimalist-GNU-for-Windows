@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-038-6e1f-f759c7">
+    <release tarname="mingw-utils-0.4-1-mingw32-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/doc" />
+        <dir path="share/doc/mingw-utils" />
+        <dir path="share/doc/mingw-utils/0.4" />
+        <dir path="share/doc/mingw-utils/0.4/a2dll" />
+        <file path="share/doc/mingw-utils/0.4/a2dll/a2dll.html" />
+        <file path="share/doc/mingw-utils/0.4/a2dll/static2dll_howto.txt" />
+        <file path="share/doc/mingw-utils/0.4/AUTHORS" />
+        <file path="share/doc/mingw-utils/0.4/ChangeLog" />
+        <dir path="share/doc/mingw-utils/0.4/msys-here" />
+        <file path="share/doc/mingw-utils/0.4/msys-here/AUTHORS" />
+        <file path="share/doc/mingw-utils/0.4/msys-here/ChangeLog" />
+        <file path="share/doc/mingw-utils/0.4/msys-here/libwinui.ChangeLog" />
+        <file path="share/doc/mingw-utils/0.4/msys-here/NEWS" />
+        <file path="share/doc/mingw-utils/0.4/msys-here/README" />
+        <file path="share/doc/mingw-utils/0.4/msys-here/TODO" />
+        <file path="share/doc/mingw-utils/0.4/NEWS" />
+        <file path="share/doc/mingw-utils/0.4/README" />
+        <dir path="share/doc/mingw-utils/0.4/redir" />
+        <file path="share/doc/mingw-utils/0.4/redir/README" />
+        <dir path="share/doc/mingw-utils/0.4/reimp" />
+        <file path="share/doc/mingw-utils/0.4/reimp/README" />
+        <dir path="share/doc/mingw-utils/0.4/res2coff" />
+        <file path="share/doc/mingw-utils/0.4/res2coff/README" />
+        <file path="share/doc/mingw-utils/0.4/TODO" />
+        <dir path="share/msys-here" />
+        <file path="share/msys-here/registry.template" />
+    </manifest>
+</package>

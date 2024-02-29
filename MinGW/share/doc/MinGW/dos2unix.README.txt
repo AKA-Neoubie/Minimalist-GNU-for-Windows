@@ -1,0 +1,71 @@
+dos2unix
+================================================================================
+The dos2unix package provides manipulation utilities for converting the line
+break characters of text files between the unix convention (0x0a), the
+DOS/Windows convention (0x0d 0x0a), and the old (pre-OS-X) Mac convention (0x0d).
+
+Runtime requirements:
+  msvcrt
+  libintl-8   0.18.1.1-2
+  libiconv-2  1.14-2
+
+Build requirements:
+  msys
+  msys-make
+  msys-sed
+  msys-perl
+  mingw-gcc-core-4.x
+  mingw-binutils
+  mingw-mgwport
+  mingw-gettext-bin
+  mingw-gettext-dev
+
+Canonical homepage:
+  http://waterlan.home.xs4all.nl/dos2unix.html
+
+Canonical download:
+  http://waterlan.home.xs4all.nl/dos2unix/dos2unix-7.4.0.tar.gz
+
+License:
+  2-clause BSD (FreeBSD) style
+
+Language:
+  C
+
+================================================================================
+
+Build instructions:
+  unpack dos2unix-7.4.0-X-mingw32-src.tar.lzma
+  mgwport dos2unix-7.4.0-X.mgwport all
+
+This will create:
+  dos2unix-7.4.0-X-mingw32-bin.tar.lzma
+  dos2unix-7.4.0-X-mingw32-doc.tar.lzma
+  dos2unix-7.4.0-X-mingw32-lic.tar.lzma
+
+================================================================================
+
+Files in dos2unix:
+  /usr/bin/d2u.exe
+  /usr/bin/dos2unix.exe
+  /usr/bin/mac2unix.exe
+  /usr/bin/u2d.exe
+  /usr/bin/unix2dos.exe
+  /usr/bin/unix2mac.exe
+  /usr/share/doc/MinGW/dos2unix.README
+  /usr/share/doc/dos2unix/*
+  /usr/share/locale/*/LC_MESSAGES/dos2unix.mo
+  /usr/share/man/man1/*
+  /usr/share/man/*/man1/*
+
+================================================================================
+
+Port Notes:
+
+
+upgrade dos2unix to version 7.4.0 
+
+---------- dos2unix-7.4.0-1 -- 2017 Dec 21 -----------
+
+================================================================================
+MinGW port maintained by: Erwin Waterlander <waterlan@xs4all.nl>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-033-be67-4fd7b4">
+    <release tarname="zlib-1.2.8-1-mingw32-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share" />
+        <dir path="share/doc" />
+        <dir path="share/doc/zlib" />
+        <dir path="share/doc/zlib/1.2.8" />
+        <file path="share/doc/zlib/1.2.8/ChangeLog" />
+        <dir path="share/doc/zlib/1.2.8/doc" />
+        <file path="share/doc/zlib/1.2.8/doc/algorithm.txt" />
+        <file path="share/doc/zlib/1.2.8/doc/rfc1950.txt" />
+        <file path="share/doc/zlib/1.2.8/doc/rfc1951.txt" />
+        <file path="share/doc/zlib/1.2.8/doc/rfc1952.txt" />
+        <file path="share/doc/zlib/1.2.8/doc/txtvsbin.txt" />
+        <file path="share/doc/zlib/1.2.8/FAQ" />
+        <file path="share/doc/zlib/1.2.8/INDEX" />
+        <file path="share/doc/zlib/1.2.8/README" />
+        <file path="share/doc/zlib/1.2.8/README.zlib-1.2.8-1-mingw32" />
+        <file path="share/doc/zlib/1.2.8/zlib.3.pdf" />
+    </manifest>
+</package>

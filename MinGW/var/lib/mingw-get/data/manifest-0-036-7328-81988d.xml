@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-7328-81988d">
+    <release tarname="sed-4.2.1-2-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/sed-4.2.1-2-msys.RELEASE_NOTES.txt" />
+        <dir path="share/doc/sed" />
+        <dir path="share/doc/sed/4.2.1" />
+        <file path="share/doc/sed/4.2.1/AUTHORS" />
+        <file path="share/doc/sed/4.2.1/ChangeLog" />
+        <file path="share/doc/sed/4.2.1/NEWS" />
+        <file path="share/doc/sed/4.2.1/README" />
+        <file path="share/doc/sed/4.2.1/THANKS" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/sed.1" />
+        <dir path="share/info" />
+        <file path="share/info/sed.info" />
+    </manifest>
+</package>

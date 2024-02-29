@@ -1,0 +1,73 @@
+ncurses
+========================================================================
+Ncurses provides libraries and utilities for manipulating terminal
+display.  This package contains the utility programs and documentation
+for ncurses.  It is compiled to support "narrow" and "wide" characters.
+
+
+Runtime requirements:
+  msvcrt
+
+Build requirements:
+  msys
+  msys-coreutils
+  msys-make
+  msys-sed
+  msys-gawk
+  msys-perl
+  mingw-automake
+  mingw-autoconf
+  mingw-gcc-core-4.x
+  mingw-binutils
+  mingw-libtool
+  mingw-mgwport
+
+
+Canonical homepage:
+  http://www.gnu.org/software/ncurses/ncurses.html
+
+Canonical download:
+  ftp://ftp.gnu.org/pub/gnu/ncurses/
+
+License:
+  MIT/X11
+
+Language:
+  C, C++
+ 
+========================================================================
+
+Build instructions:
+  unpack  ncurses-6.0-X-mingw32-src.tar.lzma
+  mgwport ncurses-6.0-X.mgwport download
+  mgwport ncurses-6.0-X.mgwport all
+
+This will create:
+   ncurses-6.0-X-mingw32-bin.tar.lzma
+   ncurses-6.0-X-mingw32-doc.tar.lzma
+   ncurses-6.0-X-mingw32-lic.tar.lzma
+   ncurses-6.0-X-mingw32-src.tar.lzma
+   libncurses-6.0-X-mingw32-dev.tar.lzma
+   libncurses-6.0-X-mingw32-dll.tar.lzma
+   terminfo-6.0-X-mingw32-terminfo.tar.lzma
+
+
+========================================================================
+
+NOTES:
+
+* ncurses works in a standard Command Prompt or PowerShell console.
+* ncurses also works fine in ConEmu.
+* To work in Console (also known as Console2) set environment variable
+  NCURSES_CONSOLE2 before you start your program. Any value will do, e.g. "1".
+* ncurses does not work in ConsoleZ (a modified version of Console).
+* You may see some trembling in the screen when it redraws.
+
+The PDCurses library is more stable and works in all Windows consoles.
+One advantage of ncurses over PDCurses is that ncurses supports Unicode
+combining characters, and PDCurses does not. Also PDCurses development has
+stopped while ncurses development is ongoing.
+
+========================================================================
+Mingw port maintained by:
+  Erwin Waterlander <waterlan@xs4all.nl>

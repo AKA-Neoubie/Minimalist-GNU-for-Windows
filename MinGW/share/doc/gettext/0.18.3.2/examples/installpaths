@@ -1,0 +1,9 @@
+prefix='/mingw'
+exec_prefix="${prefix}"
+datarootdir="${prefix}/share"
+datadir="${datarootdir}"
+docdir="${prefix}/share/doc/gettext/0.18.3.2"
+ACLOCALDIR="${datadir}/aclocal"
+GETTEXTSRCDIR="${datarootdir}/gettext"
+GETTEXTSRCPODIR="${datarootdir}/gettext/po"
+EXAMPLESCONFIGDIR="${prefix}/share/doc/gettext/0.18.3.2/examples/config"
