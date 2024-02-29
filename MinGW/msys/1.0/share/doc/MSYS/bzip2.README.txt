@@ -1,0 +1,162 @@
+msys bzip2
+===============================================================================
+bzip2 is a freely available, patent free (see below), high-quality data
+compressor. It typically compresses files to within 10% to 15% of the best
+available techniques (the PPM family of statistical compressors), whilst being
+around twice as fast at compression and six times faster at decompression.
+
+Release: bzip2-1.0.6-1-msys-1.0.17
+
+Files:   bzip2-1.0.6-1-msys-1.0.17-src.tar.lzma      (full source code)
+         bzip2-1.0.6-1-msys-1.0.17-bin.tar.lzma      (utilities)
+         bzip2-1.0.6-1-msys-1.0.17-doc.tar.lzma      (FAQ, readmes, manpages)
+         bzip2-1.0.6-1-msys-1.0.17-lic.tar.lzma      (licensing terms)
+         libbz2-1.0.6-1-msys-1.0.17-dev.tar.lzma     (libraries and headers)
+         libbz2-1.0.6-1-msys-1.0.17-dll-1.tar.lzma   (redistributable DLL)
+
+Notes:   This is a binary release of the bzip2 compression/decompression
+         library, compiled for use with MSYS applications.
+
+         The source code is modified from that distributed by bzip.org,
+         to fix various security holes, correct build errors, and add
+         new features.  In addition, the original build system has been
+         completely replaced by an autoconf-based one (see README.CYGMING
+         for more information).
+
+         The "src" tarball delivers the full unmodified source code from
+         bzip.org, along with the relevant patches and (external) build
+         driver (.mgwport) script.
+
+         The "doc", "lic" and "man" tarballs provide the documentation
+         components, as identified above, abstracted from the source
+         tarball, and repackaged into a file hierarchy structure which
+         is suitable for installation into the user's installed MSYS
+         directory hierarchy; for a standard installation, they should
+         be unpacked into the C:\MinGW\msys\1.0 directory.
+
+         The "bin" tarball provides the bzip2.exe compression utility, along
+         with several other utilities and scripts. This package should be
+         unpacked into the C:\MinGW\msys\1.0 directory.
+
+         Developers of MSYS applications, who wish to link to the bzip2
+         libraries, will require at least the "dev" tarball; this provides
+         the libbz2.a static version of the library, libbz2.dll.a import
+         library, for linking to a DLL version of the library, and the set
+         of C language headers common to both.  The DLL version of the
+         library, msys-bz2-1.dll, is provided separately, by the "dll-1"
+         tarball.  As in the case of the installable documentation, each of
+         these tarballs should be unpacked into the C:\MinGW\msys\1.0
+         directory.
+
+         Please note that the msys-bz2-1.dll delivered by this package
+         depends on the MSYS runtime msys-1.0.dll. Developers need to
+         install and use the msys-system-builder (aka msys-dvlpr)
+         toolkit to compile clients of this library; it may NOT be used
+         in conjunction with the MinGW compiler (which generates native
+         win32 binaries, rather than MSYS-dependent ones).
+
+Requires:
+  msys-core-bin             1.0.17-1
+  msys-
+
+Build Requires:
+  msys-binutils-bin         2.19.51-3
+  msys-gcc-bin              3.4.4-3
+  msys-w32api-dev           3.14-3
+  mingw32-mgwport-bin       0.10.4
+  msys-autoconf2.5-bin      2.67-1      
+  msys-core-bin             1.0.17-1
+  msys-coreutils-bin        5.97-3
+  msys-bash-bin             3.1.17-4
+  msys-patch-bin            2.6.1-1
+  msys-make-bin             3.81-3
+  msys-tar-bin              1.23-1
+  msys-bzip2-bin            1.0.5-2
+  msys-gzip-bin             1.3.12-2
+  msys-xz-bin               4.999.9beta_20091209-1
+  msys-wget-bin             1.12-1
+  msys-texinfo-bin          4.13a-2
+
+Canonical homepage:
+  http://www.bzip2.org/
+
+Canonical download:
+  http://www.bzip2.org/1.0.6/
+
+License:
+  modified BSD (3-clause).
+  (Actually, it's a four-clause old-style BSD, but the offensive
+  advertising clause is turned into a "request")
+
+Language:
+  C
+
+===============================================================================
+
+Build instructions:
+  unpack bzip2-1.0.6-1-msys-1.0.17-src.tar.lzma
+  mgwport bzip2-1.0.6-1.msysport all
+
+This will create:
+  bzip2-1.0.6-1-msys-1.0.17-src.tar.lzma
+  bzip2-1.0.6-1-msys-1.0.17-bin.tar.lzma
+  bzip2-1.0.6-1-msys-1.0.17-doc.tar.lzma
+  bzip2-1.0.6-1-msys-1.0.17-lic.tar.lzma
+  libbz2-1.0.6-1-msys-1.0.17-dev.tar.lzma
+  libbz2-1.0.6-1-msys-1.0.17-dll-1.tar.lzma
+
+See `mgwport --help' for other options.
+
+===============================================================================
+
+Test suite results
+This section of this document is updated with each new release.
+No history is maintained here.
+
+All currently enabled tests have passed.
+
+===============================================================================
+Port Notes:
+
+1) This msys build of bzip2 DOES NOT support 64 bit file access (large files),
+   because the msys runtime does not support 64bit off_t.
+
+2) This build is based on the cygwin source patches, NOT any MinGW
+   ones. It is only "lightly" ported -- that is, the sources have not
+   been modified to recognize #define __MSYS__.  Therefore, when compiling
+   against this library, you should explicitly define the __CYGWIN__
+   macro, by adding -D__CYGWIN__ to your CFLAGS (msys-gcc-3.4.4-3 does this
+   automatically).
+
+3) (internal:) the original, and rather dated and inflexible, build system
+   has been completely replaced by a new autoconf-based one, contributed
+   by Keith Marshall. This allows for (a) out-of-tree builds, (b) cross-
+   compiler builds, and (c) better handling for win32/cygwin builds.
+   However, this original contribution required some additional tweaks, to
+   support MSYS.
+
+4) (internal:) The build and packaging is driven by an external .msysport
+   script, to handle the specifics of package creation and naming suitable
+   for use with the mingw-get installation program.
+
+===============================================================================
+
+----------  bzip2-1.0.6-1 -- 2011 Sep 01 -----------
+* Updated to most recent upstream release
+  - fixes CVE-2010-0405
+* Add --show-progress option to bzip2
+* Update documentation, correct various errors and omissions
+* Incorporate and adapt Keith's autoconf-based internal build system patches.
+* Update external build driver system to use mgwport
+
+----------  bzip2-1.0.5-2 -- 2010 Jan 28 -----------
+* Rebuild against msys-1.0.13, using (msys)gcc-3.4.4
+  and (msys)binutils-2.19.51.
+* Use -O3 -fno-unit-at-a-time to avoid optimization bug
+  in latest msys-gcc. Also, don't use -mms-bitfields
+  when compiling msys binaries.
+
+----------  bzip2-1.0.5-1 -- 2009 Jul 26 -----------
+* First release of bzip2 for msys using new packaging standard.
+* Uses patches derived from cygwin's bzip2-1.0.5-10 package.
+

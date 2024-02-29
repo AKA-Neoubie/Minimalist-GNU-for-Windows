@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libarchive
+Description: library that can create and read several streaming archive formats
+Version: 2.8.3
+Libs: -larchive
+Libs.private: -lcrypto -lxml2 -llzma -lbz2 -lz  -L/usr/lib -lxml2 -L/usr/lib -lz -liconv -lm

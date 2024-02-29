@@ -1,0 +1,105 @@
+msys expat
+========================================================================
+This is Expat, a C library for parsing XML, written by James Clark.
+Expat is a stream-oriented XML parser.  This means that you register
+handlers with the parser before starting the parse.  These handlers
+are called when the parser discovers the associated structures in the
+document being parsed.  A start tag is an example of the kind of
+structures for which you may register handlers.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  libexpat-2.0.1-1-msys-1.0.13-dll-1
+
+Build requirements:
+  binutils-2.19.51-3-msys-1.0.13-bin
+  gcc-3.4.4-3-msys-1.0.13-bin
+  w32api-3.14-3-msys-1.0.12-dev
+
+  Devel Tools and Dependent Libraries
+    autoconf-2.63-1-msys-1.0.11-bin
+    automake-1.11-1-msys-1.0.11-bin
+    libtool-2.2.7a-1-msys-1.0.11-bin
+
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+    coreutils-5.97-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20091209-1-msys-1.0.12-bin
+    gzip-1.3.12-1-msys-1.0.11-bin
+    liblzma-4.999.9beta_20091209-1-msys-1.0.12-dll-1
+    zlib-1.2.3-2-msys-1.0.13-dll
+    gawk-3.1.7-1-msys-1.0.11-bin
+    sed-4.2.1-1-msys-1.0.11-bin
+
+Canonical website:
+  http://expat.sourceforge.net/
+
+Canonical download:
+  http://downloads.sourceforge.net/expat/
+
+========================================================================
+Build instructions:
+  unpack expat-2.0.1-X-msys-1.0.13-src.tar.lzma
+  ./msys-build-expat
+
+This will create:
+  expat-2.0.1-X-msys-1.0.13-src.tar.lzma
+  expat-2.0.1-X-msys-1.0.13-bin.tar.lzma
+  expat-2.0.1-X-msys-1.0.13-doc.tar.lzma
+  expat-2.0.1-X-msys-1.0.13-lic.tar.lzma
+  libexpat-2.0.1-X-msys-1.0.13-dll-1.tar.lzma
+  libexpat-2.0.1-X-msys-1.0.13-dev.tar.lzma
+
+========================================================================
+
+Files included in the binary packages:
+
+expat-*-bin:
+  /usr/bin/xmlwf.exe
+
+expat-*-doc:
+  /usr/share/doc/MSYS/expat-2.0.1-X-msys.RELEASE_NOTES.txt
+  /usr/share/doc/expat/2.0.1/Changes
+  /usr/share/doc/expat/2.0.1/README
+  /usr/share/doc/expat/2.0.1/expat.png
+  /usr/share/doc/expat/2.0.1/reference.html
+  /usr/share/doc/expat/2.0.1/style.css
+  /usr/share/doc/expat/2.0.1/valid-xhtml10.png
+  /usr/share/man/man1/xmlwf.1
+
+expat-*-lic:
+  /usr/share/doc/expat/2.0.1/COPYING
+
+libexpat-*-dll-1
+  /usr/bin/msys-expat-1.dll
+
+libexpat-*-dev:
+  /usr/include/expat.h
+  /usr/include/expat_external.h
+  /usr/lib/libexpat.a
+  /usr/lib/libexpat.dll.a
+  /usr/lib/libexpat.la
+
+========================================================================q
+
+Test suite results
+This section of this document is updated with each new release.
+No history is maintained here.
+
+tests/runtests
+Expat version: expat_2.0.1
+100%: Checks: 50, Failed: 0
+tests/runtestspp
+Expat version: expat_2.0.1
+100%: Checks: 50, Failed: 0
+
+========================================================================
+
+Port Notes:
+
+----- expat-2.0.1-1 -----
+* First release for MSYS
+

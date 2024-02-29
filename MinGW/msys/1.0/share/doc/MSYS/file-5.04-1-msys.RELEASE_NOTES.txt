@@ -1,0 +1,96 @@
+msys file
+========================================================================
+The file command is used to identify a particular file according to the
+type of data contained by the file.  File can identify many different
+file types, including ELF binaries, system libraries, RPM packages, and
+different graphics formats.
+
+This version has been modified and compiled for use in the MSYS
+environment. It should be installed into the / == /usr directory, which
+is usually but not always, C:\msys\1.0.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  zlib-1.2.3-2-msys-1.0.13-dll
+  libregex-1.20090805-2-msys-1.0.13-dll-1
+  libmagic-5.04-1-msys-1.0.13-dll-1
+
+Build requirements (these, or newer)
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+
+  Devel Tools and Dependent Libraries 
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libtool-2.2.7a-2-msys-1.0.13-bin
+    zlib-1.2.3-2-msys-1.0.13-dev
+    libregex-1.20090805-2-msys-1.0.13-dev
+ 
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    bzip2-1.0.5-2-msys-1.0.13-bin
+    libbz2-1.0.5-2-msys-1.0.13-dll-1
+    coreutils-5.97-2-msys-1.0.11-bin
+    diffutils-2.8.7.20071206cvs-2-msys-1.0.11-bin
+    findutils-4.4.2-1-msys-1.0.11-bin
+    gawk-3.1.7-1-msys-1.0.11-bin
+    grep-2.5.4-1-msys-1.0.11-bin
+    gzip-1.3.12-1-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    m4-1.4.13-1-msys-1.0.11-bin
+    patch-2.5.9-1-msys-1.0.11-bin
+    sed-4.2.1-1-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    libgdbm-1.8.3-3-msys-1.0.13-dll-3
+ 
+Canonical homepage:
+  n/a (elist: file@mx.gw.com)
+
+Canonical download:
+  ftp://ftp.astron.com/pub/file/file-5.03.tar.gz
+
+License:
+  BSD (2-clause)
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack file-5.04-1-msys-1.0.13-src.tar.lzma
+  ./msys-build-file file-5.04.tar.gz
+
+This will create:
+  file-5.04-1-msys-1.0.13-src.tar.lzma
+  file-5.04-1-msys-1.0.13-bin.tar.lzma
+  file-5.04-1-msys-1.0.13-doc.tar.lzma
+  file-5.04-1-msys-1.0.13-lic.tar.lzma
+  libmagic-5.04-1-msys-1.0.13-dll-1.tar.lzma
+  libmagic-5.04-1-msys-1.0.13-dev.tar.lzma
+
+========================================================================
+
+Test suite results
+
+This section of this document is updated with each new release.
+No history is maintained here.
+
+All pass.
+
+========================================================================
+
+Port Notes:
+----------  file-5.04-1 -- 2010 Apr 15 -----------
+* Update to latest upstream release (and most recent
+  debian patchset)
+* Rebuild using new msys-gcc-3.x and against msys 1.0.13
+
+----------  file-5.03-1 -- 2009 Aug 10 -----------
+* First release of file for msys using new packaging standard. 

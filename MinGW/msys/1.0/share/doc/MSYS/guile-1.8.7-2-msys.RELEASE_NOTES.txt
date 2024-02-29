@@ -1,0 +1,165 @@
+msys guile
+========================================================================
+Guile is a library designed to help programmers create flexible
+applications. Using Guile in an application allows programmers to write
+plug-ins, or modules (there are many names, but the concept is
+essentially the same) and users to use them to have an application fit
+their needs.
+
+Guile is an interpreter for the Scheme programming language, with
+support for many SRFIs (Scheme Request For Implementations), packaged as
+a library which can be incorporated into your programs. Your users have
+full access to the interpreter, so Guile itself can be extended, based
+on the needs of the user. The result is a scripting language tailored to
+your application.  
+
+This version has been modified and compiled for use in the MSYS
+environment. It should be installed into the / == /usr directory, which
+is usually but not always, C:\msys\1.0.
+
+NOTE: built WITHOUT national language support. This is because (a) on
+MSYS, libintl is a static library only (b) libtool will not create
+shared libraries that depend on static ones (c) we *must* build libguile
+as a shared library, because the static version doesn't work at all.
+Thus, no NLS.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  libintl-0.17-2-msys-dll-8
+  libiconv-1.13.1-2-msys-1.0.13-dll-1
+  libltdl-2.2.7a-2-msys-1.0.13-dll-7
+  libcrypt-1.1_1-3-msys-1.0.13-dll-0
+  libregex-1.20090805-2-msys-1.0.13-dll-1
+  libgmp-5.0.1-1-msys-1.0.13-dll-10
+
+Build requirements (these, or newer)
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.15-1-msys-1.0.15-dev
+ 
+  Devel Tools and Dependent Libraries
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libtool-2.2.7a-2-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-dev
+    gettext-0.17-2-msys-1.0.13-bin
+    gettext-0.17-2-msys-1.0.13-dev
+    libgettextpo-0.17-2-msys-1.0.13-dll-0
+    libltdl-2.2.7a-2-msys-1.0.13-dev
+    libcrypt-1.1_1-3-msys-1.0.13-dev
+    libregex-1.20090805-2-msys-1.0.13-dev
+    libgmp-5.0.1-1-msys-1.0.13-dev
+
+  MSYS Environment
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    libgdbm-1.8.3-3-msys-1.0.13-dll-3
+    zlib-1.2.3-2-msys-1.0.13-dll
+    coreutils-5.97-3-msys-1.0.13-bin
+    make-3.81-3-msys-1.0.13-bin
+    patch-2.6.1-1-msys-1.0.13-bin
+    bash-3.1.17-3-msys-1.0.13-bin
+    tar-1.23-2-msys-1.0.13-bin
+    bzip2-1.0.5-2-msys-1.0.13-bin
+    libbz2-1.0.5-2-msys-1.0.13-dll-1
+    xz-4.999.9beta_20100401-1-msys-1.0.13-bin
+    liblzma-4.999.9beta_20100401-1-msys-1.0.13-dll-1
+    file-5.04-2-msys-1.0.13-bin
+    grep-2.5.4-2-msys-1.0.13-bin
+    sed-4.2.1-2-msys-1.0.13-bin
+    gawk-3.1.7-2-msys-1.0.13-bin
+    cvs-1.12.13-2-msys-1.0.13-bin
+    texinfo-4.13a-2-msys-1.0.13-bin
+
+Canonical homepage:
+  http://www.gnu.org/software/guile/guile.html
+
+Canonical download:
+  http://ftp.gnu.org/pub/gnu/guile/
+
+License:
+  LGPLv2.1
+
+Language:
+  C, scheme
+
+========================================================================
+
+Build instructions:
+  unpack guile-1.8.7-2-msys-1.0.13-src.tar.lzma
+  ./msys-build-guile guile-1.8.7.tar.gz
+
+This will create:
+  guile-1.8.7-2-msys-1.0.13-src.tar.lzma
+  guile-1.8.7-2-msys-1.0.13-bin.tar.lzma
+  libguile-1.8.7-2-msys-1.0.13-dll-17.tar.lzma
+  libguile-1.8.7-2-msys-1.0.13-rtm.tar.lzma
+  libguile-1.8.7-2-msys-1.0.13-dev.tar.lzma
+  guile-1.8.7-2-msys-1.0.13-doc.tar.lzma
+  guile-1.8.7-2-msys-1.0.13-lic.tar.lzma
+
+========================================================================
+
+Test suite results
+
+This section of this document is updated with each new release.
+No history is maintained here.
+
+SUMMARY: guile-1.8.7-1-msys has no regressions from guile-1.8.4-1-msys.
+
+libguile
+=============
+1 test passed
+=============
+
+test-suite/standalone
+===================
+All 14 tests passed
+===================
+
+guile:
+==================================
+  Totals for this test run:
+  passes:                 11918
+  failures:               4
+  unexpected passes:      0
+  expected failures:      24
+  unresolved test cases:  9
+  untested test cases:    0
+  unsupported test cases: 19
+  errors:                 2
+
+Details:
+  FAIL: time.test: localtime: gmtoff of AST-10 at GMT 10pm on 10 Jan 2000
+  FAIL: time.test: localtime: gmtoff of AST-10 at GMT 10pm on 31 Dec 2000
+  FAIL: time.test: mktime: gmtoff of AST-10 at 3:00am on 10 Jan 2000
+  FAIL: time.test: mktime: gmtoff of AST-10 at 3:00am on 1 Jan 2000
+
+There were also some 'error' reports, that aren't exactly failures:
+
+  ERROR: socket.test: AF_UNIX/SOCK_DGRAM: sendto - arguments: ((system-error "sendto" "~A" ("Addresses in the specified family cnot be used with this socket") (106)))
+  ERROR: socket.test: AF_UNIX/SOCK_DGRAM: sendto/sockaddr - arguments: ((system-error "sendto" "~A" ("Addresses in the specifiedamily cannot be used with this socket") (106)))
+  ERROR: socket.test: AF_UNIX/SOCK_DGRAM: sendto - arguments: ((system-error "sendto" "~A" ("Addresses in the specified family cnot be used with this socket") (106)))
+  ERROR: socket.test: AF_UNIX/SOCK_DGRAM: sendto/sockaddr - arguments: ((system-error "sendto" "~A" ("Addresses in the specifiedamily cannot be used with this socket") (106)))
+
+This represents three fewer failures than the 1.8.7-1 version.
+
+========================================================================
+
+Port Notes:
+
+----------  guile-1.8.7-2 -- 2010 May 04 -----------
+* Rebuild with latest msys-gcc-3.x compiler, against msys 1.0.13
+  - exploit auto-import and runtime pseudo-relocs; avoid -DSCM_IMPORT
+  - binary clients must link using -Wl,--enable-runtime-pseudo-reloc-v2
+  - requires a fix in the msys-1.0.15 pseudo-reloc implementation
+    but that is only necessary at *build* time, not run time.
+* Incorporate fixes from Debian guile-1.8.7+1-3
+* Link against DLL version of libintl and libiconv
+
+----------  guile-1.8.7-1 -- 2009 Aug 26 -----------
+* First release of guile for msys using new packaging standard.
+

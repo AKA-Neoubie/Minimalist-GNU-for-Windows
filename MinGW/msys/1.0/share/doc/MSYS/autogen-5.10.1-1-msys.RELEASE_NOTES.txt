@@ -1,0 +1,249 @@
+msys autogen
+========================================================================
+AutoGen is a tool designed to simplify the creation and maintenance of
+programs that contain large amounts of repetitious text. It is
+especially valuable in programs that have several blocks of text that
+must be kept synchronized.
+
+A common example where this would be useful is in creating and
+maintaining the code required for processing program options. Processing
+options requires multiple constructs to be maintained in parallel in
+different places in your program. Options maintenance needs to be done
+countless times. So, AutoGen comes with an add-on package named AutoOpts
+that simplifies the maintenance and documentation of program options.
+
+AutoOpts 33:0, a semi-automated command line option parser, is included
+with AutoGen 5.10.1. It automatically generates everything you need for
+option processing, including man pages and an "invoking" chapter for
+your texinfo document.  AutoOpts incorporates a configuration file
+parser library. This functionality supports AutoOpts features and is
+also available separately through configFileLoad(3AutoOpts) and a
+selected subset of libopts exported functions.
+
+AutoFSM, a finite state machine generator, is included with AutoGen.
+It automatically generates easy-to-follow tables and a prototype
+implementation of a Finite State Machine.
+
+This version has been modified and compiled for use in the MSYS
+environment. It should be installed into the / == /usr directory, which
+is usually but not always, C:\msys\1.0.
+
+NOTE: the MSYS port of autogen has significant shortcomings. While much
+improved over ealier versions, it is extremely sensitive to the 'rebase'
+problem.  See the rebase package documentation for more information.
+
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  libregex-1.20090805-2-msys-1.0.13-dll-1
+  libguile-1.8.7-2-msys-1.0.15-rtm
+  libguile-1.8.7-2-msys-1.0.15-dll-17
+  libxml2-2.7.6-1-msys-1.0.13-dll-2
+  libopts-5.10.1-1-msys-1.0.15-dll-25
+
+Build requirements (these, or newer)
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.15-1-msys-1.0.15-dev
+
+  Devel Tools and Dependent Libraries 
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libtool-2.2.7a-2-msys-1.0.13-bin
+    libregex-1.20090805-2-msys-1.0.13-dev
+    libxml2-2.7.6-1-msys-1.0.13-dev
+    libguile-1.8.7-2-msys-1.0.15-dev
+    guile-1.8.7-2-msys-1.0.15-bin
+    libiconv-1.13.1-2-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-dev
+    gettext-0.17-2-msys-1.0.13-bin
+    gettext-0.17-2-msys-1.0.13-dev
+    libgettextpo-0.17-2-msys-1.0.13-dll-0
+    libltdl-2.2.7a-2-msys-1.0.13-dev
+    libcrypt-1.1_1-3-msys-1.0.13-dev
+    libregex-1.20090805-2-msys-1.0.13-dev
+    libgmp-5.0.1-1-msys-1.0.13-dev
+
+  MSYS Environment
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    libgdbm-1.8.3-3-msys-1.0.13-dll-3
+    zlib-1.2.3-2-msys-1.0.13-dll
+    coreutils-5.97-3-msys-1.0.13-bin
+    make-3.81-3-msys-1.0.13-bin
+    patch-2.6.1-1-msys-1.0.13-bin
+    bash-3.1.17-3-msys-1.0.13-bin
+    tar-1.23-2-msys-1.0.13-bin
+    bzip2-1.0.5-2-msys-1.0.13-bin
+    libbz2-1.0.5-2-msys-1.0.13-dll-1
+    xz-4.999.9beta_20100401-1-msys-1.0.13-bin
+    liblzma-4.999.9beta_20100401-1-msys-1.0.13-dll-1
+    file-5.04-2-msys-1.0.13-bin
+    grep-2.5.4-2-msys-1.0.13-bin
+    sed-4.2.1-2-msys-1.0.13-bin
+    gawk-3.1.7-2-msys-1.0.13-bin
+    texinfo-4.13a-2-msys-1.0.13-bin
+ 
+Canonical homepage:
+  http://www.gnu.org/software/autogen/
+
+Canonical download:
+  http://ftp.gnu.org/pub/gnu/autogen/
+
+License:
+  GPLv3
+  AutoOpts: GPL, with the exception that it is allowed to be linked 
+            with non-free programs. See the text for fuller details.
+
+  Generated file licensing depends on the license of the template involved:
+    AutoFSM generates Finite State Machines that are licensed under the
+            BSD license, sans the advertising clause.
+
+Language:
+  C, custom
+
+========================================================================
+
+Build instructions:
+  unpack autogen-5.10.1-1-msys-1.0.15-src.tar.lzma
+  ./msys-build-autogen autogen-5.10.1.tar.bz2
+
+This will create:
+  autogen-5.10.1-1-msys-1.0.15-src.tar.lzma
+  autogen-5.10.1-1-msys-1.0.15-bin.tar.lzma
+  libopts-5.10.1-1-msys-1.0.15-dll-25.tar.lzma
+  libopts-5.10.1-1-msys-1.0.15-dev.tar.lzma
+  autogen-5.10.1-1-msys-1.0.15-doc.tar.lzma
+  autogen-5.10.1-1-msys-1.0.15-lic.tar.lzma
+
+========================================================================
+
+Test suite results
+
+This section of this document is updated with each new release.
+No history is maintained here.
+
+Automated test suite can't be executed (the suite believes that every
+test fails, because autogen.exe coredumps *after* generating the correct
+output). But...when the test fails, the suite then attempts to save the
+test directory, but since the coredump leaves a zombie process, it can't
+do that...and things just get messy.
+
+However, hand-running some selected tests seem to indicate that
+autogen works correctly -- or, at least, does generate correct output.
+
+========================================================================
+
+Port Notes:
+
+1) <autoopts/options.h> unconditionally includes stdint.h -- and libopts
+   now fails to compile if neither stdint.h nor inttype.h are present.
+   MSYS provides neither.  Therefore, this package includes suitable
+   versions of stdint.h and inttypes.h.  To avoid conflicting with any
+   future MSYS implementations that may supply these headers, these
+   temporary versions are installed into an odd location:
+      /usr/share/doc/autogen/5.10.1/headers
+   so you must include -I/usr/share/doc/autogen/5.10.1/headers when
+   building any client of the libopts library.
+
+2) The autogen build will hang at a certain point in the build. Find
+   the last process in the tree and kill it.  This will probably result
+   in the next step reporting "recreate_mmaps_after_fork_failed" which
+   is a symptom of the rebase problem.  To solve it:
+     a) copy the autoopts/.libs/msys-opts-25.dll to /bin
+     b) shut everything down
+     c) run rebaseall from a dash shell
+     d) copy /bin/msys-opts-25.dll back to autoopts/.libs/
+     e) restart the build (this may require commenting out certain
+        steps in msys-build-autogen, and launching the buildscript
+	from inside the srcdir).
+        Alternatively, you can try to use the rebase tool directly
+	on autoopts/.libs/msys-opts-25.dll, and give it a very low
+	base address (say, 0x58000000) where it *probably* won't
+	conflict with other msys DLLs.
+
+3) The test suite has many failures -- but they are intermittent,
+   and all involve "recreate_mmaps_after_fork_failed" -- e.g. the
+   rebase problem.  I assume that a properly installed version of
+   autogen, with the DLLs properly rebased for a specific system,
+   will exhibit fewer of these issues.
+
+   An alternative possibility, since the remap errors all involve
+   mmap, is to /not use mmap/ -- but that will require a lot of
+   re-coding, since autogen-5.10.1 does not properly guard against
+   mmap-not-present, nor provide its own alternative non-mmap-based
+   implementation. So, we can't fool it by simply configuring with
+   ac_cv_mmap=no or somesuch.
+
+Here's a simple test:
+http://autogen.sourceforge.net/doc/autogen_3.html
+
+Invoke as 'autogen list.def'
+
+============= input: list.def ================
+autogen definitions list;
+list = { list_element = alpha;
+           list_info    = "some alpha stuff"; };
+list = { list_info    = "more beta stuff";
+           list_element = beta; };
+list = { list_element = omega;
+           list_info    = "final omega stuff"; };
+==============================================
+
+============= input: list.tpl ================
+[+ AutoGen5 template h c +]
+[+ CASE (suffix) +][+
+   ==  h  +]
+typedef enum {[+
+   FOR list "," +]
+        IDX_[+ (string-upcase! (get "list_element")) +][+
+   ENDFOR list +] }  list_enum;
+
+extern char const* az_name_list[ [+ (count "list") +] ];
+[+
+
+   ==  c  +]
+#include "list.h"
+char const* az_name_list[] = {[+
+  FOR list "," +]
+        "[+list_info+]"[+
+  ENDFOR list +] };[+
+
+ESAC +]
+==============================================
+
+
+========= expected output: list.h ============
+typedef enum {
+        IDX_ALPHA,
+        IDX_BETA,
+        IDX_OMEGA }  list_enum;
+
+extern char const* az_name_list[ 3 ];
+==============================================
+
+========= expected output: list.h ============
+#include "list.h"
+char const* az_name_list[] = {
+        "some alpha stuff",
+        "more beta stuff",
+        "final omega stuff" };
+==============================================
+
+
+
+----------  autogen-5.10.1-1 -- 2010 May 08 -----------
+* Rebuild with latest msys-gcc-3.x compiler, against msys 1.0.13
+  - exploit auto-import and runtime pseudo-relocs; avoid -DSCM_IMPORT
+    and -DAO_IMPORT
+  - binary clients must link using -Wl,--enable-runtime-pseudo-reloc-v2
+  - requires a fix in the msys-1.0.15 pseudo-reloc implementation
+    but that is only necessary at *build* time, not run time.
+* Many upstream changes
+  - libguileopts is no longer provided
+  - autogen doesn't crash on exit anymore
+
+----------  autogen-5.9.2-2 -- 2009 Aug 26 -----------
+* First release of autogen for msys using new packaging standard.

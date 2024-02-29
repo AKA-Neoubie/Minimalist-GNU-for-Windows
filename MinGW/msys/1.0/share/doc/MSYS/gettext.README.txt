@@ -1,0 +1,245 @@
+msys gettext
+========================================================================
+This is not the gettext you are looking for.
+
+This is the current version of gettext, GNU Internationalization library
+and utilities, as modified specifically for use in the MSYS DVLPR
+environment; that is, it is intended to be used only when producing
+binary packages for the MSYS subsystem.  If you intend to produce
+executables for the native "mingw32" subsystem (that is, applications
+that should work on Microsoft Windows installations without the MSYS DLL),
+then you should use the following version instead, which is generally
+installed into the /mingw (C:\MinGW) directory:
+
+   gettext-0.18.1.1-2-mingw32-bin
+   gettext-0.18.1.1-2-mingw32-dev
+   gettext-0.18.1.1-2-mingw32-doc
+   gettext-0.18.1.1-2-mingw32-lic
+   gettext-0.18.1.1-2-mingw32-ext
+   libasprintf-0.18.1.1-2-mingw32-dll-0
+   libgettextpo-0.18.1.1-2-mingw32-dll-0
+   libintl-0.18.1.1-2-mingw32-dll-8
+
+This msys-specific version of gettext, and the related msys-specific
+versions of autoconf, automake, and libtool, are NOT intended for use
+other than from within the MSYS DVLPR environment.  These packages are
+installed into /bin, but the /mingw/bin directory typically precedes
+that directory in the PATH -- and the "normal" versions of the autotools
+should be installed into /mingw/bin, so they usually take precedence.
+Only in the MSYS DVLPR environment would this version of gettext be
+encounted.
+
+Proper operation of this gettext distribution requires a working
+MSYS installation, as well as certain other elements available from
+the MinGW team (http://www.mingw.org/) as listed below.  This gettext
+distribution was configured as part of the "msys" subsystem, and should
+be installed into the / directory (which is usually, but not always,
+C:\MinGW\msys\1.0).
+
+Runtime requirements
+  msys-core-bin                   1.0.17-1
+  msys-libintl-dll-8              0.18.1.1-1
+  msys-libgettextpo-dll-0         0.18.1.1-1
+  msys-libiconv-dll-2             1.14-1
+  msys-libexpat-dll-1             2.0.1-1
+  msys-libtermcap-dll-0           0.20050421_1-2
+  msys-termcap-bin                0.20050421_1-2
+  msys-cvs-bin                    1.12.13-1
+
+Additional runtime requirements for autopoint, gettextize, and gettext.sh
+  msys-autoconf-bin               2.68-1
+  msys-automake-bin               1.11.1-1
+  msys-core-bin                   1.0.17-1
+  msys-coreutils-bin              5.97-3
+  msys-perl-bin                   5.8.8-1
+  msys-libcrypt-dll-0             1.1_1-3
+  msys-libgdbm-dll-3              1.8.3-3
+  msys-zlib-dll                   1.2.5-1
+  msys-cvs-bin                    1.12.13-2
+
+Build requirements (these, or newer)
+  msys-gcc-bin                    3.4.4-3
+  msys-binutils-bin               2.19.51-3
+  msys-w32api-dev                 3.14-3
+  msys-libtool                    2.4-1
+  msys-libiconv-bin               1.14-1
+  msys-libiconv-dev               1.14-1
+  msys-libexpat-dev               2.0.1-1
+  msys-libtermcap-dev             0.20050421_1-2
+  mingw32-gcc-tools-epoch2-autoconf-bin         2.64-1
+  mingw32-gcc-tools-epoch2-automake-bin         1.11.1-1
+  mingw32-mgwport-bin             0.10.5-1
+
+  msys-core-bin                   1.0.17-1
+  msys-coreutils-bin              5.97-3
+  msys-bash-bin                   3.1.17-4
+  msys-patch-bin                  2.6.1-1
+  msys-make-bin                   3.81-3
+  msys-tar-bin                    1.23-1
+  msys-sed-bin                    4.2.1-2
+  msys-gawk-bin                   3.1.7-2
+  msys-gzip-bin                   1.3.12-2
+  msys-bzip2-bin                  1.0.6-3
+  msys-xz-bin                     5.0.3-1
+  msys-wget-bin                   1.12-1
+  msys-texinfo-bin                4.13a-2
+  msys-file-bin                   5.04-1
+  msys-cvs-bin                    1.12.13-1
+  msys-perl-bin                   5.8.8-1
+  msys-libcrypt-dll-0             1.1_1-3
+  msys-libgdbm-dll-3              1.8.3-3
+  msys-zlib-dll                   1.2.5-1
+  
+Canonical homepage:
+  http://www.gnu.org/software/gettext/
+
+Canonical download:
+  ftp://ftp.gnu.org/pub/gnu/gettext/
+
+License:
+  GPL
+
+Language:
+  C, C++, C#, CLisp, Java, ObjC, Pascal, Perl, Python, Php, Shell, Smalltak, tcl, 
+
+========================================================================
+
+Build instructions:
+  unpack gettext-0.18.1.1-1-msys-1.0.17-src.tar.lzma
+  mgwport gettext-0.18.1.1-1.msysport all
+
+This will create:
+  gettext-0.18.1.1-1-msys-1.0.17-src.tar.lzma
+  gettext-0.18.1.1-1-msys-1.0.17-bin.tar.lzma
+  gettext-0.18.1.1-1-msys-1.0.17-dev.tar.lzma
+  gettext-0.18.1.1-1-msys-1.0.17-doc.tar.lzma
+  gettext-0.18.1.1-1-msys-1.0.17-lic.tar.lzma
+  gettext-0.18.1.1-1-msys-1.0.17-ext.tar.lzma
+  libasprintf-0.18.1.1-1-msys-1.0.17-dll-0.tar.lzma
+  libgettextpo-0.18.1.1-1-msys-1.0.17-dll-0.tar.lzma
+  libintl-0.18.1.1-1-msys-1.0.17-dll-8.tar.lzma
+
+See `mgwport --help' for other options.
+
+========================================================================
+
+Test suite results
+This section of this document is updated with each new release.
+No history is maintained here.
+
+gettext-runtime
+-----------------------------------------------------------------------
+All 0 tests passed
+(no threads, no need to test thread support)
+
+gettext-tools
+-----------------------------------------------------------------------
+All 313 tests passed (31 tests were not run)
+
+SKIP: gettext-{3,4,5,6,7,8}
+SKIP: msgunfmt-{csharp-1,java-1,tcl-1}
+SKIP: recode-sr-latin-{1,2}
+SKIP: format-c-5
+SKIP: lang-{c,c++,objc,sh,bash,python-1,python-2}
+SKIP: lang-{clisp,librep,guile,smalltalk,java,csharp}
+SKIP: lang-{gawk,pascal,tcl,perl-1,perl-2,php}
+
+
+gettext-tools/gnulib-tests
+-----------------------------------------------------------------------
+11 of 105 tests failed (18 tests were not run)
+
+FAIL: test-set-mode-acl.sh
+FAIL: test-copy-acl.sh
+FAIL: test-copy-file.sh
+      ACLs and permissions not really supported on MSYS
+
+FAIL: test-dup2.exe
+      *** couldn't commit memory for cygwin heap, Win32 error 0
+
+FAIL: test-fcntl.exe
+FAIL: test-fopen.exe
+      MSYS bug? sets errno to unexpected value
+
+FAIL: test-open.exe
+      MSYS bug? open(".", O_WRONLY) succeeds (expected failure)
+
+FAIL: test-pipe-filter-ii1.sh
+      MSYS bug: works for small files, but hangs with huge files
+      and must be manually killed.
+
+FAIL: test-sigaction.exe
+      MSYS bug (not surprising; signal handling was wonky in 1.3)
+
+FAIL: test-lstat.exe
+FAIL: test-stat.exe
+      MSYS bug? lstat ("///", &st2) returns -1  (expected 0)
+
+SKIP: test-mbrtowc{1,2,3,4}.sh
+SKIP: test-mbsinit.sh
+SKIP: test-mbsrtowcs{1,2,3,4}.sh
+SKIP: test-mbsstr{2,3}.sh
+      Necessary locales not supported
+
+SKIP: test-lock.exe
+SKIP: test-tls.exe
+      multithreading not enabled
+
+SKIP: test-areadlink.exe, test-canonicalize-lgpl.exe
+SKIP: test-readlink.exe, test-rmdir.exe, test-symlink.exe
+      symlinks not supported on this file system
+
+========================================================================
+
+Port Notes:
+
+----------  gettext-0.18.1.1-1 -- 2011 Oct 29 -----------
+* Update to latest upstream release
+* Include patches derived from mingw32 gettext-0.18.1.1-2
+* Switch build system to use mgwport
+
+----------  gettext-0.17-2 -- 2010 Jan 31 -----------
+* Rebuild against msys-1.0.13, using (msys)gcc-3.4.4
+  and (msys)binutils-2.19.51.
+* Build as DLL, now that we have a gcc that supports the necessary
+  mechanisms.
+* Use -O3 -fno-unit-at-a-time to avoid optimization bug
+  in latest msys-gcc. Also, don't use -mms-bitfields
+  when compiling msys binaries.
+* Compiled using the following flags:
+     --enable-shared --enable-static
+     --disable-threads --disable-openmp
+     --disable-native-java
+  * No threads, nor openmp: MSYS has difficulty with the former, and gcc-3.4.4
+    doesn't support the latter.
+  * Now, with DLLs!
+  * MSYS does not provide a java implementation, so no need for a java-
+    specific gettext implementation.
+
+----------  gettext-0.17-1 -- 2009 Jul 31 -----------
+* First release of gettext for msys using new packaging standard.
+* Includes patches derived from cygwin gettext-0.17-11
+* Includes patches derived from the gettext-0.17-1-mingw32 distribution:
+    * build-aux/fixaclocal: work around bug with MSYS path
+    conversion and sed expression.
+    * gettext-tools/configure.ac: Explicitly require C++ compiler.
+    * gettext-tools/woe32dll/gettextlib-exports.c: Newer mingwrt
+    supplies functional long_getopt in -lmingwex; no need for rpl.
+    * gettext-tools/misc/gettextize.in: Properly handle pathnames
+    with '\\' path separators.
+    * gettext-tools/misc/autopoint.in: Ditto.
+* Includes additional MSYS-specific patches. Mostly, replacing
+  "*-*-cygwin*" patterns with "*-*-cygwin* | *-*-msys*", and
+  "#if defined __CYGWIN__" with "#if defined __CYGWIN__ || defined __MSYS__"
+* Compiled using the following flags:
+     --disable-shared --enable-static
+     --disable-threads --disable-openmp
+     --disable-native-java
+  * No threads, nor openmp: MSYS has difficulty with the former, and gcc-2.95.3
+    doesn't support the latter.
+  * No DLLs: Upstream uses an interesting approach to building shared libraries
+    on "woe32" platforms -- but gcc-2.95.3 doesn't support the necessary
+    constructs.
+  * As with the cygwin distribution of 0.17, there is only limited
+    java support; no "native java" included.
+

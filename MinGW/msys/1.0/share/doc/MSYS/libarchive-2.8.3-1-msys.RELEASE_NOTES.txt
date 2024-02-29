@@ -1,0 +1,229 @@
+msys libarchive
+========================================================================
+Libarchive is a programming library that can create and read several
+different streaming archive formats, including most popular tar
+variants and several cpio formats. It can also write shar archives and
+read ISO9660 CDROM images. The bsdtar program is an implementation of
+tar(1) that is built on top of libarchive. It started as a test
+harness, but has grown and is now the standard system tar for FreeBSD 5
+and 6.
+
+This version has been modified and compiled for use in the MSYS
+environment. It should be installed into the / == /usr directory,
+which is usually, but not always, C:\msys\1.0.
+
+The libarchive library offers a number of features that make it both
+very flexible and very powerful.
+
+- Automatic format detection: libarchive can automatically determine
+   both the compression and the archive format, regardless of the
+   data source. Most tar implementations do not automatically detect
+   the compression format, few implementation that can correctly do
+   this when reading from stdin or a socket. (The tar program
+   included with Gunnar Ritter's heirloom collection also does full
+   automatic format detection.)
+
+- Writes POSIX formats: libarchive writes POSIX-standard formats,
+   including "ustar," "pax interchange format," and the POSIX "cpio"
+   format.
+
+- Supports pax interchange format: Pax interchange format (which,
+   despite the name, is really an extended tar format) eliminates
+   almost all limitations of historic tar formats and provides a
+   standard method for incorporating vendor-specific extensions.
+   libarchive exploits this extension mechanism to support ACLs and
+   file flags, for example. (Joerg Schilling's star archiver is
+   another open-source tar program that supports pax interchange
+   format.)
+
+- Reads popular formats: libarchive can read GNU tar, ustar, pax
+   interchange format, cpio, and older tar variants. The internal
+   architecture is easily extensible. The only requirement for
+   support is that it be possible to read the format without seeking
+   in the file. (For example, a format that includes a compressed
+   size field before the data cannot be correctly written without
+   seeking.)
+
+- High-Level API: the libarchive API makes it fairly simple to build
+   an archive from a list of filenames or to extract the entries
+   from an archive. However, the API also provides extreme
+   flexibility with regards to data sources. For example, there are
+   generic hooks that allow you to write an archive to a socket or
+   read data from an archive entry into a memory buffer.
+
+- Extensible. The internal design uses generic interfaces for
+   compression, archive format detection and decoding, and archive data
+   I/O. It should be very easy to add new formats, new compression
+   methods, or new ways of reading/writing archives.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  libopenssl-1.0.0-1-msys-1.0.13-dll-100
+  zlib-1.2.3-2-msys-1.0.13-dll
+  libbz2-1.0.5-2-msys-1.0.13-dll-1
+  liblzma-4.999.9beta_20100401-1-msys-1.0.13-dll-1
+
+Build requirements (these, or newer)
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    bzip2-1.0.5-2-msys-1.0.13-bin
+    libbz2-1.0.5-2-msys-1.0.13-dll-1
+    coreutils-5.97-2-msys-1.0.11-bin
+    diffutils-2.8.7.20071206cvs-2-msys-1.0.11-bin
+    findutils-4.4.2-1-msys-1.0.11-bin
+    gawk-3.1.7-1-msys-1.0.11-bin
+    grep-2.5.4-1-msys-1.0.11-bin
+    gzip-1.3.12-1-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    m4-1.4.13-1-msys-1.0.11-bin
+    patch-2.5.9-1-msys-1.0.11-bin
+    sed-4.2.1-1-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20100401-1-msys-1.0.13-bin
+
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+
+  Devel Tools and Dependent Libraries
+    libiconv-1.13.1-2-msys-1.0.13-dev
+    gettext-0.17-2-msys-1.0.13-dev
+    gettext-0.17-2-msys-1.0.13-bin
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libtool-2.2.7a-2-msys-1.0.13-bin
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    cvs-1.12.13-1-msys-1.0.11-bin
+    libopenssl-1.0.0-1-msys-1.0.13-dev
+    zlib-1.2.3-2-msys-1.0.13-dev
+    libbz2-1.0.5-2-msys-1.0.13-dev
+    liblzma-4.999.9beta_20100401-1-msys-1.0.13-dev
+ 
+Canonical homepage:
+  http://code.google.com/p/libarchive/
+
+Canonical download:
+  http://code.google.com/p/libarchive/downloads/list
+
+License:
+  BSD (2-clause)
+  BSD (3-clause)
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack libarchive-2.8.3-1-msys-1.0.13-src.tar.lzma
+  ./msys-build-libarchive libarchive-2.7.1.tar.gz
+
+This will create:
+  libarchive-2.8.3-1-msys-1.0.13-src.tar.lzma
+  bsdtar-2.8.3-1-msys-1.0.13-bin.tar.lzma
+  bsdcpio-2.8.3-1-msys-1.0.13-bin.tar.lzma
+  libarchive-2.8.3-1-msys-1.0.13-dll-2.tar.lzma
+  libarchive-2.8.3-1-msys-1.0.13-dev.tar.lzma
+  libarchive-2.8.3-1-msys-1.0.13-doc.tar.lzma
+  libarchive-2.8.3-1-msys-1.0.13-lic.tar.lzma
+
+========================================================================
+
+Test suite results
+
+This section of this document is updated with each new release.
+No history is maintained here.
+
+libarchive_test:
+=============================
+Totals:
+  Tests run:              106
+  Tests failed:             5
+  Assertions checked: 2823445
+  Assertions failed:       42
+  Skips reported:          10
+
+Failing tests:
+  28: test_read_extract (6 failures)          (1)
+  83: test_write_disk (8 failures)            (1)
+  85: test_write_disk_hardlink (4 failures)   (1)
+  86: test_write_disk_perms (17 failures)     (1)
+  87: test_write_disk_secure (7 failures)     (1,2)
+
+(1) related to MSYS "permission bits" emulation
+(2) related to MSYS lack of true symlink support.
+
+bsdtar_test:
+=============================
+Totals:
+  Tests run:               16
+  Tests failed:             1
+  Assertions checked:    1610
+  Assertions failed:        2
+  Skips reported:           5
+
+Failing tests:
+  1: test_basic (2 failures)      (1)
+
+(1) permission bits
+
+
+bsdcpio_test:
+=============================
+Totals:
+  Tests run:               27
+  Tests failed:             8
+  Assertions checked:     806
+  Assertions failed:       67
+  Skips reported:           2
+
+Failing tests:
+  1: test_basic (12 failures)                (1)
+  3: test_format_newc (1 failures)           (1)
+  4: test_gcpio_compat (44 failures)         (2)
+  11: test_option_c (1 failures)             (1)
+  18: test_option_t (3 failures)             (3)
+  23: test_owner_parse (4 failures)          (4)
+  24: test_passthrough_dotdot (1 failures)   (1)
+  25: test_passthrough_reverse (1 failures)  (1)
+
+(1) MSYS permissions
+(2) Bug in testsuite: file required for testing cpio on systems
+    without symlink support (test_gcpio_compat_ref_nosym.bin.uu)
+    is not included in distribution.
+(3) Date difference (just before midnight Dec 31 1969 != just
+    after midnight Jan 01 1970.
+(4) MSYS pretends to be root, but isn't.
+
+
+However, don't let these test results scare you. Most of the failures
+fall into two categories:
+  1) MSYS doesn't support symlinks
+  2) MSYS doesn't properly support posix-style permissions (e.g.
+     chmod)
+
+The only exceptions are two failures that I've papered over, by
+modifying the test code:
+  1) MSYS does not handle paths approaching PATH_MAX very well; it
+     coredumps with paths around 150 characters long, even though
+     PATH_MAX is 260.  This is an MSYS issue, so presumably other
+     tar implementations would have similar problems. "Don't Do That".
+  2) Some slight issues with timezone support near the unix epoch
+     (Jan 01, 1970)
+  3) libarchive-on-msys "thinks" it should be able to chown files
+     but MSYS itself doesn't really support that.
+========================================================================
+
+Port Notes:
+
+----------  libarchive-2.8.3-1 -- 2010 Apr 10 -----------
+* Update to latest upstream release.
+* Rebuild with new msys-gcc against recent msys dll.
+
+----------  libarchive-2.7.1-1 -- 2009 Aug 07 -----------
+* First release of libarchive for msys using new packaging standard. 
+

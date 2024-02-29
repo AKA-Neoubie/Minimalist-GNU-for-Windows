@@ -1,0 +1,94 @@
+msys libxml2
+========================================================================
+Libxml2 is the XML C parser and toolkit developed for the Gnome project
+(but usable outside of the Gnome platform), it is free software
+available under the MIT License. XML itself is a metalanguage to design
+markup languages, i.e. text language where semantic and structure are
+added to the content using extra 'markup' information enclosed between
+angle brackets. HTML is the most well- known markup language. Though the
+library is written in C a variety of language bindings make it available
+in other environments.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  libxml2-2.0.1-1-msys-1.0.13-dll-2
+  libiconv-1.13.1-2-msys-dll-2
+  zlib-1.2.3-2-msys-1.0.13-dll
+
+Build requirements:
+  binutils-2.19.51-3-msys-1.0.13-bin
+  gcc-3.4.4-3-msys-1.0.13-bin
+  w32api-3.14-3-msys-1.0.12-dev
+  msysCORE-1.0.13-2-msys-1.0.13-dev
+
+  Devel Tools and Dependent Libraries
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libtool-2.2.7a-2-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-dev
+    zlib-1.2.3-2-msys-1.0.13-dev
+
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+    coreutils-5.97-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20100131-1-msys-1.0.13-bin
+    gzip-1.3.12-1-msys-1.0.11-bin
+    liblzma-4.999.9beta_20100131-1-msys-1.0.13-dll-1
+    zlib-1.2.3-2-msys-1.0.13-dll
+    gawk-3.1.7-1-msys-1.0.11-bin
+    sed-4.2.1-1-msys-1.0.11-bin
+
+Canonical homepage:
+  http://xmlsoft.org/
+
+Canonical download:
+  ftp://xmlsoft.org/libxml2/
+
+========================================================================
+Build instructions:
+  unpack libxml2-2.7.6-X-msys-1.0.13-src.tar.lzma
+  ./msys-build-libxml2 libxml2-2.7.6.tar.gz
+
+This will create:
+  libxml2-2.7.6-X-msys-1.0.13-src.tar.lzma
+  libxml2-2.7.6-X-msys-1.0.13-bin.tar.lzma
+  libxml2-2.7.6-X-msys-1.0.13-doc.tar.lzma
+  libxml2-2.7.6-X-msys-1.0.13-lic.tar.lzma
+  libxml2-2.7.6-X-msys-1.0.13-dll-2.tar.lzma
+  libxml2-2.7.6-X-msys-1.0.13-dev.tar.lzma
+
+========================================================================
+
+Test Results:
+This section of this document is updated with each new release.
+No history is maintained here.
+
+runtest       Total 2319 tests, 10 errors, 0 leaks
+              (all repeated ebcdic failures)
+testrecurse   Total 9 tests, no errors
+testapi (*)   Total: 1124 functions, 274012 tests, 0 errors
+testchar      All pass
+testdict      dictionary tests succeeded 20000 strings
+runxmlconf    (skipped: missing xmlts20080205.tar.gz)
+
+(*) Test patched to skip http://localhost/ and similar tests; windows
+    networking timeout is 120 seconds each, for 200 or so subtests.
+    No thanks.
+========================================================================
+
+Port Notes:
+
+The following behavior/capability modifying configure options
+are used:
+        --disable-ipv6          : not supported by msys
+        --without-python        : ...
+        --without-ftpd          : tickles an bug (SEGV) in MSYS' socket
+        --without-http          :    implementation, so avoid.
+        --with-history          :
+
+----- libxml2-2.7.6-1 -----
+* Initial msys release
+

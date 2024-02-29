@@ -1,0 +1,131 @@
+msys cvs
+========================================================================
+CVS is a version control system, which allows you to keep old versions
+of files (usually source code), and maintains a log of who, when, and
+why changes occurred, etc., like RCS or SCCS.
+
+This version has been modified and compiled for use in the MSYS
+environment. It should be installed into the / == /usr directory, which
+is usually but not always, C:\msys\1.0.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  libintl-0.17-2-msys-1.0.13-dll-8
+  libiconv-1.13.1-2-msys-dll-2
+  libcrypt-1.1_1-3-msys-1.0.13-dll-0
+
+Optional runtime requiremenst:
+  perl (necessary only to build/use the scripts in
+        the contrib/ directory)
+  openssh   (for connecting with remote clients over ssh)
+  inetutils (for connecting with remote clients over rsh)
+
+Build requirements (these, or newer)
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+
+  Devel Tools and Dependent Libraries 
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-dev
+    gettext-0.17-2-msys-1.0.13-bin
+    gettext-0.17-2-msys-1.0.13-dev
+    libgettextpo-0.17-2-msys-1.0.13-dll-0
+    texinfo-4.13a-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dev
+    vim-7.2-1-msys-1.0.11-bin (cvs build autodetects editor)
+
+  MSYS Environment
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    libgdbm-1.8.3-3-msys-1.0.13-dll-3
+    zlib-1.2.3-2-msys-1.0.13-dll
+    coreutils-5.97-2-msys-1.0.11-bin
+    bison-2.4.2-1-msys-1.0.13-bin
+    bison-2.4.2-1-msys-1.0.13-rtm
+    make-3.81-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    tar-1.23-2-msys-1.0.13-bin
+    xz-4.999.9beta_20100401-1-msys-1.0.13-bin
+    liblzma-4.999.9beta_20100401-1-msys-1.0.13-dll-1
+    bzip2-1.0.5-2-msys-1.0.13-bin
+    libbz2-1.0.5-2-msys-1.0.13-dll-1
+    file-5.04-2-msys-1.0.13-bin
+    grep-2.5.4-2-msys-1.0.13-bin
+    sed-4.2.1-2-msys-1.0.13-bin
+    gawk-3.1.7-2-msys-1.0.13-bin
+    cvs-1.12.13-2-msys-1.0.13-bin [*]
+
+[*] circular dependency can be broken by first building
+    cvs with --disable-nls. cvs is used in this context
+    by autopoint, to update the internal libintl macros
+    and sources to version 0.17, so --disable-nls helps
+    avoid that.
+
+Canonical homepage:
+  http://www.nongnu.org/cvs/
+
+Canonical download:
+  http://download.savannah.gnu.org/releases/
+
+License:
+  GPLv2
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack cvs-1.12.13-2-msys-1.0.13-src.tar.lzma
+  ./msys-build-cvs cvs-1.12.13.tar.gz
+
+This will create:
+  cvs-1.12.13-2-msys-1.0.13-src.tar.lzma
+  cvs-1.12.13-2-msys-1.0.13-bin.tar.lzma
+  cvs-1.12.13-2-msys-1.0.13-lang.tar.lzma
+  cvs-1.12.13-2-msys-1.0.13-doc.tar.lzma
+  cvs-1.12.13-2-msys-1.0.13-lic.tar.lzma
+
+========================================================================
+
+Test suite results
+
+This section of this document is updated with each new release.
+No history is maintained here.
+
+No regressions from cvs-1.11.22-MSYS-1.0.11-1-bin
+No regressions from cvs-1.12.13-1-msys-1.0.11-bin
+
+Only ran the "local" tests; "remote" tests require a working MSYS
+sshd or rshd server (a cygwin one won't do).
+
+There were 6 failures in 175 tests (same as 1.11.22, and 1.12.13-1):
+  rcslib   : MSYS doesn't support symlinks
+  abspath  : cygwin also fails this one
+  toplevel : MSYS is lax with respect to permissions
+  lockfiles: MSYS is lax with respect to permissions
+  modes    : MSYS is lax with respect to permissions
+  modes3   : MSYS is lax with respect to permissions
+
+========================================================================
+
+Port Notes:
+
+----------  cvs-1.12.13-2 -- 2010 Apr 26 -----------
+* Rebuild with latest msys-gcc-3.x compiler, against msys 1.0.13
+* Link against DLL version of libintl and libiconv
+* Provide i18n files into separate -lang package
+* updated to latest autoconf (2.65), automake (1.11.1), and gettext
+  (0.17-2).
+
+----------  cvs-1.12.13-1 -- 2009 Aug 14 -----------
+* First release of cvs for msys using new packaging standard.
+* updated to 'Feature Branch' 1.12.x
+* updated to Debian patchset 1.12.13-12
+* updated to recent gnulib (2009-04-25, rev.
+  b3fef2a47fcc4c239a618ffd71d55af00650572a)
+* updated to latest autoconf (2.63), automake (1.11), and gettext (0.17).

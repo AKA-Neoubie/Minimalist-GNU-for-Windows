@@ -1,0 +1,478 @@
+msys inetutils
+========================================================================
+This package provides common networking clients, including telnet, ftp,
+rsh, rlogin, tftp, and rcp, adapated and compiled for the MSYS platform
+on Microsoft Windows.
+
+This msys package provides no servers, nor the talk client.
+
+Most of these utilities are security nightmares, dating from a time when
+the internet was a more innocent place.  It is NOT recommended that you
+enable or use ANY of these utilities -- unless you have a VERY good
+reason.
+
+For telnet, rlogin, rsh, rexec, rcp, the MSYS openssh package provides
+a full replacement that is secure.
+
+The ftp protocol is fundamentally flawed, but if you must use it, the
+client is provided. (Note that there are a myriad of other ftp clients,
+both GUI and "native", that can be used from within an MSYS environemnt).
+
+tftp is an atrocious, repulsive security horror freak show, with ZERO
+authentication.  Fortunately it is only used in specialized situations
+(primarily these days in development of embedded software via direct
+connections or protected local networks).
+
+So why is this package present?  Because as insecure and flawed as they
+are, the telnet, ftp, and r* tools and protocols are still in wide use,
+and their conspicuous absence would be viewed as a flaw, not a feature.
+
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  termcap-0.20050421_1-2-msys-1.0.13-bin
+  libminires-1.02_1-2-msys-1.0.13-dll
+  bison-2.4.1-2-msys-1.0.13-rtm
+
+Build requirements (these, or newer)
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+
+  Devel Tools and Dependent Libraries 
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-dev
+    gettext-0.17-2-msys-1.0.13-bin
+    gettext-0.17-2-msys-1.0.13-dev
+    libgettextpo-0.17-2-msys-1.0.13-dll-0
+    termcap-0.20050421_1-2-msys-1.0.13-dev
+    libcrypt-1.1_1-3-msys-1.0.13-dev
+    libminires-1.02_1-2-msys-1.0.13-dev
+    flex-2.5.35-2-msys-1.0.13-bin
+    bison-2.4.1-2-msys-1.0.13-bin
+    bison-2.4.1-2-msys-1.0.13-rtm
+    libregex-1.20090805-2-msys-1.0.13-dll-1
+
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-bin
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    libgdbm-1.8.3-3-msys-1.0.13-dll-3
+    zlib-1.2.3-2-msys-1.0.13-dll
+    coreutils-5.97-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20100131-1-msys-1.0.13-bin
+    gzip-1.3.12-1-msys-1.0.11-bin
+    liblzma-4.999.9beta_20100131-1-msys-1.0.13-dll-1
+    file-5.03-1-msys-1.0.11-bin
+    grep-2.5.4-1-msys-1.0.11-bin
+    sed-4.2.1-1-msys-1.0.11-bin
+    gawk-3.1.7-1-msys-1.0.11-bin
+    cvs-1.12.13-1-msys-1.0.11-bin
+    patch-2.5.9-1-msys-1.0.11-bin
+
+Canonical homepage:
+  http://www.gnu.org/software/inetutils
+
+Canonical download:
+  http://ftp.gnu.org/gnu/inetutils
+
+License:
+  GPLv3
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack inetutils-1.7-X-msys-1.0.13-src.tar.lzma
+  ./msys-build-inetutils inetutils-1.7.tar.bz2
+
+This will create:
+  inetutils-1.7-X-msys-1.0.13-src.tar.lzma
+  inetutils-1.7-X-msys-1.0.13-bin.tar.lzma
+  inetutils-1.7-X-msys-1.0.13-dev.tar.lzma
+  inetutils-1.7-X-msys-1.0.13-doc.tar.lzma
+  inetutils-1.7-X-msys-1.0.13-lic.tar.lzma
+
+The -dev package provides a few header files that are missing from
+the MSYS runtime (as well as from cygwin, even as late as 1.7.0).
+Technically, these headers should be added to the msysCORE package;
+I imagine that will happen about 7.3 years after cygwin adds them,
+which hasn't happened yet either.
+
+The following omissions in certain header files provided by MSYS
+caused build warnings and sometimes errors. The files in question
+have been corrected as of 2010-03-29, but as of 2010-04-02 there
+has not yet been an official msysCORE-*-msys-*-dev release that
+provides the corrected files. You'll need to modify them manually,
+as described below:
+
+/usr/include/netdb.h -- declare rcmd, rexec, and rresvport.
+(There's actually another issue with these three functions; see
+the detailed port notes section, below).
+
+  int rcmd (char **, unsigned short, const char *, const char *,
+            const char *, int *);
+  int rexec (char **, unsigned short, char *, char *, char *, int *);
+  int rresvport (int *);
+
+/usr/include/sys/unistd.h -- Declare fchdir and getdomainname.
+
+  int _EXFUN(fchdir, (int __fildes));
+  int _EXFUN(getdomainname ,(char *__name, size_t __len));
+  
+========================================================================
+
+Test suite results
+This section of this document is updated with each new release.
+No history is maintained here.
+
+========================================================================
+
+Port Notes:
+
+identd authentication
++++++++++++++++++++++
+In some cases, client applications such as rsh, rlogin, and ftp, may
+experience long delays during authentication.  There are two possible
+explanations:
+
+  1) Poor DNS configuration; make sure the client can do both forward
+     and reverse DNS lookups of the server, and that the server can
+     do both forward and reverse DNS lookups of the client.
+
+  2) In some cases, the *client* machine must be running an identd
+     server, so that the *server* daemon can do an auth callback.
+     MSYS does not provide an identd server, but the following
+        http://rndware.info/products/windows-ident-server.html
+     works pretty well. It's a free-as-in-beer, but closed-source,
+     identd service for Win32.  You'll need to open a hole in your
+     firewall at port 113, for any identd service you install. On
+     Windows Vista, enter the following command from an Administrator
+     cmd prompt (or use the Control Panel GUI):
+        netsh advfirewall firewall add rule name="ident" action=allow protocol=TCP dir=in localport=113
+
+~/.netrc authentication
++++++++++++++++++++++++
+This style of authentication is not supported by any of these
+clients when running under MSYS. The reasons for this boil down to
+the fact that MSYS fakes permissions for all files, and the faked
+values are too "permissive" for the built-in safeguards in the client
+applications. However, for completeness, ~/.netrc authentication is
+described below -- along with the reason that you really really don't
+want to use it anyway.
+
+~/.netrc allows you to login to certain servers (rexec, ftp) without
+typing in a password. It does this by maintaining, on every client
+that you wish to enable passwordless logins, a list of the username
+and password -- stored in plain text -- for every server you wish
+for that client to login to automatically.  So, you would have, on
+the local client machine:
+
+        ~/.netrc contents
+        (on local client)
+        -----------------
+        machine mycomputer
+        login username1
+        password 12345
+        machine somehost.out-there.on-the.net
+        login username2
+        password on-my-luggage
+
+Now, as a nod to a naive form of security, the ftp and rexec clients
+verify that ~/.netrc has at best 0600 permissions -- that is, readable
+only by you.  However, MSYS's faked permissinos are always either
+0644 for files, or 0755 for executables and directories.  This fails
+the ftp and rexec clients "security check".
+
+As it happens, if you're using ~/.netrc, you probably don't care too
+much about security -- because both rexec and ftp transmit those
+credentials unencrypted across the internet each time you use them.
+But regardless, I'm not to fussed about trying to make this work. If
+you want to get your machine rooted, there are faster ways -- but not
+many.
+
+~/.rhosts authentication
+++++++++++++++++++++++++
+In contrast to ~/.netrc, the relevant ~/.rhosts file is store
+in your home directory on the server, not the client. It is used
+to enable passwordless logins for rsh, rlogin, and rcp clients,
+and specifies the hostnames of the client machines that should be
+allowed to logon to the server without a password.  This works
+with the MSYS clients -- because it only requires that the server
+support it.
+
+The contents of the remote ~/.rhosts file would be:
+
+        (on remote server)
+        ------------------
+        localhost
+        mycomputer
+        myfileserver
+        some.remote.host.net
+
+Now, this is also a security problem, because it relies on the
+DNS server accurately reporting the hostname and IP of the client.
+If someone were to take over the local DNS -- or intercept the
+server's communication with that DNS -- then they could impersonate
+a valid client.
+
+However, if you're using rsh, rlogin, or rcp -- all of which transmit
+your login credentials unencrypted over the internet UNLESS ~/.rhosts
+is used -- then you probably don't care too much about security.
+
+
+------------------- notes on individual clients ------------------
+There are seven: telnet, ftp, rlogin, rsh/rcp, rexec, and tftp.
+
+++++++++++++ telnet +++++++++++++
+The client machine may need to have an identd server running,
+accessible to the server machine, to avoid long timeouts during
+authentication.
+
+When connecting to a cygwin telnetd server (as of 2010-04-02),
+AND when the msys telnet client is running in a cmd.exe shell
+or a console2 shell, there are odd issues with backspace and
+'extra' spaces between each character. It is not yet clear
+whether this is a flaw in the cygwin telnetd, or in the
+cygwin/msys ports of the telnet client.
+
+If you must connect to a cygwin telnet server, from within a cmd
+or console2 window, you'd probably prefer the native windows
+telnet client (installed by default up to and including XP; on
+Vista, got to Start, Control Panel, Programs and Features, and
+select "Turn Windows features on or off". Choose the Telnet Client
+option, and allow the install.
+
+However, if you connect to linux or other telnet servers, this
+MSYS telnet client works fine, whether executing within a cmd.exe
+console2 shell, or not.
+
+
+++++++++++++  ftp   +++++++++++++
+The rexec protocol uses ~/.netrc (on the local client) for
+passwordless logons; this does not work with the MSYS ftp
+client. It fails due to built-in permission checks.
+
+The client machine may need to have an identd server running,
+accessible to the server machine, to avoid long timeouts during
+authentication.
+
+No known issues, when executing in passive mode (type 'passive'
+at the ftp prompt).  When executing in the default active mode,
+there may be firewall issues on your client machine.  The active
+ftp protocol requires the server to make a connection back to the
+client machine; to allow this, you need to open a hole on your
+software firewall to allow the connection. You can either make
+a global exception for the msys ftp.exe program, or turn on the
+'stateful FTP support' on the client's firewall. In Windows Vista,
+this can be done via the Firewall Setting control panel applet, or
+by launching a cmd prompt 'As Administrator', and issuing the
+following command:
+  netsh advfirewall set global StatefulFtp enable
+
+Note that active ftp is actually pretty rare these days, since it
+does not work well when the client is behind a NAT router -- as
+almost all home LANs are.
+
+
+++++++++++++ rlogin +++++++++++++
+The rlogin protocol uses ~/.rhosts (on the remote server) for
+passwordless logons; this works with the MSYS rlogin client.
+
+The client machine may need to have an identd server running,
+accessible to the server machine, to avoid long timeouts during
+authentication.
+
+On a multi-homed machine [*] you sometimes can't rlogin to localhost
+by its short hostname (but 'localhost' and the fully-qualified name
+will both work). For the MSYS clients, this is only an issue if you
+attempt connect to a cygwin rlogin server running on the same machine
+as the client via the short hostname.
+
+[*] one with more than a single network interface: such as
+    wired+wireless, or even "real" + VMware "virtual" network
+    interfaces.
+
+
+++++++++++++ rsh,rcp +++++++++++++
+The rsh protocol uses ~/.rhosts (on the remote server) for
+passwordless logons; this works with the MSYS rsh and rcp clients.
+
+The client machine may need to have an identd server running,
+accessible to the server machine, to avoid long timeouts during
+authentication.
+
+On the client machine, you may need to allow a 'program exception'
+in your firewall for the rsh client. The rsh protocol allows the
+client to specify an additional port (other than 514) that the server
+will contact, to send stderr information.  This port is random, but
+you need to allow incoming connections on your *client* machine at
+that port. Windows has no 'stateful' filters for the rsh protocol,
+so you need to allow the rsh program to 'answer' on any port: thus,
+a 'program exception'.  On Windows Vista, enter the following
+command from an Administrator cmd prompt (or use the Firewall
+Settings control panel GUI):
+
+  netsh advfirewall firewall add rule name="MSYS rsh.exe client" action=allow dir=in program="`cd /usr/bin && pwd -W`/rsh.exe" enable=yes
+
+On a multi-homed machine [*] you sometimes can't rsh or rcp to
+localhost by its short hostname (but 'localhost' and the fully-
+qualified name will both work). For the MSYS clients, this is only
+an issue if you attempt connect to a cygwin rsh server running
+on the same machine as the client via the short hostname.
+
+[*] one with more than a single network interface: such as
+    wired+wireless, or even "real" + VMware "virtual" network
+    interfaces.
+
+
+++++++++++++ rexec +++++++++++++
+The rexec protocol uses ~/.netrc (on the local client) for
+passwordless logons; this does not work with the MSYS rexec
+client. It fails due to built-in permission checks.
+
+The client machine may need to have an identd server running,
+accessible to the server machine, to avoid long timeouts during
+authentication.
+
+On a multi-homed machine [*] you sometimes can't rexec to localhost
+by its short hostname (but 'localhost' and the fully-qualified name
+will both work). For the MSYS clients, this is only an issue if you
+attempt connect to a cygwin rexec server running on the same machine
+as the client via the short hostname.
+
+[*] one with more than a single network interface: such as
+    wired+wireless, or even "real" + VMware "virtual" network
+    interfaces.
+
+In addition to ~/.netrc, rexec also allows login credentials to be
+specified via environment variables (on the client) or on the command
+line:
+
+    $ REXEC_USER=myuser
+    $ REXEC_PASS=12345
+    $ rexec some-host ls -l
+
+or
+
+    $ rexec -l myuser -p 12345 some-host ls -l
+
+In either case, your password is will be visible in plain text in
+your ~/.history or ~/.bash_history file.  Are you sure you wouldn't
+rather use ssh?
+
+Finally, on the *client* machine, you may need to allow a 'program
+exception' in your firewall for the rexec client. The rexec protocol
+allows the client to specify an additional port (other than 512) that
+the server will contact, to send stderr information.  This port is
+random, but you need to allow incoming connections on your *client*
+machine at that port. Windows has no 'stateful' filters for the rexec
+protocol, so you need to allow the rexec program to 'answer' on any
+port: thus, a 'program exception'. On Windows Vista, enter the
+following command from an Administrator cmd prompt (or use the
+Firewall Settings control panel GUI):
+
+  netsh advfirewall firewall add rule name="MSYS rexec.exe client" action=allow dir=in program= ="`cd /usr/bin && pwd -W`/rexec.exe" enable=yes
+
+Some rexec clients, including the one supplied here, have an option
+('-a') that combines both stdout and stderr channels on the original
+port 512; with this option you don't need to open a hole in your
+client's firewall, but output can be jumbled.
+
+++++++++++++  tftp  +++++++++++++
+NOTE: untested in this release.
+
+This implementation of tftp does not provide for authorization
+(that is, user/password authentication).  It is intended for use
+with tftp servers with open permissions: any client who CAN 
+connect, is assumed to be authorized TO connect.
+
+Client operation is as follows:
+  $ tftp <REMOTE-HOST>
+
+    tftp> get <FILE>
+where <FILE> is either an absolute path, that matches one of the
+<PATH> values on the server, or a relative path.  However, the
+downloaded file will be stored in tftp's current working directory.
+The path information is relevant only on the server; the client
+uses only the basename of <FILE>
+
+    tftp> put <FILE>
+where <FILE> is either an absolute path, that matches one of the
+<PATH> values on the server, or a relative path.  However, the
+uploaded file will be read from tftp's current working directory.
+The path information is relevant only on the server; the client
+uses only the basename of <FILE>. Furthermore, the target <FILE>
+must *already* exist on the server, with user-, group-, and world-
+write permissions.
+
+Finally, on the *client* machine, you may need to allow a 'program
+exception' in your firewall for the tftp client. The tftp protocol
+works by creating a new connection from a random high port on the
+server (e.g. NOT 69) to the port from which the client originally
+contacted the server (e.g ALSO a random high port, not 69), it is
+difficult to describe an appropriate firewall rule on the client to
+allow tftp -- without stateful support. Unfortunately, the windows
+firewall does not have a module for stateful support of the tftp
+protocol.  Therefore, on the client machine you will need create a
+global exception for the tftp.exe program itself. On Windows Vista,
+enter the following command from an Administrator cmd prompt (or use
+the Firewall Settings control panel GUI):
+
+  netsh advfirewall firewall add rule name="MSYS tftp.exe client" action=allow dir=in program= ="`cd /usr/bin && pwd -W`/tftp.exe" enable=yes
+
+
+------------------- developer details ------------------
+Prior to the release of Microsoft Vista, the windows socket library
+(wsock32.dll) provided the following three important functions:
+   rcmd() / rexec() / rresvport()
+which were necessary to support rlogin, rexec, and rsh/rcp clients.
+Consequently, the MSYS dll exports those three functions, but only
+as pass-throughs for the existing wsock32 implementations. However,
+with the release of Microsoft Vista, those three functions were
+removed -- so the MSYS "implementations" no longer work. This port
+address the problem as follows:
+
+Take the BSD sources for "plain" non-IPv6-enabled rexec(), rcmd(),
+and rresvport() functions, and link them directly into the rlogin,
+rsh, rcp, and rexec clients.  This is done using standard autoconf/
+automake idioms to turn them into rpl_* replacement functions, where
+they take precedence over the existing "implementations" provided
+by MSYS/wsock32.dll.
+
+Therefore, these r* clients use the replacement functions
+rexec()/rcmd()/rresvport() on ALL platforms, not just Windows Vista.
+However, they appear to work equally well ON all those platforms,
+including Windows Vista.
+
+Note that this approach differs from that taken by cygwin. In 2006,
+they implemented new, non-pass-through versions of these three
+functions within the cygwin DLL itself. However, we cannot use their
+work directly, because their implementation was complicated by the
+simultaneous addition of IPv6 support, which is an extremely far-
+reaching change. In fact, this patch was THE patch that triggered
+cygwin to jump its version number from 1.5.x to 1.7.0.  For MSYS, it
+would be possible -- and simpler than /that/ -- to take the non-IPv6
+implementations and integrate them into the msys dll. I simply chose
+the current approach instead, as providing the same effect for the
+least effort.
+
+
+----------  inetutils-1.7-1 -- 2010 Apr 02 -----------
+* Update to latest upstream, and latest cygwin patches
+* Adds rexec client
+* r* clients now work on Windows Vista
+* Much improved and expanded documentation
+
+----------  inetutils-1.5-1 -- 2009 Aug 06 -----------
+* First release of inetutils for msys using new packaging standard.
+

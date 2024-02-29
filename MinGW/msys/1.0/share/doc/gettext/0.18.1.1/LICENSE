@@ -1,0 +1,45 @@
+LICENSING SUMMARY
+-----------------
+	libintl                         LGPL
+	libasprintf                     LGPL
+	GNU.Gettext.dll C# library      LGPL
+	gettext.sh                      LGPL
+	gettext.exe                     GPL
+	ngettext.exe                    GPL
+	envsubst.exe                    GPL
+	envsubst.exe                    GPL
+	documentation                   GPL
+
+LICENSING DETAILS
+-----------------
+
+- - - - - - - - -  - - - - - - - -
+*** GETTEXT-RUNTIME COMPONENTS ***
+- - - - - - - - -  - - - - - - - -
+
+The gettext-runtime package is partially under the LGPL and partially under
+the GPL.
+
+The following parts are under the LGPL, see files intl/COPYING.LIB-2.0 and
+intl/COPYING.LIB-2.1:
+  - the libintl and libasprintf libraries and their header files,
+  - the libintl.jar Java library,
+  - the GNU.Gettext.dll C# library,
+  - the gettext.sh shells script function library.
+
+The following parts are under the GPL, see file COPYING in the toplevel
+directory:
+  - the _programs_ gettext, ngettext, envsubst,
+  - the documentation.
+
+- - - - - - - - - -
+*** LIBASPRINTF ***
+- - - - - - - - - -
+
+The libasprintf package is under the LGPL, see file COPYING.LIB.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - -
+*** GETTEXT-TOOLS COMPONENTS (utility programs) ***
+- - - - - - - - - - - - - - - - - - - - - - - - - -
+
+This subpackage is under the GPL, see file COPYING in the toplevel directory.

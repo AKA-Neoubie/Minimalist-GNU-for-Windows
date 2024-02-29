@@ -1,0 +1,168 @@
+msys zlib
+===============================================================================
+zlib is a general purpose data compression library.  All the code is thread
+safe.  The data format used by the zlib library is described by RFCs (Request
+for Comments) 1950 to 1952 in the files http://www.ietf.org/rfc/rfc1950.txt
+(zlib format), rfc1951.txt (deflate format) and rfc1952.txt (gzip format).
+
+Release: zlib-1.2.7-1-msys
+
+Files:   zlib-1.2.7-1-msys-1.0.17-src.tar.lzma         (full source code)
+         zlib-1.2.7-1-msys-1.0.17-doc.tar.lzma         (FAQ, man, and example code)
+         zlib-1.2.7-1-msys-1.0.17-lic.tar.lzma         (licensing terms)
+         zlib-1.2.7-1-msys-1.0.17-dev.tar.lzma         (libraries and headers)
+         zlib-1.2.7-1-msys-1.0.17-dll.tar.lzma         (redistributable DLL)
+         minizip-1.2.7-1-msys-1.0.17-bin.tar.lzma      (minizip utility)
+         libminizip-1.2.7-1-msys-1.0.17-dll-1.tar.lzma (redistributable DLL)
+         libminizip-1.2.7-1-msys-1.0.17-dev.tar.lzma   (libraries and headers)
+
+Notes:   This is a binary release of the zlib compression/decompression
+         library, compiled for use with MSYS applications.
+
+         The source code is unchanged from that distributed by zlib.net,
+         library libminizip and a sample minizip application, suitable
+         for simple manipulations of zip-format archives.
+
+         The "src" tarball delivers the full unmodified source code from
+         zlib.net, with the addition of the above two files.
+
+         The "doc" and "lic" tarballs provide the documentation
+         components, as identified above, abstracted from the source
+         tarball, and repackaged into a file hierarchy structure which
+         is suitable for installation into the user's installed MSYS
+         directory hierarchy; for a standard installation, they should
+         be unpacked into the C:\MinGW\msys\1.0 directory.
+
+         Developers of MSYS applications, who wish to link to the
+         zlib libraries, will require at least the "dev" tarball; this
+         provides the libz.a static version of the library, libz.dll.a
+         import library, for linking to a DLL version of the library,
+         and the set of C language headers common to both.  The DLL
+         version of the library, msys-z.dll, is provided separately, by
+         the "dll" tarball.  As in the case of the installable
+         documentation, each of these tarballs should be unpacked into
+         the C:\MinGW\msys\1.0 directory.
+
+         Please note that the msys-z.dll delivered by this package
+         depends on the MSYS runtime msys-1.0.dll. Developers need to
+         install and use the msys-system-builder (aka msys-dvlpr)
+         toolkit to compile clients of this library; it may NOT be used
+	 in conjunction with the MinGW compiler (which generates native
+	 win32 binaries, rather than MSYS-dependent ones).
+
+Requires:
+  msys-core-bin             1.0.17-1
+
+Build Requires:
+  msys-binutils-bin         2.19.51-3
+  msys-gcc-bin              3.4.4-3
+  msys-w32api-dev           3.14-3
+  mingw32-mgwport-bin       0.10.6
+  msys-core-bin             1.0.17-1
+  msys-coreutils-bin        5.97-3
+  msys-bash-bin             3.1.17-4
+  msys-patch-bin            2.6.1-1
+  msys-make-bin             3.82-5
+  msys-tar-bin              1.23-1
+  msys-bzip2-bin            1.0.5-2
+  msys-xz-bin               5.0.3-2
+  msys-lndir-bin            1.0.1-2
+  msys-wget-bin             1.12-1
+ 
+Canonical homepage:
+  http://zlib.net/
+
+Canonical download:
+  http://prdownloads.sourceforge.net/libpng/zlib-1.2.7.tar.bz2?download
+
+License:
+  Zlib
+
+Language:
+  C
+
+===============================================================================
+
+Build instructions:
+  unpack zlib-1.2.7-1-msys-1.0.17-src.tar.lzma
+  mgwport zlib-1.2.7-1.msysport all
+
+This will create:
+  zlib-1.2.7-1-msys-1.0.17-doc.tar.lzma
+  zlib-1.2.7-1-msys-1.0.17-lic.tar.lzma
+  zlib-1.2.7-1-msys-1.0.17-dev.tar.lzma
+  zlib-1.2.7-1-msys-1.0.17-dll.tar.lzma
+  zlib-1.2.7-1-msys-1.0.17-src.tar.lzma
+  libminizip-1.2.7-1-msys-1.0.17-dev.tar.lzma
+  libminizip-1.2.7-1-msys-1.0.17-dll-1.tar.lzma
+  minizip-1.2.7-1-msys-1.0.17-bin.tar.lzma
+
+See `mgwport --help' for other options.
+
+===============================================================================
+
+Test suite results
+This section of this document is updated with each new release.
+No history is maintained here.
+
+$ mgwport zlib-$VER-$REL.mgwport check
+>>> Testing zlib-1.2.7-1
+hello world
+zlib version 1.2.7 = 0x1270, compile flags = 0x55
+uncompress(): hello, hello!
+gzread(): hello, hello!
+gzgets() after gzseek:  hello!
+inflate(): hello, hello!
+large_inflate(): OK
+after inflateSync(): hello, hello!
+inflate with dictionary: hello, hello!
+                *** zlib test OK ***
+hello world
+zlib version 1.2.7 = 0x1270, compile flags = 0x55
+uncompress(): hello, hello!
+gzread(): hello, hello!
+gzgets() after gzseek:  hello!
+inflate(): hello, hello!
+large_inflate(): OK
+after inflateSync(): hello, hello!
+inflate with dictionary: hello, hello!
+                *** zlib shared test OK ***
+
+===============================================================================
+
+Port Notes:
+
+This msys build of zlib DOES NOT support 64 bit file access (large files),
+because the msys runtime does not support 64bit off_t.
+
+This build is based on the cygwin source patches, NOT any MinGW
+ones. It is only "lightly" ported -- that is, the sources have not
+been modified to recognize #define __MSYS__.  Therefore, when compiling
+against this library, you should explicitly define the __CYGWIN__
+macro, by adding -D__CYGWIN__ to your CFLAGS (msys-gcc-3.4.4-3 does this
+automatically).
+
+The DLL is named "msys-z.dll" to preserve consistency with earlier
+msys releases of zlib. Because it carries no explicit version number,
+the -dll package does not have a "Component Version" field, unlike
+most -dll packages.
+
+===============================================================================
+
+----------  zlib-1.2.7-1 -- 2012 May 13 -----------
+* Upgrade to latest upstream release
+
+----------  zlib-1.2.5-1 -- 2011 Aug 31 -----------
+* Adapt build system to use mgwport framework
+
+----------  zlib-1.2.3-2 -- 2010 Jan 28 -----------
+* Rebuild against msys-1.0.13, using (msys)gcc-3.4.4
+  and (msys)binutils-2.19.51.
+* Use -O3 -fno-unit-at-a-time to avoid optimization bug
+  in latest msys-gcc. Also, don't use -mms-bitfields
+  when compiling msys binaries.
+
+----------  zlib-1.2.3-1 -- 2009 Jul 26 -----------
+* First release of zlib for msys using new packaging standard.
+* Uses patches derived from cygwin's zlib-1.2.3-10 package.
+

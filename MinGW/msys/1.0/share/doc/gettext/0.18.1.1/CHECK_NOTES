@@ -1,0 +1,77 @@
+gettext-runtime
+=======================================================================
+All 0 tests passed
+(no threads, no need to test thread support)
+
+gettext-tools
+=======================================================================
+All 313 tests passed (31 tests were not run)
+
+SKIP: gettext-3            Skipping test: not a glibc system
+SKIP: gettext-4            Skipping test: no traditional french locale is supported
+SKIP: gettext-5            Skipping test: not a glibc system
+SKIP: gettext-6            Skipping test: not a glibc or Mac OS X system
+SKIP: gettext-7            Skipping test: not a glibc or Mac OS X system
+SKIP: gettext-8            Skipping test: setrlimit does not work
+SKIP: msgunfmt-csharp-1    Skipping test: C# compiler not found
+SKIP: msgunfmt-java-1      Skipping test: Java compiler or jar not found
+SKIP: msgunfmt-tcl-1       Skipping test: tclsh not found or Tcl too old
+SKIP: recode-sr-latin-1    Skipping test: no french UTF-8 locale is supported
+SKIP: recode-sr-latin-2    Skipping test: no japanese EUC-JP locale is supported
+SKIP: format-c-5           Skipping test: locale fa_IR not supported
+SKIP: lang-c               Skipping test: no french locale is supported
+SKIP: lang-c++             Skipping test: no french locale is supported
+SKIP: lang-objc            Skipping test: Objective C compiler not found
+SKIP: lang-sh              Skipping test: no french locale is supported
+SKIP: lang-bash            Skipping test: no french locale is supported
+SKIP: lang-python-1        Skipping test: python not found
+SKIP: lang-python-2        Skipping test: python not found
+SKIP: lang-clisp           Skipping test: clisp not found
+SKIP: lang-librep          Skipping test: rep not found
+SKIP: lang-guile           Skipping test: no french locale is supported
+SKIP: lang-smalltalk       Skipping test: gst not found
+SKIP: lang-java            Skipping test: Java compiler or jar not found
+SKIP: lang-csharp          Skipping test: C# compiler not found
+SKIP: lang-gawk            Skipping test: no french locale is supported
+SKIP: lang-pascal          Skipping test: ppc386 compiler not found
+SKIP: lang-tcl             Skipping test: tclsh not found or msgcat extension not present
+SKIP: lang-perl-1          Skipping test: perl package Locale::Messages is not installed
+SKIP: lang-perl-2          Skipping test: perl package libintl-perl is not installed
+SKIP: lang-php             Skipping test: php not found
+
+
+gettext-tools/gnulib-tests
+=======================================================================
+11 of 105 tests failed (18 tests were not run)
+
+FAIL: test-set-mode-acl.sh         permissions not really supported on MSYS
+FAIL: test-copy-acl.sh             ACLs not really supported on MSYS
+FAIL: test-copy-file.sh            ACL "failure"
+FAIL: test-dup2.exe                test-dup2.exe: *** couldn't commit memory for cygwin heap, Win32 error 0
+FAIL: test-fcntl.exe               MSYS bug: fcntl (fd, F_DUPFD, -1) sets wrong errno (got EBADF, expected EINVAL)
+FAIL: test-fopen.exe               MSYS bug: fopen(dir, "w") sets errno to EEXIST, rather than EISDIR|EINVAL|EACCES
+FAIL: test-lstat.exe               lstat ("///", &st2) returns -1  (design behavior for MSYS?)
+FAIL: test-open.exe                MSYS bug: open(".", O_WRONLY) succeeds (expected -1)
+FAIL: test-pipe-filter-ii1.sh      MSYS bug: works for small files, but huge files hangs
+FAIL: test-sigaction.exe           MSYS bug (not surprising; signal handling was wonky in 1.3)
+FAIL: test-stat.exe                lstat ("///", &st2) returns -1  (design behavior for MSYS?)
+
+SKIP: test-areadlink.exe           skipping test: symlinks not supported on this file system
+SKIP: test-canonicalize-lgpl.exe   skipping test: symlinks not supported on this file system
+SKIP: test-lock.exe                Skipping test: multithreading not enabled
+SKIP: test-mbrtowc1.sh             Skipping test: no traditional french locale is supported
+SKIP: test-mbrtowc2.sh             Skipping test: no french Unicode locale is supported
+SKIP: test-mbrtowc3.sh             Skipping test: no traditional japanese locale is supported
+SKIP: test-mbrtowc4.sh             Skipping test: no transitional chinese locale is supported
+SKIP: test-mbsinit.sh              Skipping test: no french Unicode locale is supported
+SKIP: test-mbsrtowcs1.sh           Skipping test: no traditional french locale is supported
+SKIP: test-mbsrtowcs2.sh           Skipping test: no french Unicode locale is supported
+SKIP: test-mbsrtowcs3.sh           Skipping test: no traditional japanese locale is supported
+SKIP: test-mbsrtowcs4.sh           Skipping test: no transitional chinese locale is supported
+SKIP: test-mbsstr2.sh              Skipping test: no french Unicode locale is supported
+SKIP: test-mbsstr3.sh              Skipping test: no chinese GB18030 locale is supported
+SKIP: test-readlink.exe            skipping test: symlinks not supported on this file system
+SKIP: test-rmdir.exe               skipping test: symlinks not supported on this file system
+SKIP: test-symlink.exe             skipping test: symlinks not supported on this file system
+SKIP: test-tls.exe                 Skipping test: multithreading not enabled
+

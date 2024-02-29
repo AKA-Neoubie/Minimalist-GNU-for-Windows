@@ -1,0 +1,93 @@
+msys minires
+========================================================================
+minires provides a simple implementation of resolver functions (found
+e.g. in the bind package) commonly used in clients, adapted to the
+MSYS environment. The initial version was written from scratch as a
+weekend project, starting from man page API definitions, by Pierre
+Humblett for the Cygwin platform.
+
+On versions of Windows that support it (Windows 2000 and above), the
+function res_query are implemented by calling DnsQuery and translating
+the result to wire format IF THE FILE /etc/resolv.conf IS NOT READABLE
+or if it contains an "options" line with token "osquery".
+
+Otherwise, minires works as a simple synchronous non-caching stub
+resolver. Instead of querying a local bind daemon, the routines try to
+reach predefined name servers. Their addresses are obtained directly
+from Windows (except on Win95 with DHCP), from /etc/resolv.conf, or
+from the LOCALDOMAIN environment variable.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+
+Build requirements (these, or newer)
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+ 
+  Devel Tools and Dependent Libraries 
+    lndir-1.0.1-2-msys-1.0.13-bin
+ 
+  MSYS Environment
+    coreutils-5.97-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    gawk-3.1.7-1-msys-1.0.11-bin
+    sed-4.2.1-1-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20100131-1-msys-1.0.13-bin
+    liblzma-4.999.9beta_20100131-1-msys-1.0.13-dll-1
+
+Canonical homepage:
+  n/a
+
+Canonical download:
+  http://mirrors.xmission.com/cygwin/release/minires/minires-1.02-1-src.tar.bz2
+  (or other cygwin mirror)
+
+License:
+  GPL
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack minires-1.02_1-2-msys-1.0.13-src.tar.gz
+  ./msys-build-minires minires-1.02-1.tar.xz
+
+This will create:
+  minires-1.02_1-2-msys-1.0.13-src.tar.gz
+  minires-1.02_1-2-msys-1.0.13-bin.tar.gz
+  minires-1.02_1-2-msys-1.0.13-doc.tar.gz
+  minires-1.02_1-2-msys-1.0.13-lic.tar.gz
+  libminires-1.02_1-2-msys-1.0.13-dll.tar.gz
+  libminires-1.02_1-2-msys-1.0.13-dev.tar.gz
+
+========================================================================
+
+Test suite results
+This section of this document is updated with each new release.
+No history is maintained here.
+
+manually exercising try_dll.exe and try_stat.exe seems to work.
+
+========================================================================
+
+Port Notes:
+----------  minires-1.02_1-2 -- 2010 Feb 01 -----------
+* Rebuild against msys-1.0.13, using (msys)gcc-3.4.4
+  and (msys)binutils-2.19.51.
+* Use -O3 -fno-unit-at-a-time to avoid optimization bug
+  in latest msys-gcc. Also, don't use -mms-bitfields
+  when compiling msys binaries.
+
+----------  minires-1.02_1-1 -- 2009 Aug 05 -----------
+* First release of minires for msys using new packaging
+  standard. 
+* Based on cygwin's minires-1.02-1-src.tar.bz2 package
+  ("pristine" source tarball minires-1.02-1.tar.xz is 
+  simply renamed and recompressed).

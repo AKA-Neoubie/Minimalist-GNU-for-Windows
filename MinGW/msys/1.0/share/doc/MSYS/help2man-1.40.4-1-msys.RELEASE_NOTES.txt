@@ -1,0 +1,79 @@
+msys help2man
+========================================================================
+help2man is a perl script to create man pages from program --help
+and --version output.
+
+Runtime requirements:
+  msysCORE-1.0.17-1-msys-1.0.17-bin
+  perl-5.8.8-1-msys-1.0.17-bin 
+
+Build requirements:
+  perl-5.8.8-1-msys-1.0.17-bin
+
+  MSYS Environment
+    msysCORE-1.0.17-1-msys-1.0.17-bin
+    coreutils-5.97-3-msys-1.0.13-bin
+    bash-3.1.17-4-msys-1.0.16-bin
+    make-3.81-3-msys-1.0.13-bin
+    tar-1.23-1-msys-1.0.13-bin
+    xz-4.999.9beta_20100401-1-msys-1.0.13-bin
+    gzip-1.3.12-2-msys-1.0.13-bin
+    liblzma-4.999.9beta_20100401-1-msys-1.0.13-dll-1
+    zlib-1.2.3-2-msys-1.0.13-dll
+    gawk-3.1.7-2-msys-1.0.13-bin
+    sed-4.2.1-2-msys-1.0.13-bin
+
+Canonical website:
+  http://www.gnu.org/software/help2man/
+
+Canonical download:
+  ftp://ftp.gnu.org/gnu/help2man/
+
+License:
+  GPLv3+
+
+========================================================================
+Build instructions:
+  unpack help2man-1.40.4-X-msys-1.0.17-src.tar.lzma
+  ./msys-build-help2man
+
+This will create:
+  help2man-1.40.4-X-msys-1.0.17-src.tar.lzma
+  help2man-1.40.4-X-msys-1.0.17-bin.tar.lzma
+  help2man-1.40.4-X-msys-1.0.17-doc.tar.lzma
+  help2man-1.40.4-X-msys-1.0.17-lic.tar.lzma
+
+========================================================================
+
+Files included in the binary packages:
+
+help2man-*-bin:
+  /usr/bin/help2man
+
+help2man-*-doc:
+  /usr/share/doc/help2man/1.40.4/ChangeLog
+  /usr/share/doc/help2man/1.40.4/NEWS
+  /usr/share/doc/help2man/1.40.4/README
+  /usr/share/doc/help2man/1.40.4/THANKS
+  /usr/share/doc/MSYS/help2man-1.40.4-1-msys.RELEASE_NOTES.txt
+  /usr/share/man/man1/help2man.1
+  /usr/share/info/help2man.info
+
+help2man-*-lic:
+  /usr/share/doc/help2man/1.40.4/COPYING
+
+========================================================================
+
+Test suite results -- there is no test suite.
+
+========================================================================
+
+Port Notes:
+
+This version does not support i18n man pages; to do so requires the
+Locale::gettext perl module, which msys-perl does not provide.
+
+
+----- help2man-1.40.4 -- 2011 Aug 24 -----
+* First release for MSYS
+

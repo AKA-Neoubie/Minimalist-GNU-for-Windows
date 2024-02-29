@@ -1,0 +1,70 @@
+msys lndir
+========================================================================
+The lndir utility creates a shadow directory of links to another
+directory tree. Usually, these links are symbolic, but on MSYS lndir
+has been patched so that hardlinks will be created instead (or, if
+that fails, distinct copies will be used). This allows to support
+applications, such as MinGW gcc, which do not understand symbolic
+links.  (NOTE: Vista-style "symbolic links" are not considered here).
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+
+Build requirements:
+  binutils-2.19.51-3-msys-1.0.13-bin
+  gcc-3.4.4-3-msys-1.0.13-bin
+  w32api-3.14-3-msys-1.0.12-dev
+
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+    coreutils-5.97-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    bzip2-1.0.5-1-msys-1.0.11-bin
+    xz-4.999.9beta_20091209-1-msys-1.0.12-bin
+    libbz2-1.0.5-1-msys-1.0.11-dll-1
+    liblzma-4.999.9beta_20091209-1-msys-1.0.12-dll-1
+
+Canonical homepage:
+  http://xorg.freedesktop.org/
+
+Canonical download:
+  http://xorg.freedesktop.org/releases/individual/
+
+License:
+  MIT/X11 license (permissive, non-copyleft)
+
+Language:
+  C
+
+========================================================================
+  
+Build instructions:
+  unpack lndir-1.0.1-X-msys-1.0.13-src.tar.lzma
+  ./msys-build-lndir lndir-1.0.1.tar.bz2
+
+This will create:
+  lndir-1.0.1-X-msys-1.0.13-src.tar.lzma
+  lndir-1.0.1-X-msys-1.0.13-bin.tar.lzma
+  lndir-1.0.1-X-msys-1.0.13-doc.tar.lzma
+  lndir-1.0.1-X-msys-1.0.13-lic.tar.lzma
+
+========================================================================
+
+Test suite results
+n/a
+
+========================================================================
+
+Port Notes:
+----------  lndir-1.0.1-2 -- 2010 Jan 28 -----------
+* Rebuild against msys-1.0.13, using (msys)gcc-3.4.4
+  and (msys)binutils-2.19.51.
+* Use -O3 -fno-unit-at-a-time to avoid optimization bug
+  in latest msys-gcc. Also, don't use -mms-bitfields
+  when compiling msys binaries.
+
+----------  lndir-1.0.1-1 -- 2009 Jul 26 -----------
+* First release of lndir for msys using new packaging standard.
+

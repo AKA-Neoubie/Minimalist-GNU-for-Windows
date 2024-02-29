@@ -1,0 +1,190 @@
+msys tar
+========================================================================
+GNU tar is an archiver that creates and handles file archives in various
+formats. You can use tar to create file archives, to extract files from
+previously created archives, store additional files, or update or list
+files which were already stored.
+
+The program saves many files together into a single tape or disk archive,
+and can restore individual files from the archive. It includes
+multivolume support, the ability to archive sparse files, automatic
+archive compression/decompression, remote archives and special features
+that allow 'tar' to be used for incremental and full backups.
+
+The supported archive formats are: V7 tar, GNU, ustar and POSIX (also
+known as pax interchange format). GNU tar can also read and extract
+'star' archives. Tar can direct its output to available devices, files,
+or other programs (using pipes); tar can even access remote devices or
+files (as archives). 
+
+This version has been modified and compiled for use in the MSYS
+environment. It should be installed into the / == /usr directory, which
+is usually but not always, C:\msys\1.0.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  libintl-0.17-2-msys-1.0.13-dll-8
+  libiconv-1.13.1-2-msys-dll-2
+  libregex-1.20090805-2-msys-1.0.13-dll-1
+
+Build requirements (these, or newer)
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+ 
+  Devel Tools and Dependent Libraries 
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-dev
+    gettext-0.17-2-msys-1.0.13-bin
+    gettext-0.17-2-msys-1.0.13-dev
+    libgettextpo-0.17-2-msys-1.0.13-dll-0
+    libregex-1.20090805-2-msys-1.0.13-dev
+
+  MSYS Environment
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    libgdbm-1.8.3-3-msys-1.0.13-dll-3
+    zlib-1.2.3-2-msys-1.0.13-dll
+    coreutils-5.97-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20100401-1-msys-1.0.13-bin
+    liblzma-4.999.9beta_20100401-1-msys-1.0.13-dll-1
+    file-5.04-2-msys-1.0.13-bin
+    grep-2.5.4-2-msys-1.0.13-bin
+    sed-4.2.1-2-msys-1.0.13-bin
+    gawk-3.1.7-2-msys-1.0.13-bin
+    cvs-1.12.13-1-msys-1.0.11-bin
+
+Canonical homepage:
+  http://www.gnu.org/software/tar/
+
+Canonical download:
+  http://ftp.gnu.org/pub/gnu/tar/
+  git clone git://git.gnu.org.ua/tar.git
+
+License:
+  GPLv3
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack tar-1.23-1-msys-1.0.13-src.tar.lzma
+  ./msys-build-tar tar-1.23.tar.bz2
+
+This will create:
+  tar-1.23-1-msys-1.0.13-src.tar.lzma
+  tar-1.23-1-msys-1.0.13-bin.tar.lzma
+  tar-1.23-1-msys-1.0.13-ext.tar.lzma
+  tar-1.23-1-msys-1.0.13-lang.tar.lzma
+  tar-1.23-1-msys-1.0.13-doc.tar.lzma
+  tar-1.23-1-msys-1.0.13-lic.tar.lzma
+
+========================================================================
+
+Test suite results
+
+This section of this document is updated with each new release.
+No history is maintained here.
+
+ERROR: 86 tests were run,
+  8 failed unexpectedly.
+  12 tests were skipped.
+
+FAIL:
+ 14: exclude wildcards                               FAILED (exclude01.at:20)
+ 16: exclude: wildcards match slash                  FAILED (exclude03.at:20)
+ 29: mode of extracted directories                   FAILED (extrac06.at:36)
+ 31: restoring mode on existing directory            FAILED (extrac08.at:36)
+ 34: extracting existing dir with --backup           FAILED (backup01.at:36)
+ 37: restore broken symlinks from incremental        FAILED (incr01.at:30)
+ 49: cyclic renames                                  FAILED (rename03.at:26)
+ 92: remove-files with compression: grand-child      FAILED (remfiles02.at:32) [new]
+
+29, 37, and 49 are the same tests that failed in both MSYS tar-1.19.90
+and in MSYS tar-1.22.90 (see
+http://osdir.com/ml/gnu.mingw.devel/2008-04/msg00054.html)
+The others are all new tests, which fail due to deficiencies in MSYS
+(but, they are all very low-probably corner cases)
+
+14: MSYS (win32) doesn't allow files with '*' in their name, so
+    the test case can't create the scenario. Cygwin can do this
+    because as of 1.7.1, it transliterates '*' into unicode.
+
+16: Ditto
+
+23: MSYS doesn't provide full permission emulation (e.g. directories
+    always "look like" drwxr-xr-x no matter what 'chmod' you try. This
+    failure is a non-issue on windows/Msys/MinGW.
+
+31: +tar: dir/file: time stamp 2010-04-20 21:46:39 is 0.187 s in the future
+    +tar: dir: time stamp 2010-04-20 21:46:39 is 0.184 s in the future
+    So, this test fails due to granularity in win32 filesystem timestamps
+
+34: +tar: dir1/file1: time stamp 2010-04-20 21:46:43 is 0.071 s in the future
+    +tar: dir1: time stamp 2010-04-20 21:46:43 is 0.067 s in the future
+    +tar: dir2: time stamp 2010-04-20 21:46:43 is 0.064 s in the future
+    Ditto.
+
+37: MSYS doesn't support symlinks, so the test case can't actually
+    create the test scenario. As MSys transforms all attempts to
+    make a symlink into a hardlink (or copy), there is no way to
+    create a 'dangling' symlink -- because there is no such thing
+    as a 'dangling' hardlink.
+
+49: This seems to be an issue related tar's own fchdir emulation
+    interacting with MSys' filesystem layer. Because
+    (1) MSys' fchdir implementation is broken with respect to relative
+        paths -- see http://preview.tinyurl.com/mu5gg4
+    (2) because tar uses fchdir-with-relative-path in its fdopendir()
+        implementation
+    (3) this fdopendir is a necessary component of tar's mechanism for
+        recursing subdirectories, especially with respect to incremental
+        backups
+    (4) I had to force tar to use the (gnulib-derived) fchdir replacement
+        function, and NOT MSys's built in (broken) version.
+
+    However, this means that every recursed directory results in an open
+    filedescriptor being held by tar. During a cyclic rename operation,
+    tar tries to rename a directory that it still holds an open filedes
+    for.  MSys (or Win32) doesn't allow this, and so an error is reported
+    and the incremental-restore operation fails.
+
+    I don't see an easy way around this, except: I'm sure the old MSys
+    tar (tar-1.13), if it supported incremental-backup/incremental-restore
+    at all, ALSO failed for the cyclic-rename pathology, and nobody has
+    complained yet.
+
+    Since the primary purpose of MSys-tar is to support MinGW app
+    development and deployment, NOT to provide incremental backup support
+    to end users, I think it's ok if MSYS tar doesn't correct support
+    incremental backups for pathological (cyclic) directory trees.
+
+    Revisit if MSYS's fchdir function is fixed.
+
+92: -tar (child): a: Cannot open: Is a directory
+    +tar (child): a: Cannot open: File exists
+    MSYS returns the wrong errno (expected EISDIR, got EEXIST)
+
+========================================================================
+
+Port Notes:
+
+----------  tar-1.23-1 -- 2010 Apr 20 -----------
+* Update to latest upstream release
+* Rebuild with latest msys-gcc-3.x compiler, against msys 1.0.13
+* Link against DLL version of libintl and libiconv
+* Link against regex DLL rather than using MSYS' regcomp
+* Split i18n files into separate -lang package
+* Silence stupid 'Record size' warning
+
+----------  tar-1.22-1 -- 2009 Aug 12 -----------
+* First release of tar-1.22 for msys using new packaging standard. 

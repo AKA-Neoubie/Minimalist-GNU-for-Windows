@@ -1,0 +1,33 @@
+.\"             -*-Nroff-*-
+.\"  Freely distributable under the terms of the GPL
+.TH LPR 1 "11 Sep 2009 " "" ""
+.SH NAME
+lpr \- Spool files to a printer
+.SH DESCRIPTION
+\fBlpr\fP spools a file to the specified printer device. MSYS provides
+two separate implementations: \fBlpr-basic.exe\fP and \fBlpr-enhanced\fP
+(the latter is a script, not a binary executable).
+
+\fBlpr-basic.exe\fP is suitable for most simple printing needs; it can
+send "raw" data to any installed Windows printer. This is most useful
+for raw text, for sending plain PostScript files to PostScript-compatible
+printers, and for re-sending \fI.prn\fP files generated using Windows'
+own print-to-file capabilities to the specific printer for which the
+\fI.prn\fP file was generated. For more information, see `man lpr-basic'.
+
+\fBlpr-enhanced\fP is an MSYS extension which supports many of the advanced
+capabilities of a true Unix-style lpr implementation. It can pre-process
+data before sending it to the printer and apply various filters. For
+instance, different printer configurations can be established, all associated
+with the same physical device.  One configuration could pre-processes data
+using nroff and gswin32c.exe (ghostscript), while another might simply specify
+landscape rather than portrait mode, etc.  All of this is controlled by the
+associated \fI/etc/printcap\fP file; this configuration is both the source of
+\fBlpr-enhanced\fP's power, and its major drawback. Unlike \fBlpr-basic.exe\fP,
+\fBlpr-enhanced\fP requires extensive user configuration. For more information,
+see the documentation embedded within \fB/usr/bin/lpr-enhanced\fP, if installed.
+Note that, to use \fBlpr-enhanced\fP, it may be necessary to remove
+\fB/usr/bin/lpr.exe\fP, and copy \fB/usr/bin/lpr-enhanced\fP to \fB/usr/bin/lpr\fP.
+.SH AUTHORS
+Man page Written by Charles Wilson.
+

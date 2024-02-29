@@ -1,0 +1,103 @@
+msys rebase
+========================================================================
+The rebase distribution contains four utilities, rebase, rebaseall,
+peflags, and peflagsall.  The first utility is modeled after Microsoft's
+SDK rebase.  However, instead of linking rebase against Microsoft's
+imagehlp library, it is linked against Ralf Habacker's imagehelper
+library.
+
+The rebaseall utility is a convenient way for users that suffer from the
+MSYS rebase problem to rebase their entire system (i.e., all of their
+DLLs) -- this is particularly problematic with perl.  The rebase problem
+is due to fork() failing when it is unable to load DLLs in the child at
+the same address as in the parent.  This is caused by DLLs which have
+conflicting base addresses.  An error message like the following will be
+displayed when the problem is triggered:
+
+      0 [main] miniperl 7024 sync_with_child: child 7580(0xD0) died before initialization with status code 0xC0000135
+   2323 [main] miniperl 7024 sync_with_child: *** child state waiting for longjmp
+
+Usage:
+===================================================================
+Use the following procedure to rebase your entire MSYS system:
+
+    1. shutdown all MSYS processes
+    2. start dash (do not use bash, rxvt, or mintty)
+    3. execute /bin/rebaseall (in the dash window)
+
+See /usr/share/doc/rebase/$V/README for more information.
+
+Runtime requirements (these, or newer)
+  msys-core-bin                   1.0.17-1
+  msys-dash-bin                   0.5.5.1_2-1
+
+Build requirements
+  msys-gcc-bin                    3.4.4-3
+  msys-binutils-bin               2.19.51-3
+  msys-w32api-dev                 3.14-3
+  msys-core-bin                   1.0.17-1
+  msys-coreutils-bin              5.97-3
+  msys-bash-bin                   3.1.17-4
+  msys-patch-bin                  2.6.1-1
+  msys-make-bin                   3.82-5
+  msys-tar-bin                    1.23-1
+  msys-sed-bin                    4.2.1-2
+  msys-gawk-bin                   3.1.7-2
+  msys-bzip2-bin                  1.0.6-4
+  msys-xz-bin                     5.0.3-1
+  msys-file-bin                   5.04-1
+
+Canonical homepage:
+  http://www.tishler.net/jason/software/rebase/
+
+Canonical download:
+  http://www.tishler.net/jason/software/rebase/
+  http://mirrors.kernel.org/sourceware/cygwin/release/rebase/
+
+License:
+  GPLv2+
+
+Language:
+  C, C++
+
+========================================================================
+
+Build instructions:
+  unpack rebase-4.0.1_1-1-msys-1.0.17-src.tar.lzma
+  mgwport rebase-4.0.1_1-1.msysport all
+
+This will create:
+  rebase-4.0.1_1-1-msys-1.0.17-src.tar.gz
+  rebase-4.0.1_1-1-msys-1.0.17-bin.tar.gz
+  rebase-4.0.1_1-1-msys-1.0.17-dev.tar.gz
+  rebase-4.0.1_1-1-msys-1.0.17-doc.tar.gz
+  rebase-4.0.1_1-1-msys-1.0.17-lic.tar.gz
+
+See `mgwport --help' for other options.
+
+========================================================================
+
+Port Notes:
+----- rebase-4.0.1_1-1 -- 2011-11-16 -----
+* Update to latest upstream
+  + Adds rebase database functionality
+    + See /usr/share/doc/rebase/$V/README for more information,
+      especially regarding the new -s and -i flags.
+    + databases are located in
+      /etc/rebase.db.i386   (for 32bit DLLs)
+      /etc/rebase.db.x86_64 (for 64bit DLLs)
+  + Supports 64bit DLLs and EXEs
+    + See /usr/share/doc/rebase/$V/README for information concerning
+      the new -4 and -8 flags.
+  + See NEWS file
+* Added -dev package with rebase-dump.exe utility for inspecting the
+  contents of the database files.
+* Package built using mgwport framework
+
+----- rebase-3.0.1_1-2 -- 2010-05-08 -----
+* Fix a few oversights in rebaseall and peflagsall
+  (dash != ash, don't rebase msys debug dll)
+
+----- rebase-3.0.1_1-1 -- 2010-01-23 -----
+* Initial msys packaging (unreleased)
+

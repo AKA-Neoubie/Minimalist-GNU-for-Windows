@@ -1,0 +1,15 @@
+2011-02-24  Charles Wilson
+
+	2.00b147 release
+	* README: Document mintty as well.
+	* Makefile: Update to b147.
+	* console-config (PKGBASE): Update to b147.
+	(console_config_check_reqs): Also check for md5sum utility.
+	(console_config_check_md5): New function.
+	(console_config_download): Check if archive already exists, and
+	validate checksum.  Validate also after downloading.
+
+2010-05-27  Charles Wilson
+
+	* Initial release.
+

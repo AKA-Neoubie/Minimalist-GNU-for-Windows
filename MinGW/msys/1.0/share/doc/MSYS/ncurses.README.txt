@@ -1,0 +1,63 @@
+ncurses
+========================================================================
+Ncurses provides libraries and utilities for manipulating terminal
+display.  This package contains the utility programs and documentation
+for ncurses.  It is compiled to support "narrow" characters (not "wide").
+
+
+Runtime requirements:
+  msvcrt
+
+Build requirements:
+  msys
+  msys-coreutils
+  msys-make
+  msys-sed
+  msys-gawk
+  msys-perl
+  msys-automake
+  msys-autoconf
+  msys-gcc-core-3.x
+  msys-binutils
+  msys-libtool
+  msys-mgwport
+
+
+Canonical homepage:
+  http://www.gnu.org/software/ncurses/ncurses.html
+
+Canonical download:
+  ftp://ftp.gnu.org/pub/gnu/ncurses/
+
+License:
+  MIT/X11
+
+Language:
+  C, C++
+ 
+========================================================================
+
+Build instructions:
+  unpack  ncurses-6.0-X-msys-1.0.18-src.tar.lzma
+  mgwport ncurses-6.0-X.msysport download
+  mgwport ncurses-6.0-X.msysport all
+
+This will create:
+   ncurses-6.0-X-msys-1.0.18-bin.tar.lzma
+   ncurses-6.0-X-msys-1.0.18-doc.tar.lzma
+   ncurses-6.0-X-msys-1.0.18-lic.tar.lzma
+   ncurses-6.0-X-msys-1.0.18-src.tar.lzma
+   libncurses-6.0-X-msys-1.0.18-dev.tar.lzma
+   libncurses-6.0-X-msys-1.0.18-dll.tar.lzma
+   terminfo-6.0-X-msys-1.0.18-data.tar.lzma
+
+
+========================================================================
+
+NOTES:
+
+* This ncurses is for using in rxvt or mintty.
+
+========================================================================
+MSYS port maintained by:
+  Erwin Waterlander <waterlan@xs4all.nl>

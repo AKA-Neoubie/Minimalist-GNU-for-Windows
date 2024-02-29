@@ -1,0 +1,57 @@
+msys dash
+========================================================================
+DASH is a POSIX-compliant implementation of /bin/sh that aims to be as
+small as possible. It does this without sacrificing speed where
+possible. In fact, it is significantly faster than bash (the GNU
+Bourne-Again SHell) for most tasks.
+
+Runtime requirements (these, or newer)
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+
+Build requirements
+  binutils-2.19.51-3-msys-1.0.13-bin
+  gcc-3.4.4-3-msys-1.0.13-bin
+  w32api-3.14-3-msys-1.0.12-dev
+
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+    coreutils-5.97-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20091209-1-msys-1.0.12-bin
+    gzip-1.3.12-1-msys-1.0.11-bin
+    liblzma-4.999.9beta_20091209-1-msys-1.0.12-dll-1
+    zlib-1.2.3-2-msys-1.0.13-dll
+
+Canonical homepage:
+  http://gondor.apana.org.au/~herbert/dash
+
+Canonical download:
+  http://gondor.apana.org.au/~herbert/dash/files/
+
+License:
+  BSD
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack dash-0.5.5.1_2-X-msys-1.0.13-src.tar.gz
+  ./msys-build-dash  dash-0.5.5.1.tar.gz
+
+This will create:
+  dash-0.5.5.1_2-X-msys-1.0.13-src.tar.gz
+  dash-0.5.5.1_2-X-msys-1.0.13-bin.tar.gz
+  dash-0.5.5.1_2-X-msys-1.0.13-doc.tar.gz
+  dash-0.5.5.1_2-X-msys-1.0.13-lic.tar.gz
+
+========================================================================
+
+Port Notes:
+
+----- dash-0.5.5.1_2-1 -- 2010-01-23 -----
+* Initial msys release
+

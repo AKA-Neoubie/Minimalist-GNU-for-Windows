@@ -1,0 +1,90 @@
+msys crypt
+========================================================================
+This is the DES-crypt package Version 1.1
+
+It provides a static library libcrypt.a as well as a shared library
+msys-crypt-0.dll together with a link lib libcrypt.dll.a, which export
+the functions
+
+        crypt(3)
+        encrypt(3)
+        setkey(3)
+
+The passwords created by crypt(3) are 56 bit DES encrypted and are
+100% identical to those created by the Linux crypt().
+
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+
+Build requirements:
+  binutils-2.19.51-3-msys-1.0.13-bin
+  gcc-3.4.4-3-msys-1.0.13-bin
+  w32api-3.14-3-msys-1.0.12-dev
+
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+    coreutils-5.97-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20091209-1-msys-1.0.12-bin
+    bzip2-1.0.5-2-msys-1.0.13-bin
+    liblzma-4.999.9beta_20091209-1-msys-1.0.12-dll-1
+    libbz2-1.0.5-2-msys-1.0.13-dll-1
+    lndir-1.0.1-2-msys-1.0.13-bin
+
+Canonical homepage:
+  n/a
+
+Canonical download:
+  <CYGWIN_MIRROR>/cygwin/release/crypt/
+
+License:
+  GPL
+
+Language:
+  C
+
+========================================================================
+  
+Build instructions:
+  unpack crypt-1.1_1-X-msys-1.0.11-src.tar.lzma
+  ./msys-build-crypt
+
+This will create:
+  crypt-1.1_1-X-msys-1.0.11-src.tar.lzma
+  crypt-1.1_1-X-msys-1.0.11-bin.tar.lzma
+  crypt-1.1_1-X-msys-1.0.11-doc.tar.lzma
+  crypt-1.1_1-X-msys-1.0.11-lic.tar.lzma
+  libcrypt-1.1_1-X-msys-1.0.11-dll-0.tar.lzma
+  libcrypt-1.1_1-X-msys-1.0.11-dev.tar.lzma
+
+========================================================================
+
+Test suite results
+n/a
+
+========================================================================
+
+Port Notes:
+
+This build is based on the cygwin source package 'crypt-1.1-1.tar.bz2'
+which is unique to the cygwin distribution, although the primary
+functionality is implemented via the files
+    encrypt.h
+    encrypt.c
+which were developed Jochen Obalek in 1991 for a wider audience, and
+released at that time under the GPL. The msys patches only add an
+explicit copy of the license, and modify the build procedure.
+
+----------  crypt-1.1_1-3 -- 2010 Jan 28 -----------
+* Rebuild against msys-1.0.13, using (msys)gcc-3.4.4
+  and (msys)binutils-2.19.51.
+* Use -O3 -fno-unit-at-a-time to avoid optimization bug
+  in latest msys-gcc. Also, don't use -mms-bitfields
+  when compiling msys binaries.
+
+----------  crypt-1.1_1-2 -- 2009 Jul 27 -----------
+* First release of crypt for msys using new packaging standard.
+

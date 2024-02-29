@@ -1,0 +1,343 @@
+msys xz
+========================================================================
+This package provides a data compression library and utilities
+supporting the .xz and .lzma file formats, which use the LZMA
+compression algorithm.  LZMA provides high compression ratios
+and very fast decompression, with minimal memory requirements
+for decompression. XZ Utils is the latest generation of this
+software, supplanting the older LZMA Utils.
+
+XZ Utils provides the xz tool, which supports the new .xz
+file format usually indicated by the extension '.xz'. Internally,
+it uses a variation of the original LZMA compression algorithm,
+called LZMA2.  However, the new xz tool also seamlessly supports
+the older .lzma files and LZMA1 compression.
+
+Release: xz-5.0.3-1-msys-1.0.17
+
+Files:   xz-5.0.3-1-msys-1.0.17-src.tar.lzma        (full source code)
+         xz-5.0.3-1-msys-1.0.17-bin.tar.lzma        (utilities, scripts)
+         xz-5.0.3-1-msys-1.0.17-doc.tar.lzma        (FAQ, readmes, manpages)
+         xz-5.0.3-1-msys-1.0.17-lang.tar.lzma       (i18n support)
+         xz-5.0.3-1-msys-1.0.17-lic.tar.lzma        (licensing terms)
+         liblzma-5.0.3-1-msys-1.0.17-dev.tar.lzma   (libraries and headers)
+         liblzma-5.0.3-1-msys-1.0.17-dll-5.tar.lzma (redistributable DLL)
+
+This distribution incorporates pre-built binary components, which
+have been specifically compiled for the "MSYS" subsystem; in other
+other words, they comprise binary executables and object libraries
+suitable for use only within the MSYS posix emulation environment.
+As such, these xz packages should be installed into the /usr
+directory (which is usually, but not always, C:\MinGW\msys\1.0).
+
+Developers of MSYS applications, who wish to link to the liblzma
+libraries, will require at least the "dev" tarball; this provides
+the liblzma.a static version of the library, liblzma.dll.a import
+library, for linking to a DLL version of the library, and the set
+of C language headers common to both.  The DLL version of the
+library, msys-lzma-5.dll, is provided separately, by the "dll-5"
+tarball.  As in the case of the installable documentation, each of
+these tarballs should be unpacked into the C:\MinGW\msys\1.0
+directory.
+
+Please note that the msys-lzma-5.dll delivered by this package
+depends on the MSYS runtime msys-1.0.dll. Developers need to
+install and use the msys-system-builder (aka msys-dvlpr)
+toolkit to compile clients of this library; it may NOT be used
+in conjunction with the MinGW compiler (which generates native
+win32 binaries, rather than MSYS-dependent ones).
+
+
+Runtime requirements
+  msys-core-bin                   1.0.17-1
+  msys-libintl-dll-8              0.17-2
+  msys-libiconv-dll-2             1.13.1-2
+  msys-libcharset-dll-1           1.13.1-2
+  msys-coreutils-bin              5.97-3
+  msys-bash-bin                   3.1.17-4
+  msys-grep-bin                   2.5.4-2
+
+Build Requires:
+  mingw32-mgwport-bin             0.10.4
+  msys-gcc-bin                    3.4.4-3
+  msys-binutils-bin               2.19.51-3
+  msys-w32api-dev                 3.14-3
+  mingw32-autoconf-bin            2.67-1
+  mingw32-automake-bin            1.11.1-1
+  mingw32-gettext-bin             0.17-2
+  mingw32-gettext-dev             0.17-2
+  mingw32-libgettextpo-dll-0      0.17-2
+  mingw32-libtool                 2.4-1
+
+  msys-core-bin                   1.0.17-1
+  msys-coreutils-bin              5.97-3
+  msys-bash-bin                   3.1.17-4
+  msys-patch-bin                  2.6.1-1
+  msys-make-bin                   3.81-3
+  msys-tar-bin                    1.23-1
+  msys-sed-bin                    4.2.1-2
+  msys-gawk-bin                   3.1.7-2
+  msys-gzip-bin                   1.3.12-2
+  msys-bzip2-bin                  1.0.5-2
+  msys-xz-bin                     4.999.9beta_20100401-1
+  msys-wget-bin                   1.12-1
+  msys-texinfo-bin                4.13a-2
+  msys-file-bin                   5.04-1
+  msys-cvs-bin                    1.12.13-1
+  msys-perl-bin                   5.8.8-1
+  msys-libcrypt-dll-0             1.1_1-3
+  msys-libgdbm-dll-3              1.8.3-3
+  msys-zlib-dll                   1.2.3-2
+
+Canonical homepage:
+  http://tukaani.org/xz/
+
+Canonical download:
+  http://tukaani.org/xz/download
+  git://ctrl.tukaani.org/xz.git
+
+License:
+  liblzma:               public domain
+  xz, xzdec, lzmadec:    public domain (LGPLv2.1+ under certain circumstances)
+  lzdiff, other scripts: GPLv2+
+  build system:          varies: public domain, GPLv2+, GPLv3+
+
+Language:
+  C, shell
+
+========================================================================
+
+Build instructions:
+  unpack xz-5.0.3-1-msys-1.0.17-src.tar.lzma
+  mgwport xz-5.0.3-1.mgwport all
+
+This will create:
+  xz-5.0.3-1-msys-1.0.17-src.tar.lzma
+  xz-5.0.3-1-msys-1.0.17-bin.tar.lzma
+  xz-5.0.3-1-msys-1.0.17-lic.tar.lzma
+  xz-5.0.3-1-msys-1.0.17-doc.tar.lzma
+  xz-5.0.3-1-msys-1.0.17-src.tar.lzma
+  liblzma-5.0.3-1-msys-1.0.17-dll-5.tar.lzma
+  liblzma-5.0.3-1-msys-1.0.17-dev.tar.lzma
+
+See `mgwport --help' for other options.
+
+History:
+========================================================================
+1. LZMA SDK
+First there was the LZMA SDK. Upstream, it shipped no libraries;
+only a few executables such as 'lzma'. The source code was
+provided for public use (under a variety of licenses), but it
+was expected that developers would incorporate the source code
+directly into their own projects.  This is not The Unix Way.
+
+The LZMA SDK was tightly coupled with the 7zip compression
+program, and both were developed on and solely for the Windows 
+platform.  7zip -- but not the LZMA SDK -- was ported to
+Unix under the auspices of the p7zip ("Portable 7zip") project.
+(As an aside, p7zip was then ported to cygwin...to come full
+circle). However, it should be clear that the file format used
+by 7zip (and p7zip) was completely different from the one
+supported by the LZMA SDK's 'lzma' tool.  The latter used what
+was called the 'LZMA-Alone' format, which consisted of 13 bytes
+of header information followed by a raw lzma-compressed byte-
+stream.  7zip, on the other hand, used a much more complicated
+file format capable of hosting multiple files, spanned archives,
+and other features. The only similarity is that the core data 
+compression algorithm used by both is LZMA.
+
+2. LZMA Utils
+Eventually, a unix port of the LZMA SDK appeared, in the form of
+the LZMA Utils distribution, which reorganized the original
+source code, and provided the decompression code in library form
+(liblzmadec). It also provided a version of the 'lzma' program,
+but with a completely different command-line interface. The
+LZMA Utils version consciously mimicked the command-line options
+of the familiar gzip and bzip2 tools, while the original LZMA
+SDK version was...different. Very different. This is because the
+LZMA SDK's tool was originally intended just as a test and
+development utility, to help refine the algorithm. So, it has a
+number of 'compression guru' options that no sane user cares to
+use, and very few of the 'normal user' options that they would.
+
+   LZMA Utils: (Lasse Collin)
+      lzma -d foo.tar.lzma
+         uncompress to (implied) foo.tar, and remove
+         original compressed file.
+      lzma foo.tar
+         compress to (implied) foo.tar.lzma, and remove
+         original uncompressed file.
+      Supports familiar "tuning" options like -0 .. -9
+      Sends output data to stdout using -c
+      Could be invoked under alternate names (symlinks) 
+      for different behavior:
+          unlzma == lzma -d  (uncompress)
+          lzcat  == lzma -dc (uncompress to stdout)
+
+   LZMA SDK: (Igor Pavlov)
+      lzma d foo.tar.lzma foo.tar
+      lzma e foo.tar      foo.tar.lzma   
+         mode d/e is the required first non-option argument
+         both input and output files must be specified
+      stdout? what's that?
+
+Finally, LZMA Utils also shipped a number of helpful
+scripts similar to the familiar ones from gzip and bzip2:
+  lzdiff/lzcmp, lzgrep/lzegrep/lzfgrep, lzless/lzmore
+
+So, the LZMA SDK version was hardly suitable for replacing
+or augmenting the existing bzip2 and gzip compression programs
+on unix systems, expecially as the most common use was in
+conjuction with tar.  But tar expects compression programs
+to satisfy a common command-line argument format, and to be
+able to manipulate data on standard streams. Most linux
+distributions have standardized on LZMA Utils.
+
+However, the .lzma file format (e.g. LZMA-Alone) is not
+sufficient for modern needs, as it (1) had no 'signature
+bytes' so compressed files were difficult to automatically
+detect and verify, (2) it had no provision for internal
+integrity checks, and (3) it could not support multi-file
+archives.
+
+3. XZ Utils
+Approaching final non-beta release is the newest member of
+this family, the XZ Utils. Addressing the shortcomings of the
+LZMA-Alone file format, the xz file format and the (slightly
+modified) LZMA2 compression algorithm were jointly developed
+by Lasse Collin (LZMA Utils) and Igor Pavlov (LZMA SDK). The
+xz tool has all of the benefits of the LZMA Utils' version of
+the lzma tool, and ships with all of the same helpful scripts.
+In addition, it can be invoked as either 'xz' (or xzcat, unxz)
+or 'lzma' (or lzcat, unlzma) so you don't even need to retrain
+your fingers.
+
+You probably should, though, because .lzma files are already
+being replaced by .xz files on by many software distribution
+sites, including GNU ones.
+
+Finally, the XZ Utils also provides the liblzma decompression
+AND compression library, which supports both LZMA-Alone (that
+is, the old .lzma) format, and the new .xz format.
+
+The new .xz file format has an easily identifiable initial
+signature for automated format detection and verification. It
+supports integrity checks of several types including crypto-
+graphic hashes. Finally, the format also supports multiple
+compressed streams within the same file (that is, multi-file
+archives).  However, the xz tool does NOT, at present, support
+multi-file archives; only archives with a single compressed
+stream.
+
+As an aside, eventually the 7zip (and p7zip) utilities will
+support a "new" .7z format -- which will be simply a compatible
+variant of the .xz file format, but with custom filters (codecs)
+specified in the (highly extensible) header defined by the .xz
+standard. This was the primary reason for the new .xz format
+to support multi-file archives; because the xz tool has no
+present need for them, and doesn't even support them (although
+the liblzma library does).
+
+Single File Compression
+==============================================================
+Although the xz file format supports multiple streams, the
+xz tool itself is concerned only with single files that have
+been compressed as a single complete stream using LZMA compression.
+This is similar to the behavior of the older lzma tool and its
+LZMA-Alone file format, or the archetypal gzip and bzip2
+compression programs.
+
+Just as with bzip2 and gzip (and the old lzma tool), to create
+multi-file archives you should use tar and THEN compress with
+xz.exe.  For an integrated compressed archive file format that
+uses LZMA compression, see p7zip and the 7zip programs, and
+their associated .7z file format.
+
+========================================================================
+
+Test suite results
+This section of this document is updated with each new release.
+No history is maintained here.
+
+PASS: test_check.exe
+PASS: test_stream_flags.exe
+PASS: test_filter_flags.exe
+PASS: test_block_header.exe
+PASS: test_index.exe
+PASS: test_files.sh
+test_compress.sh:
+  generated_abc.............
+  generated_random.............
+  generated_text.............
+  prepared_bcj_sparc.............
+  prepared_bcj_x86.............
+PASS: test_compress.sh
+==================
+All 7 tests passed
+==================
+
+========================================================================
+Port Notes:
+
+* This msys build of bzip2 DOES NOT support 64 bit file access (large files),
+  because the msys runtime does not support 64bit off_t.
+
+========================================================================
+
+----------  xz-5.0.3-1 -- 2011 Sep 02 -----------
+* Update to latest upstream release, non-beta!
+  + Bumps DLL number to "5"
+* Adapt build system to use mgwport framework
+
+----------  xz-4.999.9beta_20100401-1 -- 2010 Apr 09 -----------
+* Update to 2010-Apr-01 git snapshot
+  Wed Mar 31 16:47:25 2010 +0300
+  a1f7a986b8d708f9290da9799ca1b8d7082fad3e
+* Patch lzma.h to work around missing inttypes.h and stdint.h
+  Needed for clean build of libarchive.
+
+----------  xz-4.999.9beta_20100131-1 -- 2010 Jan 31 -----------
+* Update to latest upstream git snapshot
+  f9dd797a423a148903cf345b4146cb1fe1eab11d
+  2010-01-31T23:43:54+0200
+* Various upstream fixes
+* Rebuild against msys-1.0.13, using (msys)gcc-3.4.4
+  and (msys)binutils-2.19.51.
+* Rebuild against (shared) libintl/libiconv libraries.
+* Use -O3 -fno-unit-at-a-time to avoid optimization bug
+  in latest msys-gcc. Also, don't use -mms-bitfields
+  when compiling msys binaries.
+
+----------  xz-4.999.9beta_20091209-1 -- 2010 Jan 5 -----------
+* Update to latest upstream git snapshot
+  b56cb1fc31fa2381f92eefc040df85667048d626
+  2009-12-09T18:13:44+0200
+* Various upstream fixes
+* No longer require am-1.11; other packaging changes to ease cross
+  builds.
+* Built with new MSYS gcc 3 toolchain, drop all C89 patches.
+
+----------  xz-4.999.9beta-1 -- 2009 Aug 30 -----------
+* Update to latest upstream release
+* Use (new) upstream xz.1 in preference to custom attempt
+  at a man page.
+* Upstream:
+  - Lots of documentation updates
+  - Fixes data corruption error
+  - C++ compatiblity fixes
+  - New lzmainfo utility
+  - Fixes to helper scripts (xzdiff, xzless, etc)
+  - Other miscellaneous bug fixes and build improvements
+  - Distribute a changelog derived from git log.
+
+----------  xz-4.999.8beta_20090725git-1 -- 2009 Jul 31 -----------
+* First release of xz OR lzma for msys using new packaging standard.
+* Based on a git snapshot because Lasse Collin says: "snapshot of the
+  code in the git repository is better than the latest beta release".
+* HEAVILY patched to support gcc-2.95.3, because xz is coded to C99
+  standards.
+* Fix installation issue with missing .exe extensions.
+* Bump the DLL number to "1" (for consistency with mingw and cygwin).
+  No worries: when xz-5.0.0 the DLL number (and unix SONAME) will be
+  artificially incremented to "5").
+

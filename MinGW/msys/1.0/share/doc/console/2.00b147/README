@@ -1,0 +1,180 @@
+console-config is a shell script to download the Console-2.00
+executable from sourceforge, and install and configure it in a
+manner suitable for use with MSYS and MinGW.
+
+Console2 is a Windows console window enhancement. Console features
+include: multiple tabs, text editor-like text selection, different
+background types, alpha and color-key transparency, configurable
+font, and different window styles.
+
+From the perspective of MinGW/MSYS, there are several different
+"consoles" in which you can interact with MinGW/MSYS tools:
+
+  1) The default cmd.exe console (*).  This is what you get when you
+     launch the msys.bat file with no arguments.  However, it has
+     several shortcomings: The cmd window can't be easily resized (in
+     width). Cut-n-paste is non-intuitive (although that can be improved
+     somewhat by using the 'QuickEdit' settings). The size of the
+     scrollback buffer is limited (although that, too, can be corrected).
+     For these reasons, many people have preferred to use rxvt (see
+     below).
+
+     (*) This is actually a misnomer.  cmd.exe is just a command
+         interpreter (like bash or sh or zsh).  The black window in
+         which it appears is the "console", which on older versions
+         of windows is created by the csrss (Client/Server Runtime
+         Subsystem Service). On Windows 7 and above, it is created by
+         the conhost helper application:
+
+         http://www.howtogeek.com/howto/4996/what-is-conhost.exe-and-why-is-it-running/
+         
+	 Think of the black box as the "terminal emulator" (e.g.
+         console == rxvt == xterm == mintty == console2) and cmd.exe
+         as the "command interpreter" that runs inside it. (e.g.
+         cmd.exe == bash == sh)
+
+  2) rxvt is a VT100-compatible terminal emulator. It is fully
+     resizable, has a large scrollback buffer, and point-n-click
+     cut-n-paste behavior familiar to old unix hands.  Unfortunately,
+     like most cygwin terminal emulators (cygwin-rxvt, xterm, mintty)
+     msys-rxvt communicates with the inferior (that is, the bash shell)
+     using pseudo-ttys (ptys).  While common on unix, on MSYS ptys are
+     emulated by the MSYS dll. For this to work, both the superior
+     (rxvt) and the inferior (bash) must be msys applications, so that
+     they both have access to the emulated ptys.  Since both msys-rxvt
+     and msys-bash are MSYS apps, there is no problem.
+
+     The problem occurs when bash is used to run OTHER programs.
+     Typically, bash launches the child and gives the child access to
+     bash's own stdio handles (remember, these stdio handles are ptys).
+     If the child is ALSO an MSYS app, then this works fine. OTOH, if
+     the child is a native application -- sometimes there are issues.
+     In particular, some native win32 applications expect the normal
+     Windows CONSOLE handles to be used for stdio, and they explicitly
+     use the Win32 console API such as ReadConsole or WriteConsole.
+     This does not work if the "console handle" is actually an MSYS pty.
+     Sometimes, even native applications that use only ANSI C stdio
+     functions -- such as MinGW gcc.exe -- can experience issues with
+     ptys.  Some applications use the _isatty() function to detect
+     whether it is running in a script or interactively. With rxvt,
+     _isatty() always returns false, so interactive applications will
+     "act like" they were running in a script -- perhaps by suppressing
+     all user I/O.  This is both unfortunate and disconcerting to both
+     novice and experience users alike.
+
+     So, while rxvt has a long history with MSYS and many adherents,
+     lately attitudes have shifted and the official position is to
+     discourage the use of msys-rxvt, to avoid the problems described
+     above. Note that cygwin is now also recommending against cygwin-rxvt,
+     but for a different reason. In that case, "native" programs are used
+     much less often in conjection with cygwin ones, so the pty problem
+     does not occur as frequently (the whole purpose of MSYS is to support
+     MinGW gcc, which is a native w32 application). Cygwin's reason for
+     disfavoring rxvt is that it is unmaintained upstream, having been
+     abandoned sometime in 2005. With recent cygwin changes to support
+     multilingual programs and i18n, rxvt's shortcomings in that area
+     are becoming more obvious.
+
+  3) Recently, the mintty (http://code.google.com/p/mintty/) terminal
+     emulator has been ported to MSYS, and is available as part of a
+     regular msys installation.  Mintty is a terminal emulator based on
+     Putty (http://www.chiark.greenend.org.uk/~sgtatham/putty/), and
+     provides many improvements over older emulators such as rxvt. In
+     addition, mintty was developed specifically for the Windows
+     environment, and adheres to the normal Windows application standards:
+     easy copy & paste, support for Windows IME, nice options and
+     configuration menus, transparency and the Vista/Win7 'glass' effect,
+     etc.  Mintty attempts to provide full compatibility with the 'xterm'
+     TERM setting, but also adds a few features introduced by the linux
+     console, rxvt-unicode, and vtXXX terminal emulators.  Mintty also
+     offers features not found in other terminal emulators on Windows, such
+     as robust support for i18n, including wide character support, as well
+     as encoding support including many national languages and UTF-8. (Note
+     that i18n support is not applicable or well-integrated with MSYS
+     applications; MSYS's support for i18n is quite primitive and mintty
+     was designed to work well with cygwin-1.7's more robust i18n
+     implementation).
+
+     However, mintty shares the 'pseudo-tty' (pty) drawback, and some users
+     might find it awkward to use with native applications.  Again, because
+     MSYS's raison de eter is to facilitate the use of native apps such as
+     MinGW gcc, this is a serious drawback.
+
+
+     Well, if cmd.exe is uncomfortable for some users, and rxvt is now
+     officially discouraged, and mintty has the 'pty' problem -- what
+     option remains?
+
+
+  4) console2 is a terminal emulator with advanced features, that does
+     NOT use ptys. In fact, console2 is not an MSYS application at all.
+     Instead, console2 creates a hidden win32 console, and has separate
+     threads that monitor all output to that console and copies the
+     contents to the visible window, and copies all user input to the
+     visible window to the hidden console's input handle.  As far as
+     the client applications are concerned, they ARE running in a normal
+     win32 console.  However, the user-visible window has all the
+     usability improvements, like full resizability, easy cut-n-paste,
+     large scroll back buffers, that many users desire.  Hence, the best
+     of both worlds.
+
+     There's just one little problem...
+
+The MinGW/MSYS project does not provide its own binary version of
+Console2 because, while Console2 is open source (GPL), it cannot be
+compiled with free (as in speech) tools. It can only be built using
+the Microsoft C++ compiler.
+
+Since everything shipped in binary form by the MinGW/MSYS project is
+compiled by tools ALSO provided by MinGW/MSYS, this presents a
+conundrum: by policy we can't ship a binary package for console2, but
+we'd really like for people to use it, instead of rxvt (which we DO
+provide).
+
+The solution is this package, which provides the script 'console-config'.
+The job of this script is to download the official binary package
+provided by the Console2 team from their site.  The script unpacks and
+installs console2 into a suitable location, and configures it for use
+with MSYS and MinGW.
+
+All you have to do is install this package, then run 'console-config'
+with the desired options (see below).  Then, if necessary, move the
+shortcut that is created to its final location (Desktop? QuickLaunch?).
+Also, you may want to edit the configuration file that is created by
+console-config. That configuration file will be located in
+   /usr/lib/Console2/console.xml
+in your MSYS installation (C:\MinGW\msys\1.0\lib\Console2 ?)
+
+=======================================================================
+console-config [-ahuAD] [-c DIR] [-f FONT] [-P SDIR]
+  Download, install, and configure Console2 for
+  use with MinGW/MSYS.
+
+Options:
+  -h       Show this help
+  -a       Download alternate (64bit) package. By default
+           the 32bit package is used.
+  -c DIR   Include cygwin configuration. DIR must
+           be the msys path to the root of the cygwin
+           installation. E.g. '/c/cygwin'
+  -f FONT  Specify the font. Defaults to Lucida Console
+           but 'Consolas', 'Courier New', or
+           'DejaVu LGC Sans Mono' are also good choices
+  -A       Use 'All Users' instead of current user for -D,-P
+  -D       Create shortcut on the 'Desktop'
+  -P SDIR  Create shortcut in the specified subdirectory of
+           the Start Menu 'Programs' directory
+  -u       Uninstall Console2. This will remove everything
+           except the configuration files in /usr/lib/Console2
+           and any shortcuts that may have been created earlier
+
+See https://sourceforge.net/projects/console/
+=======================================================================
+
+NOTE: -A might not work as desired on Windows Vista or Windows 7,
+      thanks to the new security model.  If you really want the shortcut
+      to appear in the All Users section, I suggest not using any of
+      the -A/-D/-P options.  The shortcut will be created in the current
+      user's home directory.  Then, manually move it to All Users,
+      after obtaining elevated credentials.
+

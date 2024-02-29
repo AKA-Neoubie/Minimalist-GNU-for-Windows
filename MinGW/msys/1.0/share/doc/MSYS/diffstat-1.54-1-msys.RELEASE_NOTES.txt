@@ -1,0 +1,123 @@
+msys diffstat
+========================================================================
+diffstat reads the output of diff and displays a histogram of the
+insertions, deletions, and modifications per-file. It is useful for
+reviewing large, complex patch files.
+
+Runtime requirements:
+  msysCORE-1.0.18-1-msys-1.0.18-bin
+
+Build requirements:
+  binutils-2.21-3-mingw32-bin
+  gcc-3.4.4-3-msys-1.0.13-bin
+  w32api-3.14-3-msys-1.0.12-dev
+
+  Devel Tools and Dependent Libraries
+    automake-1.11.1-1-msys-1.0.13-bin
+
+  MSYS Environment
+    msysCORE-1.0.17-1-msys-1.0.17-bin
+    coreutils-5.97-3-msys-1.0.13-bin
+    bash-3.1.17-4-msys-1.0.16-bin
+    make-3.81-3-msys-1.0.13-bin
+    tar-1.23-1-msys-1.0.13-bin
+    xz-4.999.9beta_20100401-1-msys-1.0.13-bin
+    gzip-1.3.12-2-msys-1.0.13-bin
+    liblzma-4.999.9beta_20100401-1-msys-1.0.13-dll-1
+    zlib-1.2.3-2-msys-1.0.13-dll
+    gawk-3.1.7-2-msys-1.0.13-bin
+    sed-4.2.1-2-msys-1.0.13-bin
+
+Canonical website:
+  http://dickey.his.com/diffstat/diffstat.html
+
+Canonical download:
+  ftp://invisible-island.net/diffstat/diffstat.tar.gz
+
+License:
+  BSDish
+
+========================================================================
+Build instructions:
+  unpack diffstat-1.54-X-msys-1.0.17-src.tar.lzma
+  ./msys-build-diffstat
+
+This will create:
+  diffstat-1.54-X-msys-1.0.17-src.tar.lzma
+  diffstat-1.54-X-msys-1.0.17-bin.tar.lzma
+  diffstat-1.54-X-msys-1.0.17-doc.tar.lzma
+  diffstat-1.54-X-msys-1.0.17-lic.tar.lzma
+
+========================================================================
+
+Files included in the binary packages:
+
+diffstat-*-bin:
+  /usr/bin/diffstat.exe
+
+diffstat-*-doc:
+  /usr/share/doc/diffstat/1.54/CHANGES
+  /usr/share/doc/diffstat/1.54/README
+  /usr/share/doc/MSYS/diffstat-1.54-1-msys.RELEASE_NOTES.txt
+  /usr/share/man/man1/diffstat.1
+
+diffstat-*-lic:
+  /usr/share/doc/diffstat/1.54/LICENSE
+
+========================================================================q
+
+Test suite results
+This section of this document is updated with each new release.
+No history is maintained here.
+
+testing case01: all ok
+testing case02: all ok
+testing case03: all ok
+testing case04: all ok
+testing case05: all ok
+testing case06: all ok
+testing case07: all ok
+testing case08: all ok
+testing case09: all ok
+testing case10: all ok
+testing case11: all ok
+testing case12: all ok
+testing case13: all ok
+testing case14: all ok
+testing case15: all ok
+testing case16: all ok
+testing case17: all ok
+testing case18: all ok
+testing case19: all ok
+testing case20: all ok
+testing case21: all ok
+testing case22: all ok
+testing case23: all ok
+testing case24: all ok
+testing case25: all ok
+testing case26: all ok
+testing case27: all ok
+testing case28: fail 1/9
+<  testing/case28.pat |   70 ++++++++++++++++++++++++++---------------------------
+---
+>  usr/src/diffstat/diffstat-1.54/testing/case28.pat |   70 +++++++++++-----------
+testing case29: fail 1/9
+<  testing/case29.pat |   70 ++++++++++++++++++++++++++---------------------------
+---
+>  usr/src/diffstat/diffstat-1.54/testing/case29.pat |   70 +++++++++++-----------
+<<<< there is no case30 >>>>
+testing case31: all ok
+testing case31l: all ok
+testing case31u: all ok
+testing case32: all ok
+testing case33: all ok
+
+>>>> no significant failures.
+
+========================================================================
+
+Port Notes:
+
+----- diffstat-1.54-1 -----
+* First release for MSYS
+

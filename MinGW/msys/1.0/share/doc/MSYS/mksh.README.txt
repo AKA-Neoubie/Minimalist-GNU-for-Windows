@@ -1,0 +1,48 @@
+mksh
+------------------------------------------
+MirBSD Korn Shell, an actively developed free implementation of the Korn Shell
+programming language and a successor to the Public Domain Korn Shell (pdksh).
+
+Runtime requirements:
+  msys-1.0.17
+
+Build requirements:
+  binutils
+  gcc-core-3.4.4
+  make-3.81
+  mgwport-0.10.5
+
+Canonical website:
+  https://www.mirbsd.org/mksh.htm
+
+Canonical download:
+  https://www.mirbsd.org/MirOS/dist/mir/mksh/
+
+-------------------------------------------
+
+Build instructions:
+    unpack mksh-40c-X-src.tar.bz2
+        if you use setup to install this src package, it will be unpacked
+        under /usr/src automatically
+    cd /usr/src
+    mgwport ./mksh-40c-X.msysport all
+
+This will create:
+    /usr/src/mksh-40c-X-src.tar.bz2
+    /usr/src/mksh-40c-X.tar.bz2
+
+Or use 'mgwport ./mksh-40c-X.msysport prep' to get the source
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /bin/mksh.exe
+  /share/man/man1/mksh.1.gz
+  /share/doc/mksh/examples/dot.mkshrc
+
+------------------
+
+Port Notes:
+
+* Compiled from the upstream sources without any modifications

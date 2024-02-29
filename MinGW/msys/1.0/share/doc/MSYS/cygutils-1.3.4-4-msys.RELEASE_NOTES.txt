@@ -1,0 +1,164 @@
+msys cygutils
+========================================================================
+The cygutils package contains a collection of simple utilities from
+various sources.
+
+See below for an important note concerning the implementation of `lpr'
+provided by this package.
+
+This version has been modified and compiled for use in the MSYS
+environment. It should be installed into the / == /usr directory, which
+is usually but not always, C:\msys\1.0. It does not provide all of the
+tools found in the cygwin build of cygutils, because many are not useful
+on MSYS.
+
+Included (description):
+    conv.exe           (generic dos-to-unix/unix-to-dos converter)
+    d2u.exe            (ditto, defaults to dos-to-unix)
+    dos2unix.exe       (ditto, defaults to dos-to-unix)
+    u2d.exe            (ditto, defaults to unix-to-dos)
+    unix2dos.exe       (ditto, defaults to unix-to-dos)
+
+    mkshortcut.exe     (create a Windows shortcut)
+    readshortcut.exe   (read data from a windows shortcut (.lnk) file)
+
+    getclip.exe        (copy contents of the Windows Clipboard to stdout)
+    putclip.exe        (copy stdin to the Windows Clipboard)
+
+    lpr-basic.exe      (Spool files to a printer)
+    lpr.exe            (Spool files to a printer)
+
+Omitted (reason):
+    ascii.exe         (not useful enough to bloat MSYS)
+    banner.exe        (ditto)
+    dump.exe          (use 'od -Ax -tx2z some-file' instead)
+    realpath.exe      (provides no meaningful functionality on MSYS)
+    cygstart.exe      (use '/bin/start <args>' instead)
+    msys-icons-0.dll  (these are cygwin, not msys, icons)
+    ipck              (IPC not supported under MSYS)
+    msgtool.exe       (ditto)
+    semstat.exe       (ditto)
+    semtool.exe       (ditto)
+    shmtool.exe       (ditto)
+
+IMPORTANT NOTE CONCERNING LPR
+========================================================================
+lpr spools a file to the specified printer device. MSYS provides
+two separate implementations: lpr-basic.exe and lpr-enhanced
+(the latter is a script, not a binary executable).
+
+lpr-basic.exe is suitable for most simple printing needs; it can
+send "raw" data to any installed Windows printer. This is most useful
+for raw text, for sending plain PostScript files to PostScript-
+compatible printers, and for re-sending .prn files generated using
+Windows' own print-to-file capabilities to the specific printer for
+which the .prn file was generated. For more information, see
+`man lpr-basic'.
+
+lpr-enhanced is an MSYS extension which supports many of the advanced
+capabilities of a true Unix-style lpr implementation. It can pre-process
+data before sending it to the printer and apply various filters. For
+instance, different printer configurations can be established, all
+associated with the same physical device.  One configuration could
+pre-processes data using nroff and gswin32c.exe (ghostscript), while
+another might simply specify landscape rather than portrait mode, etc.
+All of this is controlled by the associated /etc/printcap file; this
+configuration is both the source of lpr-enhanced's power, and its major
+drawback. Unlike lpr-basic.exe, lpr-enhanced requires extensive user
+configuration. For more information, see the documentation embedded
+within /usr/bin/lpr-enhanced, if installed. Note that, to use
+lpr-enhanced, it may be necessary to remove /usr/bin/lpr.exe, and copy
+/usr/bin/lpr-enhanced to /usr/bin/lpr.
+
+
+========================================================================
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  libpopt-1.15-2-msys-1.0.13-dll-0
+
+Build requirements (these, or newer)
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+
+  Devel Tools and Dependent Libraries
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-dev
+    gettext-0.17-2-msys-1.0.13-bin
+    gettext-0.17-2-msys-1.0.13-dev
+    libgettextpo-0.17-2-msys-1.0.13-dll-0
+    libtool-2.2.7a-2-msys-1.0.13-bin
+    libpopt-1.15-2-msys-1.0.13-dev
+
+  MSYS Environment
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    libgdbm-1.8.3-3-msys-1.0.13-dll-3
+    zlib-1.2.3-2-msys-1.0.13-dll
+    coreutils-5.97-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    tar-1.23-2-msys-1.0.13-bin
+    xz-4.999.9beta_20100401-1-msys-1.0.13-bin
+    liblzma-4.999.9beta_20100401-1-msys-1.0.13-dll-1
+    file-5.04-2-msys-1.0.13-bin
+    grep-2.5.4-2-msys-1.0.13-bin
+    sed-4.2.1-2-msys-1.0.13-bin
+    gawk-3.1.7-2-msys-1.0.13-bin
+ 
+Canonical homepage:
+  http://cygutils.fruitbat.org/cygutils-package/
+
+Canonical download:
+  http://cygutils.fruitbat.org/cygutils-package/download/
+
+License:
+  GPL, BSD-no-advert
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack cygutils-1.3.4-4-msys-1.0.13-src.tar.lzma
+  ./msys-build-cygutils cygutils-1.3.4.tar.gz
+
+This will create:
+  cygutils-dos2unix-1.3.4-4-msys-1.0.13-bin.tar.lzma
+  cygutils-1.3.4-4-msys-1.0.13-bin.tar.lzma
+  cygutils-1.3.4-4-msys-1.0.13-doc.tar.lzma
+  cygutils-1.3.4-4-msys-1.0.13-lic.tar.lzma
+  cygutils-1.3.4-4-msys-1.0.13-src.tar.lzma
+
+========================================================================
+
+Test suite results
+
+This section of this document is updated with each new release.
+No history is maintained here.
+
+Manual testing seems ok.
+
+========================================================================
+
+Port Notes:
+
+----------  cygutils-1.3.4-4 -- 2010 Apr 27 -----------
+* Rebuild with latest msys-gcc-3.x compiler, against msys 1.0.13
+
+----------  cygutils-1.3.4-3 -- 2009 Sep 12 -----------
+* Harmonize source code with mingw verison
+* split conv, dos2unix, unix2dos, d2u, and u2d into a separate -bin.
+
+----------  cygutils-1.3.4-2 -- 2009 Sep 11 -----------
+* Install lpr.exe also as lpr-basic.exe; rename associated manpage.
+* Install additional man page for lpr, mentioning both lpr-basic.exe
+  and lpr-enhanced.
+
+----------  cygutils-1.3.4-1 -- 2009 Aug 27 -----------
+* First release of cygutils for msys using new packaging standard.

@@ -1,0 +1,149 @@
+msys gdbm
+========================================================================
+GNU dbm is a set of database routines that use extensible hashing. It
+works similar to the standard UNIX dbm routines, and provides compatible
+replacement interfaces for the traditional 'dbm' and 'ndbm' libraries.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+
+Build requirements:
+  binutils-2.19.51-3-msys-1.0.13-bin
+  gcc-3.4.4-3-msys-1.0.13-bin
+  w32api-3.14-3-msys-1.0.12-dev
+
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+    coreutils-5.97-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20091209-1-msys-1.0.12-bin
+    gzip-1.3.12-1-msys-1.0.11-bin
+    liblzma-4.999.9beta_20091209-1-msys-1.0.12-dll-1
+    zlib-1.2.3-2-msys-1.0.13-dll
+
+Canonical homepage:
+  http://www.gnu.org/software/gdbm/gdbm.html
+
+Canonical download:
+  ftp://ftp.gnu.org/pub/gnu/gdbm/
+
+License:
+  GPL
+
+Language:
+  C
+
+========================================================================
+  
+Build instructions:
+  unpack gdbm-1.8.3-X-msys-1.0.13-src.tar.gz
+  ./msys-build-gdbm
+
+This will create:
+  gdbm-1.8.3-X-msys-1.0.13-src.tar.lzma
+  gdbm-1.8.3-X-msys-1.0.13-bin.tar.lzma
+  gdbm-1.8.3-X-msys-1.0.13-doc.tar.lzma
+  gdbm-1.8.3-X-msys-1.0.13-lic.tar.lzma
+  libgdbm-1.8.3-X-msys-1.0.13-dev.tar.lzma
+  libgdbm-1.8.3-X-msys-1.0.13-dll-4.tar.lzma
+
+========================================================================
+
+Test suite results
+n/a
+
+========================================================================
+
+Port Notes:
+
+This distribution was derived from the cygwin gdbm-1.3.8-8 package, 
+but with modifications:
+
+  (a) the system /usr/share/libtool/ltmain.sh was replaced with one
+      that had msys support
+  (b) the system /usr/share/aclocal/libtool.m4 was also replaced with
+      one that had msys support
+  (c) prepared autoreconf to replace old tools:
+         rm -f ltmain.sh config.guess config.sub install-sh 
+         rm -f aclocal.m4 mkinstalldirs
+         touch acinclude.m4
+      in the unpacked source dir
+  (d) removed all of the cygwin-specific packaging gunk:
+         rm -rf CYGWIN-PATCHES
+  (e) libtoolize --force --install
+  (f) aclocal
+  (g) autoreconf -f -v -i
+  (h) copy in modified config.guess with msys support
+  (i) copy in modified config.sub   with msys support
+
+All of the above modifications are reflected in the "gdbm-*-msys.patch"
+file.  To rebuild, all you need to do (from an msysDVLPR shell) is:
+
+  (1) unpack the stock gdbm-1.8.3 tarball
+  (2) apply the patch
+  (3) mkdir _build && cd _build
+  (4) <path-to-src>/configure --srcdir=<path-to-src> --prefix=/usr \
+         LDFLAGS=-Wl,--enable-auto-import \
+         CFLAGS="-mms-bitfields -O3 -s -march=i386 -mtune=i686"
+  (5) make
+  (6) make progs
+
+  (7) The install procedure insists on trying to chown/chgrp the
+      products.  Rather than fight it, fool it:
+
+        my_binown=$(id | sed -e 's/[()]/ /g' | awk '{print $2}')
+        my_bingrp=$(id | sed -e 's/[()]/ /g' | awk '{print $4}')
+        makeopts="INSTALL_ROOT=<some_destdir> BINOWN=${my_binown} BINGRP=${my_bingrp}"
+
+      you don't have to use INSTALL_ROOT, just like you don't have
+      to use DESTDIR.
+
+      make install install-compat install-progs ${makeopts}
+
+  (8) after that, it's up to you...  
+
+[*] About libgdbm_compat: From time immemorial, libgdbm provided
+    emulation of so-called "system" database interfaces.  There
+    were two flavors of these: the 'dbm' interface, and the
+    'ndbm' interface.  libgdbm supports both, as well as its own
+    more flexible interface.
+
+    Sometime after 2002, the libgdbm maintainers separated the
+    emulation code into a separate library: libgdbm_compat. 
+    However, the separation was not pretty: data items which
+    are conceptually private to libgdbm are shared between
+    libgdbm and libgdbm_compat.
+
+    Stir in Win32 DLLs. Data items are notoriously difficult
+    to deal with, and (normally) require that various compile-
+    time options when compiling clients (such as libgdbm_compat)
+    that wish to access data items exported by the DLL (libgdbm).
+
+    This is a lot of bother, and on regular mingw and cygwin,
+    gcc and ld provide support for bypassing it all: see
+    'info ld auto-import'.  However, in that past that doesn't
+    work for msys: While gcc-2.95.3 and ld 2.11.90 do support
+    auto-import, they do NOT support the runtime-pseudo-reloc
+    behavior, needed when your DLL exports complicated structs.
+
+    And wouldn't you know it: one of the data items "shared" between
+    libgdbm and libgdbm_compat is a gigantic struct.
+
+    But now that we have (msys) gcc 3.4.4 and (msys) binutils
+    2.19.51.1, plus pseudo-reloc support in the msys DLL, we can do
+    it just like the other platforms. Yay!
+
+----------  gdbm-1.8.3-3 -- 2010 Jan 28 -----------
+* Rebuild against msys-1.0.13, using (msys)gcc-3.4.4
+  and (msys)binutils-2.19.51.
+* Use -O3 -fno-unit-at-a-time to avoid optimization bug
+  in latest msys-gcc. Also, don't use -mms-bitfields
+  when compiling msys binaries.
+* Exploit pseudo-reloc support, and build gdbm/gdbm_compat as
+  two separate libraries, just like cygwin and *nix.
+
+----------  gdbm-1.8.3-2 -- 2009 Jul 26 -----------
+* First release of gdbm for msys using new packaging standard.
+

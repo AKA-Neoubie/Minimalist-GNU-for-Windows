@@ -1,0 +1,119 @@
+msys texinfo
+========================================================================
+Texinfo is the official documentation format of the GNU project. It was
+invented by Richard Stallman and Bob Chassell many years ago, loosely
+based on Brian Reid's Scribe and other formatting languages of the time.
+It is used by many non-GNU projects as well.
+
+Texinfo uses a single source file to produce output in a number of
+formats, both online and printed (dvi, html, info, pdf, xml, etc.). This
+means that instead of writing different documents for online information
+and another for a printed manual, you need write only one document. And
+when the work is revised, you need revise only that one document. 
+
+This version has been modified and compiled for use in the MSYS
+environment. It should be installed into the / == /usr directory, which
+is usually but not always, C:\msys\1.0.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  libintl-0.17-2-msys-1.0.13-dll-8
+  libiconv-1.13.1-2-msys-dll-2
+  libregex-1.20090805-2-msys-1.0.13-dll-1
+  libtermcap-0.20050421_1-2-msys-1.0.13-dll-0
+  termcap-0.20050421_1-2-msys-1.0.13-bin
+
+Build requirements (these, or newer)
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+
+  Devel Tools and Dependent Libraries
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-dev
+    gettext-0.17-2-msys-1.0.13-bin
+    gettext-0.17-2-msys-1.0.13-dev
+    libgettextpo-0.17-2-msys-1.0.13-dll-0
+    libtool-2.2.7a-2-msys-1.0.13-bin
+    libregex-1.20090805-2-msys-1.0.13-dev
+    libtermcap-0.20050421_1-2-msys-1.0.13-dev
+
+  MSYS Environment
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    libgdbm-1.8.3-3-msys-1.0.13-dll-3
+    zlib-1.2.3-2-msys-1.0.13-dll
+    coreutils-5.97-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20100401-1-msys-1.0.13-bin
+    bzip2-1.0.5-2-msys-1.0.13-bin
+    gzip-1.3.12-2-msys-1.0.13-bin
+    liblzma-4.999.9beta_20100401-1-msys-1.0.13-dll-1
+    libbz2-1.0.5-2-msys-1.0.13-dll-1
+    file-5.04-2-msys-1.0.13-bin
+    grep-2.5.4-2-msys-1.0.13-bin
+    sed-4.2.1-2-msys-1.0.13-bin
+    gawk-3.1.7-2-msys-1.0.13-bin
+    cvs-1.12.13-1-msys-1.0.11-bin
+
+Canonical homepage:
+  http://www.gnu.org/software/texinfo/
+
+Canonical download:
+  http://ftp.gnu.org/pub/gnu/texinfo/
+
+License:
+  GPLv3
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack texinfo-4.13a-2-msys-1.0.13-src.tar.lzma
+  ./msys-build-texinfo texinfo-4.13a.tar.lzma
+
+This will create:
+  texinfo-4.13a-2-msys-1.0.13-src.tar.lzma
+  texinfo-4.13a-2-msys-1.0.13-bin.tar.lzma
+  texinfo-4.13a-2-msys-1.0.13-lang.tar.lzma
+  texinfo-4.13a-2-msys-1.0.13-doc.tar.lzma
+  texinfo-4.13a-2-msys-1.0.13-lic.tar.lzma
+
+========================================================================
+
+Test suite results
+
+This section of this document is updated with each new release.
+No history is maintained here.
+
+Group 1 (install-info tests)
+===================
+All 53 tests passed
+===================
+
+Group 2 (makeinfo tests)
+===================
+All 24 tests passed
+===================
+
+========================================================================
+
+Port Notes:
+
+----------  texinfo-4.13a-2 -- 2010 Apr 17 -----------
+* Rebuild with latest msys-gcc-3.x compiler, against msys 1.0.13
+  and DLL versions of libintl and libiconv.
+* Link against DLL version of libregex and libtermcap.
+* Split i18n files into separate -lang package
+
+----------  texinfo-4.13a-1 -- 2009 Aug 11 -----------
+* First release of texinfo for msys using new packaging standard. 
+

@@ -1,0 +1,106 @@
+msys termcap
+========================================================================
+Termcap provides /etc/termcap, a database of terminal capabilities.
+It also provides libtermcap (in both shared and static form) as well
+as termcap.h, which together embody a library for accessing that
+database.  This version has been compiled for use by packages in the
+'msys' subsystem; it should not be used by "native" mingw32 programs.
+
+Unless you develop MSYS applications, you probably only need the -bin
+package, which contains the /etc/termcap database, and the -dll package.
+
+Runtime requirements
+  MSYS Environment
+    n/a
+
+Build requirements (these, or newer)
+  binutils-2.19.51-3-msys-1.0.13-bin
+  gcc-3.4.4-3-msys-1.0.13-bin
+  w32api-3.14-3-msys-1.0.12-dev
+  msysCORE-1.0.13-2-msys-1.0.13-dev
+
+  Devel Tools and Dependent Libraries 
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libtool-2.2.7a-2-msys-1.0.13-bin
+
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-bin
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    libgdbm-1.8.3-3-msys-1.0.13-dll-3
+    zlib-1.2.3-2-msys-1.0.13-dll
+    coreutils-5.97-2-msys-1.0.11-bin
+    m4-1.4.13-1-msys-1.0.11-bin
+    texinfo-4.13a-1-msys-1.0.11-bin
+    file-5.03-1-msys-1.0.11-bin
+    grep-2.5.4-1-msys-1.0.11-bin
+    sed-4.2.1-1-msys-1.0.11-bin
+    gawk-3.1.7-1-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20091209-1-msys-1.0.12-bin
+    liblzma-4.999.9beta_20091209-1-msys-1.0.12-dll-1
+
+Canonical homepage:
+  n/a
+
+Canonical download:
+  http://mirrors.xmission.com/cygwin/release-2/termcap/termcap-20050421-1-src.tar.bz2
+
+License:
+  BSD
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack termcap-20050421_1-X-msys-1.0.13-src.tar.gz
+  ./msys-build-termcap termcap-20050421_1.tar.bz2
+
+This will create:
+  termcap-20050421_1-X-msys-1.0.13-src.tar.lzma
+  termcap-20050421_1-X-msys-1.0.13-bin.tar.lzma
+  libtermcap-20050421_1-X-msys-1.0.13-dll-0.tar.lzma
+  libtermcap-20050421_1-X-msys-1.0.13-dev.tar.lzma
+  termcap-20050421_1-X-msys-1.0.13-lic.tar.lzma
+  termcap-20050421_1-X-msys-1.0.13-doc.tar.lzma
+
+========================================================================
+
+Test suite results
+n/a
+
+========================================================================
+
+Port Notes:
+
+This build is based on the source package 'termcap-20050421_1.tar.bz2'.
+This file is merely a repackaged version -- differing only in the name
+of the archive itself, and the name of the directory into which it
+unpacks -- of the cygwin-specific source package
+  http://mirrors.xmission.com/cygwin/release-2/termcap/termcap-20050421-1-src.tar.bz2
+The supplied patch, which is applied during the build process, adds
+specific definitions for terminals often encounted when using MSYS, and
+enables building the library as a DLL.
+
+The patch also updates some of the terminal definitions using the latest
+terminfo-derived definitions found on cygwin-1.5.25 (cygwin termcap
+package 5.7_20091114-4).
+
+----------  termcap-20050421_1-2 -- 2010 Jan 30 -----------
+* Rebuild against msys-1.0.13, using (msys)gcc-3.4.4
+  and (msys)binutils-2.19.51.
+* Use -O3 -fno-unit-at-a-time to avoid optimization bug
+  in latest msys-gcc. Also, don't use -mms-bitfields
+  when compiling msys binaries.
+* Supply library in both shared and static form.
+* Update terminal definitions using updated terminfo data from
+  cygwin-1.5.25 (cygwin termcap package 5.7_20091114-4).
+
+----------  termcap-20050421_1-1 -- 2009 Jul 30 -----------
+* First release of termcap for msys under the new packaging standard.
+

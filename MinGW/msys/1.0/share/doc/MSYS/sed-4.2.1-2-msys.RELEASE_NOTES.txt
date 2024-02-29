@@ -1,0 +1,101 @@
+msys sed
+========================================================================
+sed is a stream editor. A stream editor is used to perform basic text
+transformations on an input stream (a file or input from a pipeline).
+While in some ways similar to an editor which permits scripted edits 
+(such as ed), sed works by making only one pass over the input(s), and
+is consequently more efficient. But it is sed's ability to filter text
+in a pipeline which particularly distinguishes it from other types of
+editors.
+
+This version has been modified and compiled for use in the MSYS
+environment. It should be installed into the / == /usr directory, which
+is usually but not always, C:\msys\1.0.
+
+Runtime requirements:
+  msysCORE-1.0.13-2-msys-1.0.13-bin
+  libiconv-1.13.1-2-msys-1.0.13-dll-2
+  libintl-0.17-2-msys-dll-8
+
+Build requirements (these, or newer)
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-3-msys-1.0.12-dev
+    msysCORE-1.0.13-2-msys-1.0.13-dev
+
+  Devel Tools and Dependent Libraries 
+    autoconf-2.65-1-msys-1.0.13-bin
+    automake-1.11.1-1-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-bin
+    libiconv-1.13.1-2-msys-1.0.13-dev
+    gettext-0.17-2-msys-1.0.13-bin
+    gettext-0.17-2-msys-1.0.13-dev
+    libgettextpo-0.17-2-msys-1.0.13-dll-0
+ 
+  MSYS Environment
+    msysCORE-1.0.13-2-msys-1.0.13-bin
+    perl-5.6.1_2-2-msys-1.0.13-bin
+    libcrypt-1.1_1-3-msys-1.0.13-dll-0
+    libgdbm-1.8.3-3-msys-1.0.13-dll-3
+    zlib-1.2.3-2-msys-1.0.13-dll
+    coreutils-5.97-2-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    xz-4.999.9beta_20100401-1-msys-1.0.13-bin
+    gzip-1.3.12-1-msys-1.0.11-bin
+    liblzma-4.999.9beta_20100401-1-msys-1.0.13-dll-1
+    file-5.03-1-msys-1.0.11-bin
+    grep-2.5.4-1-msys-1.0.11-bin
+    sed-4.2.1-1-msys-1.0.11-bin
+    gawk-3.1.7-1-msys-1.0.11-bin
+    cvs-1.12.13-1-msys-1.0.11-bin
+ 
+Canonical homepage:
+  http://www.gnu.org/software/sed/
+
+Canonical download:
+  http://ftp.gnu.org/pub/gnu/sed/
+
+License:
+  GPLv3
+  GFDLv1.3 (documentation)
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack sed-4.2.1-2-msys-1.0.13-src.tar.lzma
+  ./msys-build-sed sed-4.2.1.tar.bz2
+
+This will create:
+  sed-4.2.1-2-msys-1.0.13-src.tar.lzma
+  sed-4.2.1-2-msys-1.0.13-bin.tar.lzma
+  sed-4.2.1-2-msys-1.0.13-doc.tar.lzma
+  sed-4.2.1-2-msys-1.0.13-lic.tar.lzma
+
+========================================================================
+
+Test suite results
+
+This section of this document is updated with each new release.
+No history is maintained here.
+
+======================
+All 61 tests passed
+(4 tests were not run)
+======================
+
+========================================================================
+
+Port Notes:
+
+----------  sed-4.2.1-2 -- 2010 Apr 11 -----------
+* Rebuild using latest msys-gcc, against DLL i18n libraries.
+* Put i18n files into -lang package
+
+----------  sed-4.2.1-1 -- 2009 Aug 08 -----------
+* First release of sed for msys using new packaging standard. 
