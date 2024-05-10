@@ -220,13 +220,8 @@
         <requires eq="mingw32-libiconv-*-mingw32-*-bin.tar" />
         <requires eq="mingw32-libiconv-*-mingw32-*-dev.tar" />
     </installed>
-    <installed tarname="mingwrt-5.0.2-mingw32-dll.tar.xz" />
     <installed tarname="libssp-6.3.0-1-mingw32-dll-0.tar.xz" />
     <installed tarname="libmingwex-5.0.2-mingw32-dll-0.tar.xz" />
-    <installed tarname="w32api-5.0.2-mingw32-dev.tar.xz" />
-    <installed tarname="mingwrt-5.0.2-mingw32-dev.tar.xz">
-        <requires eq="mingwrt-%-mingw32-dll.tar" />
-    </installed>
     <installed tarname="binutils-2.28-1-mingw32-bin.tar.xz">
         <requires eq="mingw32-libintl-*-mingw32-*-dll-8.tar" />
     </installed>
@@ -703,5 +698,23 @@
     <installed tarname="binutils-2.28-1-mingw32-info.tar.xz" />
     <installed tarname="liblzma-5.0.3-2-mingw32-dll-5.tar.lzma">
         <requires eq="mingw32-libgcc-*-mingw32-dll-1.tar" />
+    </installed>
+    <installed tarname="mingwrt-4.0-1-mingw32-rc-4-doc.tar.lzma" />
+    <installed tarname="w32api-4.0-1-mingw32-rc-4-doc.tar.lzma" />
+    <installed tarname="w32api-4.0-1-mingw32-rc-4-lic.tar.lzma" />
+    <installed tarname="mingwrt-3.20-2-mingw32-dll.tar.lzma" />
+    <installed tarname="w32api-3.17-2-mingw32-dev.tar.lzma" />
+    <installed tarname="mingwrt-3.20-2-mingw32-dev.tar.lzma">
+        <requires eq="mingwrt-%-mingw32-%-dll.tar" />
+    </installed>
+    <installed tarname="wsl_rc-test-off-4.0-1-mingw32-rc-4-meta.dat">
+        <download tarname="none" />
+        <requires eq="mingwrt-3.*-mingw32-*-dev.tar" />
+        <requires eq="w32api-3.*-mingw32-*-dev.tar" />
+    </installed>
+    <installed tarname="wsl_rc-test-on-4.0-1-mingw32-rc-4-meta.dat">
+        <download tarname="none" />
+        <requires eq="mingwrt-%-mingw32-%-dev.tar" />
+        <requires eq="w32api-%-mingw32-%-dev.tar" />
     </installed>
 </sysroot>

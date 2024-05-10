@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-038-18e3-b208eb">
+    <release tarname="w32api-4.0-1-mingw32-rc-4-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share/doc/w32api" />
+        <file path="share/doc/w32api/ChangeLog" />
+        <dir path="share/doc/w32api/historical" />
+        <file path="share/doc/w32api/historical/ChangeLog" />
+        <file path="share/doc/w32api/historical/CONTRIBUTIONS" />
+        <file path="share/doc/w32api/historical/README.w32api" />
+        <file path="share/doc/w32api/historical/TODO" />
+        <file path="share/doc/w32api/NEWS" />
+        <file path="share/doc/w32api/NOTES" />
+        <file path="share/doc/w32api/README" />
+        <file path="share/doc/w32api/TODO" />
+    </manifest>
+</package>

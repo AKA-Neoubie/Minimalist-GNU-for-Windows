@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-039-7743-e23a62">
+    <release tarname="mingwrt-4.0-1-mingw32-rc-4-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
+    </references>
+    <manifest>
+        <dir path="share/doc/mingwrt" />
+        <file path="share/doc/mingwrt/ChangeLog" />
+        <dir path="share/doc/mingwrt/historical" />
+        <file path="share/doc/mingwrt/historical/ChangeLog" />
+        <file path="share/doc/mingwrt/historical/CONTRIBUTORS" />
+        <file path="share/doc/mingwrt/historical/DISCLAIMER" />
+        <dir path="share/doc/mingwrt/historical/man" />
+        <file path="share/doc/mingwrt/historical/man/dirname.man" />
+        <file path="share/doc/mingwrt/historical/README" />
+        <file path="share/doc/mingwrt/historical/readme.txt" />
+        <file path="share/doc/mingwrt/historical/TODO" />
+        <file path="share/doc/mingwrt/NEWS" />
+        <file path="share/doc/mingwrt/NOTES" />
+        <file path="share/doc/mingwrt/README" />
+        <file path="share/doc/mingwrt/TODO" />
+    </manifest>
+</package>

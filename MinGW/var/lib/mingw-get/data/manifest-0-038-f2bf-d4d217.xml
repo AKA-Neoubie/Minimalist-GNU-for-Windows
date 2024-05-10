@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<package id="manifest-0-032-f706-3392b7">
-    <release tarname="mingwrt-5.0.2-mingw32-dll.tar.xz" />
+<package id="manifest-0-038-f2bf-d4d217">
+    <release tarname="w32api-4.0-1-mingw32-rc-4-lic.tar.lzma" />
     <references>
         <sysroot id="sysroot-0-002-a7c6-d7dbb5" />
     </references>
     <manifest>
-        <dir path="bin" />
-        <file path="bin/mingwm10.dll" />
+        <file path="share/doc/w32api/LICENSE" />
     </manifest>
 </package>
